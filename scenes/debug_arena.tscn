@@ -1,0 +1,413 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs5xpmqy6j3bv"]
+
+[ext_resource type="PackedScene" uid="uid://chruxdkxswxvw" path="res://scenes/player_character.tscn" id="1_3sxe6"]
+[ext_resource type="Script" uid="uid://cyetop4ntf4gp" path="res://scripts/tool-only/bubble_generator.gd" id="2_4ym8t"]
+[ext_resource type="PackedScene" uid="uid://cosckn42gn5ey" path="res://scenes/bubble_dot.tscn" id="3_rp0f4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4v3rj"]
+
+[node name="debug_arena" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2, -365)
+zoom = Vector2(0.3, 0.3)
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_3sxe6")]
+position = Vector2(2, -302)
+
+[node name="BubbleBody" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubbleBody"]
+shape = SubResource("WorldBoundaryShape2D_4v3rj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BubbleBody" node_paths=PackedStringArray("dot_cache")]
+polygon = PackedVector2Array(1280, 0, 1255.41, -249.716, 1182.57, -489.835, 1064.28, -711.13, 905.097, -905.097, 711.13, -1064.28, 489.835, -1182.57, 249.716, -1255.41, 7.83748e-14, -1280, -249.716, -1255.41, -489.835, -1182.57, -711.13, -1064.28, -905.097, -905.097, -1064.28, -711.13, -1182.57, -489.835, -1255.41, -249.716, -1280, -1.5675e-13, -1408, -1.72425e-13, -1380.95, -274.687, -1300.82, -538.818, -1170.71, -782.243, -995.606, -995.606, -782.243, -1170.71, -538.818, -1300.82, -274.687, -1380.95, 8.62123e-14, -1408, 274.687, -1380.95, 538.818, -1300.82, 782.243, -1170.71, 995.606, -995.606, 1170.71, -782.243, 1300.82, -538.818, 1380.95, -274.687, 1408, 0)
+script = ExtResource("2_4ym8t")
+dot_cache = [NodePath("../../BubbleDot"), NodePath("../../BubbleDot2"), NodePath("../../BubbleDot3"), NodePath("../../BubbleDot4"), NodePath("../../BubbleDot5"), NodePath("../../BubbleDot6"), NodePath("../../BubbleDot7"), NodePath("../../BubbleDot8"), NodePath("../../BubbleDot9"), NodePath("../../BubbleDot10"), NodePath("../../BubbleDot11"), NodePath("../../BubbleDot12"), NodePath("../../BubbleDot13"), NodePath("../../BubbleDot14"), NodePath("../../BubbleDot15"), NodePath("../../BubbleDot16"), NodePath("../../BubbleDot17"), NodePath("../../BubbleDot18"), NodePath("../../BubbleDot19"), NodePath("../../BubbleDot20"), NodePath("../../BubbleDot21"), NodePath("../../BubbleDot22"), NodePath("../../BubbleDot23"), NodePath("../../BubbleDot24"), NodePath("../../BubbleDot25"), NodePath("../../BubbleDot26"), NodePath("../../BubbleDot27"), NodePath("../../BubbleDot28"), NodePath("../../BubbleDot29"), NodePath("../../BubbleDot30"), NodePath("../../BubbleDot31"), NodePath("../../BubbleDot32"), NodePath("../../BubbleDot33"), NodePath("../../BubbleDot34"), NodePath("../../BubbleDot35"), NodePath("../../BubbleDot36"), NodePath("../../BubbleDot37"), NodePath("../../BubbleDot38"), NodePath("../../BubbleDot39"), NodePath("../../BubbleDot40"), NodePath("../../BubbleDot41"), NodePath("../../BubbleDot42"), NodePath("../../BubbleDot43"), NodePath("../../BubbleDot44"), NodePath("../../BubbleDot45"), NodePath("../../BubbleDot46"), NodePath("../../BubbleDot47"), NodePath("../../BubbleDot48"), NodePath("../../BubbleDot49"), NodePath("../../BubbleDot50"), NodePath("../../BubbleDot51"), NodePath("../../BubbleDot52"), NodePath("../../BubbleDot53"), NodePath("../../BubbleDot54"), NodePath("../../BubbleDot55"), NodePath("../../BubbleDot56"), NodePath("../../BubbleDot57"), NodePath("../../BubbleDot58"), NodePath("../../BubbleDot59"), NodePath("../../BubbleDot60"), NodePath("../../BubbleDot61"), NodePath("../../BubbleDot62"), NodePath("../../BubbleDot63"), NodePath("../../BubbleDot128")]
+radius = 1280.0
+thickness = 128.0
+steps = 16
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+
+[node name="BubbleDot" parent="." node_paths=PackedStringArray("second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(1248, 0)
+displace_position = Vector2(1280, 0)
+second_near = NodePath("../BubbleDot2")
+
+[node name="BubbleDot2" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(1246.44, -62.374)
+displace_position = Vector2(1278.4, -63.9733)
+first_near = NodePath("../BubbleDot")
+second_near = NodePath("../BubbleDot3")
+
+[node name="BubbleDot3" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(1241.77, -124.592)
+displace_position = Vector2(1273.61, -127.787)
+first_near = NodePath("../BubbleDot2")
+second_near = NodePath("../BubbleDot4")
+
+[node name="BubbleDot4" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(1233.99, -186.499)
+displace_position = Vector2(1265.63, -191.281)
+first_near = NodePath("../BubbleDot3")
+second_near = NodePath("../BubbleDot5")
+
+[node name="BubbleDot5" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(1223.12, -247.939)
+displace_position = Vector2(1254.49, -254.297)
+first_near = NodePath("../BubbleDot4")
+second_near = NodePath("../BubbleDot6")
+
+[node name="BubbleDot6" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(1209.2, -308.76)
+displace_position = Vector2(1240.21, -316.677)
+first_near = NodePath("../BubbleDot5")
+second_near = NodePath("../BubbleDot7")
+
+[node name="BubbleDot7" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(1192.26, -368.809)
+displace_position = Vector2(1222.83, -378.266)
+first_near = NodePath("../BubbleDot6")
+second_near = NodePath("../BubbleDot8")
+
+[node name="BubbleDot8" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(1172.34, -427.936)
+displace_position = Vector2(1202.4, -438.909)
+first_near = NodePath("../BubbleDot7")
+second_near = NodePath("../BubbleDot9")
+
+[node name="BubbleDot9" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(1149.48, -485.994)
+displace_position = Vector2(1178.96, -498.455)
+first_near = NodePath("../BubbleDot8")
+second_near = NodePath("../BubbleDot10")
+
+[node name="BubbleDot10" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(1123.76, -542.837)
+displace_position = Vector2(1152.57, -556.756)
+first_near = NodePath("../BubbleDot9")
+second_near = NodePath("../BubbleDot11")
+
+[node name="BubbleDot11" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(1095.22, -598.323)
+displace_position = Vector2(1123.31, -613.665)
+first_near = NodePath("../BubbleDot10")
+second_near = NodePath("../BubbleDot12")
+
+[node name="BubbleDot12" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(1063.95, -652.314)
+displace_position = Vector2(1091.23, -669.04)
+first_near = NodePath("../BubbleDot11")
+second_near = NodePath("../BubbleDot13")
+
+[node name="BubbleDot13" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(1030.02, -704.674)
+displace_position = Vector2(1056.43, -722.742)
+first_near = NodePath("../BubbleDot12")
+second_near = NodePath("../BubbleDot14")
+
+[node name="BubbleDot14" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(993.513, -755.273)
+displace_position = Vector2(1018.99, -774.639)
+first_near = NodePath("../BubbleDot13")
+second_near = NodePath("../BubbleDot15")
+
+[node name="BubbleDot15" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(954.523, -803.984)
+displace_position = Vector2(978.998, -824.599)
+first_near = NodePath("../BubbleDot14")
+second_near = NodePath("../BubbleDot16")
+
+[node name="BubbleDot16" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(913.148, -850.685)
+displace_position = Vector2(936.562, -872.498)
+first_near = NodePath("../BubbleDot15")
+second_near = NodePath("../BubbleDot17")
+
+[node name="BubbleDot17" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(869.49, -895.26)
+displace_position = Vector2(891.785, -918.216)
+first_near = NodePath("../BubbleDot16")
+second_near = NodePath("../BubbleDot18")
+
+[node name="BubbleDot18" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(823.659, -937.598)
+displace_position = Vector2(844.778, -961.639)
+first_near = NodePath("../BubbleDot17")
+second_near = NodePath("../BubbleDot19")
+
+[node name="BubbleDot19" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(775.769, -977.592)
+displace_position = Vector2(795.661, -1002.66)
+first_near = NodePath("../BubbleDot18")
+second_near = NodePath("../BubbleDot20")
+
+[node name="BubbleDot20" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(725.94, -1015.14)
+displace_position = Vector2(744.554, -1041.17)
+first_near = NodePath("../BubbleDot19")
+second_near = NodePath("../BubbleDot21")
+
+[node name="BubbleDot21" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(674.297, -1050.16)
+displace_position = Vector2(691.587, -1077.08)
+first_near = NodePath("../BubbleDot20")
+second_near = NodePath("../BubbleDot22")
+
+[node name="BubbleDot22" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(620.969, -1082.54)
+displace_position = Vector2(636.891, -1110.3)
+first_near = NodePath("../BubbleDot21")
+second_near = NodePath("../BubbleDot23")
+
+[node name="BubbleDot23" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(566.088, -1112.23)
+displace_position = Vector2(580.603, -1140.75)
+first_near = NodePath("../BubbleDot22")
+second_near = NodePath("../BubbleDot24")
+
+[node name="BubbleDot24" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(509.792, -1139.13)
+displace_position = Vector2(522.864, -1168.34)
+first_near = NodePath("../BubbleDot23")
+second_near = NodePath("../BubbleDot25")
+
+[node name="BubbleDot25" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(452.222, -1163.18)
+displace_position = Vector2(463.818, -1193.01)
+first_near = NodePath("../BubbleDot24")
+second_near = NodePath("../BubbleDot26")
+
+[node name="BubbleDot26" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(393.522, -1184.33)
+displace_position = Vector2(403.613, -1214.7)
+first_near = NodePath("../BubbleDot25")
+second_near = NodePath("../BubbleDot27")
+
+[node name="BubbleDot27" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(333.839, -1202.52)
+displace_position = Vector2(342.398, -1233.35)
+first_near = NodePath("../BubbleDot26")
+second_near = NodePath("../BubbleDot28")
+
+[node name="BubbleDot28" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(273.32, -1217.7)
+displace_position = Vector2(280.329, -1248.93)
+first_near = NodePath("../BubbleDot27")
+second_near = NodePath("../BubbleDot29")
+
+[node name="BubbleDot29" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(212.119, -1229.84)
+displace_position = Vector2(217.558, -1261.38)
+first_near = NodePath("../BubbleDot28")
+second_near = NodePath("../BubbleDot30")
+
+[node name="BubbleDot30" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(150.387, -1238.91)
+displace_position = Vector2(154.244, -1270.67)
+first_near = NodePath("../BubbleDot29")
+second_near = NodePath("../BubbleDot31")
+
+[node name="BubbleDot31" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(88.28, -1244.87)
+displace_position = Vector2(90.5436, -1276.79)
+first_near = NodePath("../BubbleDot30")
+second_near = NodePath("../BubbleDot32")
+
+[node name="BubbleDot32" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(25.9519, -1247.73)
+displace_position = Vector2(26.6174, -1279.72)
+first_near = NodePath("../BubbleDot31")
+second_near = NodePath("../BubbleDot33")
+
+[node name="BubbleDot33" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-36.441, -1247.47)
+displace_position = Vector2(-37.3754, -1279.45)
+first_near = NodePath("../BubbleDot32")
+second_near = NodePath("../BubbleDot34")
+
+[node name="BubbleDot34" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-98.7429, -1244.09)
+displace_position = Vector2(-101.275, -1275.99)
+first_near = NodePath("../BubbleDot33")
+second_near = NodePath("../BubbleDot35")
+
+[node name="BubbleDot35" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-160.798, -1237.6)
+displace_position = Vector2(-164.921, -1269.33)
+first_near = NodePath("../BubbleDot34")
+second_near = NodePath("../BubbleDot36")
+
+[node name="BubbleDot36" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-222.451, -1228.01)
+displace_position = Vector2(-228.155, -1259.5)
+first_near = NodePath("../BubbleDot35")
+second_near = NodePath("../BubbleDot37")
+
+[node name="BubbleDot37" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-283.548, -1215.36)
+displace_position = Vector2(-290.819, -1246.53)
+first_near = NodePath("../BubbleDot36")
+second_near = NodePath("../BubbleDot38")
+
+[node name="BubbleDot38" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-343.937, -1199.67)
+displace_position = Vector2(-352.756, -1230.43)
+first_near = NodePath("../BubbleDot37")
+second_near = NodePath("../BubbleDot39")
+
+[node name="BubbleDot39" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-403.465, -1180.98)
+displace_position = Vector2(-413.811, -1211.26)
+first_near = NodePath("../BubbleDot38")
+second_near = NodePath("../BubbleDot40")
+
+[node name="BubbleDot40" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-461.986, -1159.34)
+displace_position = Vector2(-473.831, -1189.07)
+first_near = NodePath("../BubbleDot39")
+second_near = NodePath("../BubbleDot41")
+
+[node name="BubbleDot41" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-519.351, -1134.8)
+displace_position = Vector2(-532.668, -1163.9)
+first_near = NodePath("../BubbleDot40")
+second_near = NodePath("../BubbleDot42")
+
+[node name="BubbleDot42" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-575.419, -1107.43)
+displace_position = Vector2(-590.173, -1135.82)
+first_near = NodePath("../BubbleDot41")
+second_near = NodePath("../BubbleDot43")
+
+[node name="BubbleDot43" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-630.048, -1077.29)
+displace_position = Vector2(-646.203, -1104.91)
+first_near = NodePath("../BubbleDot42")
+second_near = NodePath("../BubbleDot44")
+
+[node name="BubbleDot44" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-683.102, -1044.45)
+displace_position = Vector2(-700.618, -1071.23)
+first_near = NodePath("../BubbleDot43")
+second_near = NodePath("../BubbleDot45")
+
+[node name="BubbleDot45" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-734.449, -1009)
+displace_position = Vector2(-753.281, -1034.88)
+first_near = NodePath("../BubbleDot44")
+second_near = NodePath("../BubbleDot46")
+
+[node name="BubbleDot46" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-783.961, -971.035)
+displace_position = Vector2(-804.062, -995.934)
+first_near = NodePath("../BubbleDot45")
+second_near = NodePath("../BubbleDot47")
+
+[node name="BubbleDot47" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-831.512, -930.64)
+displace_position = Vector2(-852.833, -954.503)
+first_near = NodePath("../BubbleDot46")
+second_near = NodePath("../BubbleDot48")
+
+[node name="BubbleDot48" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-876.986, -887.919)
+displace_position = Vector2(-899.473, -910.686)
+first_near = NodePath("../BubbleDot47")
+second_near = NodePath("../BubbleDot49")
+
+[node name="BubbleDot49" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-920.267, -842.978)
+displace_position = Vector2(-943.864, -864.593)
+first_near = NodePath("../BubbleDot48")
+second_near = NodePath("../BubbleDot50")
+
+[node name="BubbleDot50" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-961.249, -795.93)
+displace_position = Vector2(-985.896, -816.339)
+first_near = NodePath("../BubbleDot49")
+second_near = NodePath("../BubbleDot51")
+
+[node name="BubbleDot51" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-999.827, -746.893)
+displace_position = Vector2(-1025.46, -766.044)
+first_near = NodePath("../BubbleDot50")
+second_near = NodePath("../BubbleDot52")
+
+[node name="BubbleDot52" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-1035.91, -695.989)
+displace_position = Vector2(-1062.47, -713.835)
+first_near = NodePath("../BubbleDot51")
+second_near = NodePath("../BubbleDot53")
+
+[node name="BubbleDot53" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-1069.4, -643.346)
+displace_position = Vector2(-1096.82, -659.842)
+first_near = NodePath("../BubbleDot52")
+second_near = NodePath("../BubbleDot54")
+
+[node name="BubbleDot54" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-1100.21, -589.094)
+displace_position = Vector2(-1128.43, -604.199)
+first_near = NodePath("../BubbleDot53")
+second_near = NodePath("../BubbleDot55")
+
+[node name="BubbleDot55" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-1128.28, -533.37)
+displace_position = Vector2(-1157.21, -547.046)
+first_near = NodePath("../BubbleDot54")
+second_near = NodePath("../BubbleDot56")
+
+[node name="BubbleDot56" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-1153.53, -476.313)
+displace_position = Vector2(-1183.11, -488.526)
+first_near = NodePath("../BubbleDot55")
+second_near = NodePath("../BubbleDot57")
+
+[node name="BubbleDot57" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-1175.89, -418.065)
+displace_position = Vector2(-1206.04, -428.785)
+first_near = NodePath("../BubbleDot56")
+second_near = NodePath("../BubbleDot58")
+
+[node name="BubbleDot58" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-1195.32, -358.773)
+displace_position = Vector2(-1225.97, -367.972)
+first_near = NodePath("../BubbleDot57")
+second_near = NodePath("../BubbleDot59")
+
+[node name="BubbleDot59" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-1211.76, -298.583)
+displace_position = Vector2(-1242.83, -306.239)
+first_near = NodePath("../BubbleDot58")
+second_near = NodePath("../BubbleDot60")
+
+[node name="BubbleDot60" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-1225.16, -237.647)
+displace_position = Vector2(-1256.58, -243.741)
+first_near = NodePath("../BubbleDot59")
+second_near = NodePath("../BubbleDot61")
+
+[node name="BubbleDot61" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-1235.51, -176.118)
+displace_position = Vector2(-1267.19, -180.634)
+first_near = NodePath("../BubbleDot60")
+second_near = NodePath("../BubbleDot62")
+
+[node name="BubbleDot62" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-1242.77, -114.148)
+displace_position = Vector2(-1274.63, -117.075)
+first_near = NodePath("../BubbleDot61")
+second_near = NodePath("../BubbleDot63")
+
+[node name="BubbleDot63" parent="." node_paths=PackedStringArray("first_near", "second_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-1246.92, -51.8927)
+displace_position = Vector2(-1278.89, -53.2232)
+first_near = NodePath("../BubbleDot62")
+second_near = NodePath("../BubbleDot128")
+
+[node name="BubbleDot128" parent="." node_paths=PackedStringArray("first_near") instance=ExtResource("3_rp0f4")]
+position = Vector2(-1247.96, 10.4922)
+displace_position = Vector2(-1279.95, 10.7613)
+first_near = NodePath("../BubbleDot63")
