@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cosckn42gn5ey"]
 
-[ext_resource type="Script" uid="uid://d38xbug7mu5g" path="res://scripts/bubble_dot.gd" id="1_o2usn"]
+[ext_resource type="Script" uid="uid://d38xbug7mu5g" path="res://scripts/bubble/bubble_dot.gd" id="1_o2usn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ywgiu"]
-radius = 32.0
+radius = 16.0
 
 [node name="BubbleDot" type="Area2D"]
 collision_layer = 0

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Equipment" load_steps=3 format=3 uid="uid://kl8xj483tl68"]
+
+[ext_resource type="Script" uid="uid://bnem2bbtkxhw5" path="res://scripts/equipment.gd" id="1_gyqv1"]
+[ext_resource type="Texture2D" uid="uid://lw5lly8qto0n" path="res://sprites/jumppad.png" id="2_3ton6"]
+
+[resource]
+script = ExtResource("1_gyqv1")
+label = "Jump pad"
+preview = ExtResource("2_3ton6")
+hint = "Spawn jump pads"
+category = 2
+metadata/_custom_type_script = ExtResource("1_gyqv1")

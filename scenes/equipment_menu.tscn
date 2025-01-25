@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv5k77i1oqev8"]
+
+[ext_resource type="PackedScene" uid="uid://dcpiavor2mtbe" path="res://scenes/gui/dn_d_in.tscn" id="1_4cvux"]
+[ext_resource type="Script" uid="uid://cftx0qvyj6x42" path="res://scripts/gui/equipment_reader.gd" id="1_fcpso"]
+
+[node name="EquipmentMenu" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Active" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 256)
+layout_mode = 2
+
+[node name="DnDIn" parent="Active" instance=ExtResource("1_4cvux")]
+layout_mode = 2
+category = 3
+
+[node name="Inventory" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Inventory"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 8
+script = ExtResource("1_fcpso")

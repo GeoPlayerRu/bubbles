@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://csvu6ku5ln28"]
+
+[node name="Preview" type="TextureRect"]
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.062
+offset_right = -0.32
+offset_bottom = -0.176003
+pivot_offset = Vector2(20, 20)
+expand_mode = 1
+stretch_mode = 5

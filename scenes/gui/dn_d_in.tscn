@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcpiavor2mtbe"]
+
+[ext_resource type="Shader" path="res://shaders/bubble_shine2.gdshader" id="1_d0y7u"]
+[ext_resource type="Texture2D" uid="uid://cxv27bvq7fj11" path="res://sprites/slot.png" id="1_ysye0"]
+[ext_resource type="Script" uid="uid://c7pkygnw54lvv" path="res://scripts/gui/dnd_in.gd" id="2_am4ys"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uk42u"]
+shader = ExtResource("1_d0y7u")
+shader_parameter/first_shine_color = Color(0.94214, 0.775316, 0.667301, 1)
+shader_parameter/second_shine_color = Color(0.886275, 0.360784, 0.92549, 1)
+shader_parameter/alpha = 0.6
+shader_parameter/border = 0.45
+
+[node name="DnDIn" type="TextureRect"]
+material = SubResource("ShaderMaterial_uk42u")
+custom_minimum_size = Vector2(128, 128)
+anchors_preset = -1
+anchor_right = 0.222222
+anchor_bottom = 0.395062
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ysye0")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_am4ys")
+metadata/_edit_use_anchors_ = true
+
+[node name="HoldedTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.046875
+anchor_top = 0.046875
+anchor_right = 0.953219
+anchor_bottom = 0.953
+offset_right = -0.0240173
+offset_bottom = 0.0319824
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true

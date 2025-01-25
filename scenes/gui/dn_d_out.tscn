@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7kgutl5cf63h"]
+
+[ext_resource type="PackedScene" uid="uid://dcpiavor2mtbe" path="res://scenes/gui/dn_d_in.tscn" id="1_m5emt"]
+[ext_resource type="Script" uid="uid://dobl4fvm1i8pc" path="res://scripts/gui/dnd_out.gd" id="2_puvd6"]
+
+[node name="DnDOut" instance=ExtResource("1_m5emt")]
+script = ExtResource("2_puvd6")

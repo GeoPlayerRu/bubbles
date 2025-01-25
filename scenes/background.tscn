@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvd014bl2s1ea"]
+
+[ext_resource type="Texture2D" uid="uid://cpnn774rc1i3s" path="res://sprites/background/1.png" id="1_jougr"]
+[ext_resource type="Texture2D" uid="uid://cv40qh1puxnuf" path="res://sprites/background/2.png" id="2_cbsqf"]
+[ext_resource type="Texture2D" uid="uid://b5i865ma0fsml" path="res://sprites/background/3.png" id="3_wisxt"]
+
+[node name="Background" type="ParallaxBackground"]
+scroll_base_scale = Vector2(1, 0.5)
+
+[node name="Background" type="ParallaxLayer" parent="."]
+modulate = Color(0.85, 0.85, 0.85, 1)
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+texture = ExtResource("1_jougr")
+
+[node name="Second Layer" type="ParallaxLayer" parent="."]
+modulate = Color(0.85, 0.85, 0.85, 1)
+motion_scale = Vector2(0.25, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Second Layer"]
+texture = ExtResource("2_cbsqf")
+
+[node name="Foreground" type="ParallaxLayer" parent="."]
+modulate = Color(0.85, 0.85, 0.85, 1)
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground"]
+texture = ExtResource("3_wisxt")
+
+[node name="Background2" type="ParallaxLayer" parent="."]
+modulate = Color(0.85, 0.85, 0.85, 1)
+position = Vector2(0, -1080)
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background2"]
+texture = ExtResource("1_jougr")
+
+[node name="Second Layer2" type="ParallaxLayer" parent="."]
+modulate = Color(0.85, 0.85, 0.85, 1)
+position = Vector2(0, -1080)
+motion_scale = Vector2(0.25, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Second Layer2"]
+texture = ExtResource("2_cbsqf")
+
+[node name="Foreground2" type="ParallaxLayer" parent="."]
+modulate = Color(0.85, 0.85, 0.85, 1)
+position = Vector2(0, -1080)
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground2"]
+texture = ExtResource("3_wisxt")
