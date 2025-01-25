@@ -9,19 +9,26 @@ var prev_falling : bool
 func _physics_process(_delta: float) -> void:
 	var falling : bool
 	var grounded : bool
+	var playback = get('parameters/playback')
 	
 	grounded = player.is_on_floor()
 	falling = player.velocity.y > 0 and not grounded
 	
 	set('parameters/conditions/falling',falling)
 	set('parameters/conditions/ground',prev_falling == true and prev_grounded == false and grounded)
-	set('parameters/Attack/blend_position',Input.get_vector("ch_left",'ch_right','ch_up','ch_down'))
 	
 	if state_machine.get_current_state_name() == "Move" and state_machine.get_current_state().jumped:
-		get('parameters/playback').start('jump')
+		playback.start('jump')
 	
-	if state_machine.get_current_state_name() == "Dash" and get('parameters/playback').get_current_node() != 'dash':
-		get('parameters/playback').start('dash')
+	if state_machine.get_current_state_name() == "Dash" and playback.get_current_node() != 'dash':
+		playback.start('dash')
+	
+	if state_machine.get_current_state_name() != "Attack":
+		set('parameters/attack/blend_position',Input.get_vector("ch_left",'ch_right','ch_down','ch_up'))
+	
+	if state_machine.get_current_state_name() == "Attack" and playback.get_current_node() != 'attack':
+		playback.start('attack')
+		
 	
 	prev_grounded = grounded
 	prev_falling = falling

@@ -6,6 +6,8 @@ const JUMP_SPEED = 1024.0
 var axis_cache : float
 var hor_axis : float
 
+var hp :int = 3
+
 func _physics_process(_delta: float) -> void:
 	hor_axis = Input.get_axis("ch_left","ch_right")
 	

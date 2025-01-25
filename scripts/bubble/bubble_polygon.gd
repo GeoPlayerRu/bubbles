@@ -7,7 +7,7 @@ extends Polygon2D
 
 func _ready() -> void:
 	update_poly()
-
+	
 	
 
 func _process(_delta: float) -> void:

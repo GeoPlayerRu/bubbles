@@ -11,7 +11,6 @@ extends State
 var jumped : bool = false
 var can_dash : bool = true
 
-
 func _physics_update(delta):
 	player.velocity.x = player.hor_axis * player.MAX_SPEED
 	
@@ -44,3 +43,6 @@ func _physics_update(delta):
 		tree.transit("Dash")
 		dashCooldownTimer.start()
 		can_dash = false
+	
+	if Input.is_action_just_pressed("ch_melee"):
+		tree.transit("Attack")
