@@ -12,7 +12,7 @@ static var instance
 var axis_cache : float
 var hor_axis : float
 
-var hp :int = 3
+static var hp :int = 3
 var can_move : bool = true
 
 func _ready() -> void:

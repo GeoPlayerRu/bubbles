@@ -4,8 +4,11 @@ extends AnimationTree
 @onready var state_machine := $"../StateTree"
 var prev_grounded : bool
 var prev_falling : bool
+var die : bool
 
 func _physics_process(_delta: float) -> void:
+	if die: return
+	
 	var falling : bool
 	var grounded : bool
 	var playback = get('parameters/playback')
@@ -21,3 +24,14 @@ func _physics_process(_delta: float) -> void:
 	
 	prev_falling = falling
 	prev_grounded = grounded
+
+
+func _on_bleb_death() -> void:
+	die = true
+	get('parameters/playback').start('death')
+
+
+func _on_animation_finished(anim_name: StringName) -> void:
+	if anim_name == 'death':
+		data.death_animation_ended.emit()
+		data.queue_free()

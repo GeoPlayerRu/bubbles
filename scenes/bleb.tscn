@@ -1,6 +1,7 @@
-[gd_scene load_steps=102 format=3 uid="uid://dgnnmfv3fnkq1"]
+[gd_scene load_steps=104 format=3 uid="uid://dgnnmfv3fnkq1"]
 
 [ext_resource type="Script" uid="uid://cc2i7sv5fwfl4" path="res://scripts/enemy.gd" id="1_53c42"]
+[ext_resource type="Shader" uid="uid://4hnh1b0l5ree" path="res://shaders/flash.gdshader" id="1_f06k0"]
 [ext_resource type="Texture2D" uid="uid://uxio6l7gbawd" path="res://sprites/Boss/Idle/Idle0001.png" id="1_k22kk"]
 [ext_resource type="Texture2D" uid="uid://dwy3sfnfjtrxh" path="res://sprites/Boss/Idle/Idle0002.png" id="2_gujt6"]
 [ext_resource type="Texture2D" uid="uid://dvpar58l5e175" path="res://sprites/Boss/Idle/Idle0003.png" id="3_g33ec"]
@@ -77,6 +78,11 @@
 [ext_resource type="Script" uid="uid://bg72s8p4gvmjn" path="res://scripts/boss1/boss_jump.gd" id="74_c188i"]
 [ext_resource type="Script" uid="uid://dwlpnnunulb2r" path="res://scripts/boss1/boss1_hitbox.gd" id="74_p55i8"]
 [ext_resource type="Script" uid="uid://bbemibuka00ab" path="res://scripts/boss1/boss_smash.gd" id="75_inayf"]
+[ext_resource type="Script" uid="uid://uypggti40mem" path="res://scripts/boss1/boss_death.gd" id="78_wd8vs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wd8vs"]
+shader = ExtResource("1_f06k0")
+shader_parameter/amount = null
 
 [sub_resource type="Animation" id="Animation_hw1uy"]
 length = 0.001
@@ -254,10 +260,6 @@ animation = &"idle"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_73hos"]
 animation = &"jump"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_utv5l"]
-switch_mode = 2
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e3ppq"]
 switch_mode = 2
 advance_mode = 2
@@ -294,7 +296,7 @@ states/idle/node = SubResource("AnimationNodeAnimation_pvyen")
 states/idle/position = Vector2(296, 100)
 states/jump/node = SubResource("AnimationNodeAnimation_73hos")
 states/jump/position = Vector2(296, 14)
-transitions = ["death", "End", SubResource("AnimationNodeStateMachineTransition_utv5l"), "fall", "falling", SubResource("AnimationNodeStateMachineTransition_e3ppq"), "falling", "grounding", SubResource("AnimationNodeStateMachineTransition_7vfgs"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_j7ye7"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_nntet"), "grounding", "idle", SubResource("AnimationNodeStateMachineTransition_e6cp7"), "fall", "grounding", SubResource("AnimationNodeStateMachineTransition_inayf")]
+transitions = ["fall", "falling", SubResource("AnimationNodeStateMachineTransition_e3ppq"), "falling", "grounding", SubResource("AnimationNodeStateMachineTransition_7vfgs"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_j7ye7"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_nntet"), "grounding", "idle", SubResource("AnimationNodeStateMachineTransition_e6cp7"), "fall", "grounding", SubResource("AnimationNodeStateMachineTransition_inayf")]
 graph_offset = Vector2(-32, -27)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tq23x"]
@@ -304,11 +306,13 @@ radius = 110.114
 radius = 135.033
 
 [node name="Bleb" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_wd8vs")
 collision_layer = 4
 script = ExtResource("1_53c42")
 hp = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+use_parent_material = true
 position = Vector2(0, -93)
 scale = Vector2(2, 2)
 texture = ExtResource("1_k22kk")
@@ -349,6 +353,10 @@ metadata/_custom_type_script = ExtResource("72_oes08")
 script = ExtResource("75_inayf")
 metadata/_custom_type_script = ExtResource("72_oes08")
 
+[node name="Death" type="Node" parent="StateTree"]
+script = ExtResource("78_wd8vs")
+metadata/_custom_type_script = ExtResource("72_oes08")
+
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
@@ -358,6 +366,9 @@ script = ExtResource("74_p55i8")
 position = Vector2(-2, -36)
 shape = SubResource("CircleShape2D_gl6c0")
 
+[connection signal="death" from="." to="AnimationTree" method="_on_bleb_death"]
+[connection signal="death" from="." to="StateTree/Death" method="_on_bleb_death"]
+[connection signal="animation_finished" from="AnimationTree" to="AnimationTree" method="_on_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="StateTree/Jump" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="StateTree/Smash" method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="StateTree/Idle/DecisionTimer" to="StateTree/Idle" method="_on_decision_timer_timeout"]

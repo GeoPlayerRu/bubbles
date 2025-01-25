@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3jt454tyd457"]
+
+[ext_resource type="Texture2D" uid="uid://c0wot6gikukix" path="res://sprites/beam/clockwise/frame0000.png" id="1_ajnd8"]
+[ext_resource type="Texture2D" uid="uid://ci7xmsm73b4s3" path="res://sprites/beam/clockwise/frame0001.png" id="2_8mwpx"]
+[ext_resource type="Texture2D" uid="uid://bac3w38geio5p" path="res://sprites/beam/clockwise/frame0002.png" id="3_81jgc"]
+[ext_resource type="Texture2D" uid="uid://or1ea6edbp2p" path="res://sprites/beam/clockwise/frame0003.png" id="4_adds6"]
+[ext_resource type="Texture2D" uid="uid://bwhl325y8aey8" path="res://sprites/beam/clockwise/frame0004.png" id="5_avvws"]
+
+[sub_resource type="Animation" id="Animation_ujnng"]
+resource_name = "main"
+length = 0.50001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_ajnd8"), ExtResource("2_8mwpx"), ExtResource("3_81jgc"), ExtResource("4_adds6"), ExtResource("5_avvws")]
+}
+
+[sub_resource type="Animation" id="Animation_nxkkb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_ajnd8")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1r0x4"]
+_data = {
+&"RESET": SubResource("Animation_nxkkb"),
+&"main": SubResource("Animation_ujnng")
+}
+
+[node name="BeamOfLight" type="Line2D"]
+texture_repeat = 2
+texture = ExtResource("1_ajnd8")
+texture_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1r0x4")
+}
+autoplay = "main"

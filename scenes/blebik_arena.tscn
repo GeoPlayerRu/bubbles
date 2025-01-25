@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dpwvw7ahntwnh"]
+[gd_scene load_steps=21 format=4 uid="uid://dpwvw7ahntwnh"]
 
 [ext_resource type="PackedScene" uid="uid://dvd014bl2s1ea" path="res://scenes/background.tscn" id="1_71r36"]
 [ext_resource type="Script" uid="uid://cyetop4ntf4gp" path="res://scripts/tool-only/bubble_generator.gd" id="2_0vjkv"]
@@ -7,70 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://cosckn42gn5ey" path="res://scenes/bubble_dot.tscn" id="4_wx1jw"]
 [ext_resource type="Script" uid="uid://bwr702vfv3xg6" path="res://scripts/bubble/bubble_line.gd" id="5_eq7jn"]
 [ext_resource type="PackedScene" uid="uid://b8aiqf7ypwqdh" path="res://scenes/ground_tilemap.tscn" id="7_6u58k"]
+[ext_resource type="FontFile" uid="uid://3a4vwmcvg7dv" path="res://font/Roboto_Condensed/static/RobotoCondensed-Medium.ttf" id="8_06crg"]
 [ext_resource type="PackedScene" uid="uid://dgnnmfv3fnkq1" path="res://scenes/bleb.tscn" id="8_eq7jn"]
+[ext_resource type="PackedScene" uid="uid://d3jt454tyd457" path="res://scenes/beam_of_light.tscn" id="9_2jwjg"]
+[ext_resource type="Texture2D" uid="uid://bjtmbw7qi3l87" path="res://sprites/beam/doorway.png" id="10_5k47o"]
+[ext_resource type="PackedScene" uid="uid://c8hpg010watcy" path="res://scenes/finish_area.tscn" id="12_vqsvp"]
+[ext_resource type="PackedScene" uid="uid://b2hhb3kjyonah" path="res://scenes/world_2.tscn" id="13_xpg5r"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_71r36"]
-
-[sub_resource type="Animation" id="Animation_6u58k"]
-resource_name = "main"
-length = 15.0
-step = 1.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../../PlayerCharacter:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 2),
-"transitions": PackedFloat32Array(-2, 1),
-"update": 0,
-"values": [Vector2(-2716, 0), Vector2(-1697, 0)]
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../../../PlayerCharacter/CinematicCamera:position:x")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.2245, 1440.36, 1696, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(2.50824, 4.50824)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../../PlayerCharacter/CinematicCamera:position:y")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.627947, -889.246, -806, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(2.50824, 4.50824)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../../../PlayerCharacter/CinematicCamera:zoom:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.0657139, -0.378908, 0.33, -0.472156, 0.0169508, 0.25, 0),
-"times": PackedFloat32Array(2.50824, 4.50824)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../../../PlayerCharacter/CinematicCamera:zoom:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.104572, -0.476622, 0.33, -0.483258, 0.0549505, 0.25, 0),
-"times": PackedFloat32Array(2.50824, 4.50824)
-}
 
 [sub_resource type="Animation" id="Animation_eq7jn"]
 length = 0.001
@@ -130,12 +74,244 @@ tracks/4/keys = {
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../CinematicAnimation/Label:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../..:process_mode")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../../PlayerCharacter/Camera2D:enabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../../PlayerCharacter/CinematicCamera:enabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../../CinematicAnimation/BeamOfLight:width")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../../../CinematicAnimation/Doorway:self_modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6u58k"]
+resource_name = "main"
+length = 8.5
+step = 0.033
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../PlayerCharacter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 2),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(-2716, 0), Vector2(-1697, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../PlayerCharacter/CinematicCamera:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.2245, 1440.36, 1696, -0.25, 0, 0.25, 0, 1696, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.50824, 4.50824, 7, 8.03333)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../PlayerCharacter/CinematicCamera:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.627947, -889.246, -422, -0.25, 0, 0.25, 0, -422, -0.25, 0, 0.25, 0, -63, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.50824, 4.50824, 7, 8.03333)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../PlayerCharacter/CinematicCamera:zoom:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.0657139, -0.378908, 0.33, -0.472156, 0.0169508, 0.25, 0, 0.33, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.50824, 4.50824, 7, 8.03333)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../PlayerCharacter/CinematicCamera:zoom:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.104572, -0.476622, 0.33, -0.483258, 0.0549505, 0.25, 0, 0.33, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.50824, 4.50824, 7, 8.03333)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../CinematicAnimation/Label:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4, 5, 6.47495, 6.79088),
+"transitions": PackedFloat32Array(1, 1, 0.5, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../..:process_mode")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../../PlayerCharacter/Camera2D:enabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0333333, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../../PlayerCharacter/CinematicCamera:enabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.0333333, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_5k47o"]
+resource_name = "after_death"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../CinematicAnimation/BeamOfLight:width")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [0.0, 512.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../CinematicAnimation/Doorway:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.60239, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../StaticBody2D2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eq7jn"]
 _data = {
 &"RESET": SubResource("Animation_eq7jn"),
+&"after_death": SubResource("Animation_5k47o"),
 &"main": SubResource("Animation_6u58k")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_2jwjg"]
+font = ExtResource("8_06crg")
+font_size = 256
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5k47o"]
+size = Vector2(1518, 784)
 
 [node name="blebik_arena" type="Node2D"]
 process_mode = 4
@@ -146,11 +322,13 @@ position = Vector2(-2716, 0)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCharacter"]
 position = Vector2(0, -63)
+offset = Vector2(0, -384)
 enabled = false
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
 [node name="CinematicCamera" type="Camera2D" parent="PlayerCharacter"]
+offset = Vector2(0, -384)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -158,7 +336,7 @@ position_smoothing_enabled = true
 shape = SubResource("WorldBoundaryShape2D_71r36")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" node_paths=PackedStringArray("dot_cache")]
-polygon = PackedVector2Array(2048, 0, 2008.65, -399.545, 1892.11, -783.736, 1702.85, -1137.81, 1448.15, -1448.15, 1137.81, -1702.85, 783.736, -1892.11, 399.545, -2008.65, 1.254e-13, -2048, -399.545, -2008.65, -783.736, -1892.11, -1137.81, -1702.85, -1448.15, -1448.15, -1702.85, -1137.81, -1892.11, -783.736, -2008.65, -399.545, -2048, -2.50799e-13, -3584, -4.38899e-13, -3515.13, -699.204, -3311.18, -1371.54, -2979.99, -1991.16, -2534.27, -2534.27, -1991.16, -2979.99, -1371.54, -3311.18, -699.204, -3515.13, 2.19449e-13, -3584, 699.204, -3515.13, 1371.54, -3311.18, 1991.16, -2979.99, 2534.27, -2534.27, 2979.99, -1991.16, 3311.18, -1371.54, 3515.13, -699.204, 3584, 0)
+polygon = PackedVector2Array(2008.65, -399.545, 1892.11, -783.736, 1702.85, -1137.81, 1448.15, -1448.15, 1137.81, -1702.85, 783.736, -1892.11, 399.545, -2008.65, 1.254e-13, -2048, -399.545, -2008.65, -783.736, -1892.11, -1137.81, -1702.85, -1448.15, -1448.15, -1702.85, -1137.81, -1892.11, -783.736, -2008.65, -399.545, -2048, -2.50799e-13, -3584, -4.38899e-13, -3515.13, -699.204, -3311.18, -1371.54, -2979.99, -1991.16, -2534.27, -2534.27, -1991.16, -2979.99, -1371.54, -3311.18, -699.204, -3515.13, 2.19449e-13, -3584, 699.204, -3515.13, 1371.54, -3311.18, 1991.16, -2979.99, 2534.27, -2534.27, 2979.99, -1991.16, 3311.18, -1371.54, 3516, -700)
 script = ExtResource("2_0vjkv")
 dot_cache = [NodePath("../../Arch/InnerLine/BubbleDot"), NodePath("../../Arch/InnerLine/BubbleDot2"), NodePath("../../Arch/InnerLine/BubbleDot3"), NodePath("../../Arch/InnerLine/BubbleDot4"), NodePath("../../Arch/InnerLine/BubbleDot5"), NodePath("../../Arch/InnerLine/BubbleDot6"), NodePath("../../Arch/InnerLine/BubbleDot7"), NodePath("../../Arch/InnerLine/BubbleDot8"), NodePath("../../Arch/InnerLine/BubbleDot9"), NodePath("../../Arch/InnerLine/BubbleDot10"), NodePath("../../Arch/InnerLine/BubbleDot11"), NodePath("../../Arch/InnerLine/BubbleDot12"), NodePath("../../Arch/InnerLine/BubbleDot13"), NodePath("../../Arch/InnerLine/BubbleDot14"), NodePath("../../Arch/InnerLine/BubbleDot15"), NodePath("../../Arch/InnerLine/BubbleDot16"), NodePath("../../Arch/InnerLine/BubbleDot17"), NodePath("../../Arch/InnerLine/BubbleDot18"), NodePath("../../Arch/InnerLine/BubbleDot19"), NodePath("../../Arch/InnerLine/BubbleDot20"), NodePath("../../Arch/InnerLine/BubbleDot21"), NodePath("../../Arch/InnerLine/BubbleDot22"), NodePath("../../Arch/InnerLine/BubbleDot23"), NodePath("../../Arch/InnerLine/BubbleDot24"), NodePath("../../Arch/InnerLine/BubbleDot25"), NodePath("../../Arch/InnerLine/BubbleDot26"), NodePath("../../Arch/InnerLine/BubbleDot27"), NodePath("../../Arch/InnerLine/BubbleDot28"), NodePath("../../Arch/InnerLine/BubbleDot29"), NodePath("../../Arch/InnerLine/BubbleDot30"), NodePath("../../Arch/InnerLine/BubbleDot31"), NodePath("../../Arch/InnerLine/BubbleDot32"), NodePath("../../Arch/InnerLine/BubbleDot33"), NodePath("../../Arch/InnerLine/BubbleDot34"), NodePath("../../Arch/InnerLine/BubbleDot35"), NodePath("../../Arch/InnerLine/BubbleDot36"), NodePath("../../Arch/InnerLine/BubbleDot37"), NodePath("../../Arch/InnerLine/BubbleDot38"), NodePath("../../Arch/InnerLine/BubbleDot39"), NodePath("../../Arch/InnerLine/BubbleDot40"), NodePath("../../Arch/InnerLine/BubbleDot41"), NodePath("../../Arch/InnerLine/BubbleDot42"), NodePath("../../Arch/InnerLine/BubbleDot43"), NodePath("../../Arch/InnerLine/BubbleDot44"), NodePath("../../Arch/InnerLine/BubbleDot45"), NodePath("../../Arch/InnerLine/BubbleDot46"), NodePath("../../Arch/InnerLine/BubbleDot47"), NodePath("../../Arch/InnerLine/BubbleDot48"), NodePath("../../Arch/InnerLine/BubbleDot49"), NodePath("../../Arch/InnerLine/BubbleDot50"), NodePath("../../Arch/InnerLine/BubbleDot51"), NodePath("../../Arch/InnerLine/BubbleDot52"), NodePath("../../Arch/InnerLine/BubbleDot53"), NodePath("../../Arch/InnerLine/BubbleDot54"), NodePath("../../Arch/InnerLine/BubbleDot55"), NodePath("../../Arch/InnerLine/BubbleDot56"), NodePath("../../Arch/InnerLine/BubbleDot57"), NodePath("../../Arch/InnerLine/BubbleDot58"), NodePath("../../Arch/InnerLine/BubbleDot59"), NodePath("../../Arch/InnerLine/BubbleDot60"), NodePath("../../Arch/InnerLine/BubbleDot61"), NodePath("../../Arch/InnerLine/BubbleDot62"), NodePath("../../Arch/InnerLine/BubbleDot63"), NodePath("../../Arch/InnerLine/BubbleDot64"), NodePath("../../Arch/InnerLine/BubbleDot65"), NodePath("../../Arch/InnerLine/BubbleDot66"), NodePath("../../Arch/InnerLine/BubbleDot67"), NodePath("../../Arch/InnerLine/BubbleDot68"), NodePath("../../Arch/InnerLine/BubbleDot69"), NodePath("../../Arch/InnerLine/BubbleDot70"), NodePath("../../Arch/InnerLine/BubbleDot71"), NodePath("../../Arch/InnerLine/BubbleDot72"), NodePath("../../Arch/InnerLine/BubbleDot73"), NodePath("../../Arch/InnerLine/BubbleDot74"), NodePath("../../Arch/InnerLine/BubbleDot75"), NodePath("../../Arch/InnerLine/BubbleDot76"), NodePath("../../Arch/InnerLine/BubbleDot77"), NodePath("../../Arch/InnerLine/BubbleDot78"), NodePath("../../Arch/InnerLine/BubbleDot79"), NodePath("../../Arch/InnerLine/BubbleDot80"), NodePath("../../Arch/InnerLine/BubbleDot81"), NodePath("../../Arch/InnerLine/BubbleDot82"), NodePath("../../Arch/InnerLine/BubbleDot83"), NodePath("../../Arch/InnerLine/BubbleDot84"), NodePath("../../Arch/InnerLine/BubbleDot85"), NodePath("../../Arch/InnerLine/BubbleDot86"), NodePath("../../Arch/InnerLine/BubbleDot87"), NodePath("../../Arch/InnerLine/BubbleDot88"), NodePath("../../Arch/InnerLine/BubbleDot89"), NodePath("../../Arch/InnerLine/BubbleDot90"), NodePath("../../Arch/InnerLine/BubbleDot91"), NodePath("../../Arch/InnerLine/BubbleDot92"), NodePath("../../Arch/InnerLine/BubbleDot93"), NodePath("../../Arch/InnerLine/BubbleDot94"), NodePath("../../Arch/InnerLine/BubbleDot95"), NodePath("../../Arch/InnerLine/BubbleDot96"), NodePath("../../Arch/InnerLine/BubbleDot97"), NodePath("../../Arch/InnerLine/BubbleDot98"), NodePath("../../Arch/InnerLine/BubbleDot99"), NodePath("../../Arch/InnerLine/BubbleDot100"), NodePath("../../Arch/InnerLine/BubbleDot101"), NodePath("../../Arch/InnerLine/BubbleDot102"), NodePath("../../Arch/InnerLine/BubbleDot103"), NodePath("../../Arch/InnerLine/BubbleDot104"), NodePath("../../Arch/InnerLine/BubbleDot105"), NodePath("../../Arch/InnerLine/BubbleDot106"), NodePath("../../Arch/InnerLine/BubbleDot107"), NodePath("../../Arch/InnerLine/BubbleDot108"), NodePath("../../Arch/InnerLine/BubbleDot109"), NodePath("../../Arch/InnerLine/BubbleDot110"), NodePath("../../Arch/InnerLine/BubbleDot111"), NodePath("../../Arch/InnerLine/BubbleDot112"), NodePath("../../Arch/InnerLine/BubbleDot113"), NodePath("../../Arch/InnerLine/BubbleDot114"), NodePath("../../Arch/InnerLine/BubbleDot115"), NodePath("../../Arch/InnerLine/BubbleDot116"), NodePath("../../Arch/InnerLine/BubbleDot117"), NodePath("../../Arch/InnerLine/BubbleDot118"), NodePath("../../Arch/InnerLine/BubbleDot119"), NodePath("../../Arch/InnerLine/BubbleDot120"), NodePath("../../Arch/InnerLine/BubbleDot121"), NodePath("../../Arch/InnerLine/BubbleDot122"), NodePath("../../Arch/InnerLine/BubbleDot123"), NodePath("../../Arch/InnerLine/BubbleDot124"), NodePath("../../Arch/InnerLine/BubbleDot125"), NodePath("../../Arch/InnerLine/BubbleDot126"), NodePath("../../Arch/InnerLine/BubbleDot127"), NodePath("../../Arch/InnerLine/BubbleDot128"), NodePath("../../Arch/InnerLine/BubbleDot129"), NodePath("../../Arch/InnerLine/BubbleDot130"), NodePath("../../Arch/InnerLine/BubbleDot131"), NodePath("../../Arch/InnerLine/BubbleDot132"), NodePath("../../Arch/InnerLine/BubbleDot133"), NodePath("../../Arch/InnerLine/BubbleDot134"), NodePath("../../Arch/InnerLine/BubbleDot135"), NodePath("../../Arch/InnerLine/BubbleDot136"), NodePath("../../Arch/InnerLine/BubbleDot137"), NodePath("../../Arch/InnerLine/BubbleDot138"), NodePath("../../Arch/InnerLine/BubbleDot139"), NodePath("../../Arch/InnerLine/BubbleDot140"), NodePath("../../Arch/InnerLine/BubbleDot141"), NodePath("../../Arch/InnerLine/BubbleDot142"), NodePath("../../Arch/InnerLine/BubbleDot143"), NodePath("../../Arch/InnerLine/BubbleDot144"), NodePath("../../Arch/InnerLine/BubbleDot145"), NodePath("../../Arch/InnerLine/BubbleDot146"), NodePath("../../Arch/InnerLine/BubbleDot147"), NodePath("../../Arch/InnerLine/BubbleDot148"), NodePath("../../Arch/InnerLine/BubbleDot149"), NodePath("../../Arch/InnerLine/BubbleDot150"), NodePath("../../Arch/InnerLine/BubbleDot151"), NodePath("../../Arch/InnerLine/BubbleDot152"), NodePath("../../Arch/InnerLine/BubbleDot153"), NodePath("../../Arch/InnerLine/BubbleDot154"), NodePath("../../Arch/InnerLine/BubbleDot155"), NodePath("../../Arch/InnerLine/BubbleDot156"), NodePath("../../Arch/InnerLine/BubbleDot157"), NodePath("../../Arch/InnerLine/BubbleDot158"), NodePath("../../Arch/InnerLine/BubbleDot159"), NodePath("../../Arch/InnerLine/BubbleDot160"), NodePath("../../Arch/InnerLine/BubbleDot161"), NodePath("../../Arch/InnerLine/BubbleDot162"), NodePath("../../Arch/InnerLine/BubbleDot163"), NodePath("../../Arch/InnerLine/BubbleDot164"), NodePath("../../Arch/InnerLine/BubbleDot165"), NodePath("../../Arch/InnerLine/BubbleDot166"), NodePath("../../Arch/InnerLine/BubbleDot167"), NodePath("../../Arch/InnerLine/BubbleDot168"), NodePath("../../Arch/InnerLine/BubbleDot169"), NodePath("../../Arch/InnerLine/BubbleDot170"), NodePath("../../Arch/InnerLine/BubbleDot171"), NodePath("../../Arch/InnerLine/BubbleDot172"), NodePath("../../Arch/InnerLine/BubbleDot173"), NodePath("../../Arch/InnerLine/BubbleDot174"), NodePath("../../Arch/InnerLine/BubbleDot175"), NodePath("../../Arch/InnerLine/BubbleDot176"), NodePath("../../Arch/InnerLine/BubbleDot177"), NodePath("../../Arch/InnerLine/BubbleDot178"), NodePath("../../Arch/InnerLine/BubbleDot179"), NodePath("../../Arch/InnerLine/BubbleDot180"), NodePath("../../Arch/InnerLine/BubbleDot181"), NodePath("../../Arch/InnerLine/BubbleDot182"), NodePath("../../Arch/InnerLine/BubbleDot183"), NodePath("../../Arch/InnerLine/BubbleDot184"), NodePath("../../Arch/InnerLine/BubbleDot185"), NodePath("../../Arch/InnerLine/BubbleDot186"), NodePath("../../Arch/InnerLine/BubbleDot187"), NodePath("../../Arch/InnerLine/BubbleDot188"), NodePath("../../Arch/InnerLine/BubbleDot189"), NodePath("../../Arch/InnerLine/BubbleDot190"), NodePath("../../Arch/InnerLine/BubbleDot191"), NodePath("../../Arch/InnerLine/BubbleDot192"), NodePath("../../Arch/InnerLine/BubbleDot193"), NodePath("../../Arch/InnerLine/BubbleDot194"), NodePath("../../Arch/InnerLine/BubbleDot195"), NodePath("../../Arch/InnerLine/BubbleDot196"), NodePath("../../Arch/InnerLine/BubbleDot197"), NodePath("../../Arch/InnerLine/BubbleDot198"), NodePath("../../Arch/InnerLine/BubbleDot199"), NodePath("../../Arch/InnerLine/BubbleDot200"), NodePath("../../Arch/InnerLine/BubbleDot201"), NodePath("../../Arch/InnerLine/BubbleDot202"), NodePath("../../Arch/FloorLine/BubbleDot"), NodePath("../../Arch/FloorLine/BubbleDot2"), NodePath("../../Arch/FloorLine/BubbleDot3"), NodePath("../../Arch/FloorLine/BubbleDot4"), NodePath("../../Arch/FloorLine/BubbleDot5"), NodePath("../../Arch/FloorLine/BubbleDot6"), NodePath("../../Arch/FloorLine/BubbleDot7"), NodePath("../../Arch/FloorLine/BubbleDot8"), NodePath("../../Arch/FloorLine/BubbleDot9"), NodePath("../../Arch/FloorLine/BubbleDot10"), NodePath("../../Arch/FloorLine/BubbleDot11"), NodePath("../../Arch/FloorLine/BubbleDot12"), NodePath("../../Arch/FloorLine/BubbleDot13"), NodePath("../../Arch/FloorLine/BubbleDot14"), NodePath("../../Arch/FloorLine/BubbleDot15"), NodePath("../../Arch/FloorLine/BubbleDot16"), NodePath("../../Arch/FloorLine/BubbleDot17"), NodePath("../../Arch/FloorLine/BubbleDot18"), NodePath("../../Arch/FloorLine/BubbleDot19"), NodePath("../../Arch/FloorLine/BubbleDot20"), NodePath("../../Arch/FloorLine/BubbleDot21"), NodePath("../../Arch/FloorLine/BubbleDot22"), NodePath("../../Arch/FloorLine/BubbleDot23"), NodePath("../../Arch/FloorLine/BubbleDot24"), NodePath("../../Arch/FloorLine/BubbleDot25"), NodePath("../../Arch/FloorLine/BubbleDot26"), NodePath("../../Arch/FloorLine/BubbleDot27"), NodePath("../../Arch/FloorLine/BubbleDot28"), NodePath("../../Arch/FloorLine/BubbleDot29"), NodePath("../../Arch/FloorLine/BubbleDot30"), NodePath("../../Arch/FloorLine/BubbleDot31"), NodePath("../../Arch/FloorLine/BubbleDot32"), NodePath("../../Arch/FloorLine/BubbleDot33"), NodePath("../../Arch/FloorLine/BubbleDot34"), NodePath("../../Arch/FloorLine/BubbleDot35"), NodePath("../../Arch/FloorLine/BubbleDot36"), NodePath("../../Arch/FloorLine/BubbleDot37"), NodePath("../../Arch/FloorLine/BubbleDot38"), NodePath("../../Arch/FloorLine/BubbleDot39"), NodePath("../../Arch/FloorLine/BubbleDot40"), NodePath("../../Arch/FloorLine/BubbleDot41"), NodePath("../../Arch/FloorLine/BubbleDot42"), NodePath("../../Arch/FloorLine/BubbleDot43"), NodePath("../../Arch/FloorLine/BubbleDot44"), NodePath("../../Arch/FloorLine/BubbleDot45"), NodePath("../../Arch/FloorLine/BubbleDot46"), NodePath("../../Arch/FloorLine/BubbleDot47"), NodePath("../../Arch/FloorLine/BubbleDot48"), NodePath("../../Arch/FloorLine/BubbleDot49"), NodePath("../../Arch/FloorLine/BubbleDot50"), NodePath("../../Arch/FloorLine/BubbleDot51"), NodePath("../../Arch/FloorLine/BubbleDot52"), NodePath("../../Arch/FloorLine/BubbleDot53"), NodePath("../../Arch/FloorLine/BubbleDot54"), NodePath("../../Arch/FloorLine/BubbleDot55"), NodePath("../../Arch/FloorLine/BubbleDot56"), NodePath("../../Arch/FloorLine/BubbleDot57"), NodePath("../../Arch/FloorLine/BubbleDot58"), NodePath("../../Arch/FloorLine/BubbleDot59"), NodePath("../../Arch/FloorLine/BubbleDot60"), NodePath("../../Arch/FloorLine/BubbleDot61"), NodePath("../../Arch/FloorLine/BubbleDot62"), NodePath("../../Arch/FloorLine/BubbleDot63"), NodePath("../../Arch/FloorLine/BubbleDot64"), NodePath("../../Arch/FloorLine/BubbleDot65"), NodePath("../../Arch/FloorLine/BubbleDot66"), NodePath("../../Arch/FloorLine/BubbleDot67"), NodePath("../../Arch/FloorLine/BubbleDot68"), NodePath("../../Arch/FloorLine/BubbleDot69"), NodePath("../../Arch/FloorLine/BubbleDot70"), NodePath("../../Arch/FloorLine/BubbleDot71"), NodePath("../../Arch/FloorLine/BubbleDot72"), NodePath("../../Arch/FloorLine/BubbleDot73"), NodePath("../../Arch/FloorLine/BubbleDot74"), NodePath("../../Arch/FloorLine/BubbleDot75"), NodePath("../../Arch/FloorLine/BubbleDot76"), NodePath("../../Arch/FloorLine/BubbleDot77"), NodePath("../../Arch/FloorLine/BubbleDot78"), NodePath("../../Arch/FloorLine/BubbleDot79"), NodePath("../../Arch/FloorLine/BubbleDot80"), NodePath("../../Arch/FloorLine/BubbleDot81"), NodePath("../../Arch/FloorLine/BubbleDot82"), NodePath("../../Arch/FloorLine/BubbleDot83"), NodePath("../../Arch/FloorLine/BubbleDot84"), NodePath("../../Arch/FloorLine/BubbleDot85"), NodePath("../../Arch/FloorLine/BubbleDot86"), NodePath("../../Arch/FloorLine/BubbleDot87"), NodePath("../../Arch/FloorLine/BubbleDot88"), NodePath("../../Arch/FloorLine/BubbleDot89"), NodePath("../../Arch/FloorLine/BubbleDot90"), NodePath("../../Arch/FloorLine/BubbleDot91"), NodePath("../../Arch/FloorLine/BubbleDot92"), NodePath("../../Arch/FloorLine/BubbleDot93"), NodePath("../../Arch/FloorLine/BubbleDot94"), NodePath("../../Arch/FloorLine/BubbleDot95"), NodePath("../../Arch/FloorLine/BubbleDot96"), NodePath("../../Arch/FloorLine/BubbleDot97"), NodePath("../../Arch/FloorLine/BubbleDot98"), NodePath("../../Arch/FloorLine/BubbleDot99"), NodePath("../../Arch/FloorLine/BubbleDot100"), NodePath("../../Arch/FloorLine/BubbleDot101"), NodePath("../../Arch/FloorLine/BubbleDot102"), NodePath("../../Arch/FloorLine/BubbleDot103"), NodePath("../../Arch/FloorLine/BubbleDot104"), NodePath("../../Arch/FloorLine/BubbleDot105"), NodePath("../../Arch/FloorLine/BubbleDot106"), NodePath("../../Arch/FloorLine/BubbleDot107"), NodePath("../../Arch/FloorLine/BubbleDot108"), NodePath("../../Arch/FloorLine/BubbleDot109"), NodePath("../../Arch/FloorLine/BubbleDot110"), NodePath("../../Arch/FloorLine/BubbleDot111"), NodePath("../../Arch/FloorLine/BubbleDot112"), NodePath("../../Arch/FloorLine/BubbleDot113"), NodePath("../../Arch/FloorLine/BubbleDot114"), NodePath("../../Arch/FloorLine/BubbleDot115"), NodePath("../../Arch/FloorLine/BubbleDot116"), NodePath("../../Arch/FloorLine/BubbleDot117"), NodePath("../../Arch/FloorLine/BubbleDot118"), NodePath("../../Arch/FloorLine/BubbleDot119"), NodePath("../../Arch/FloorLine/BubbleDot120"), NodePath("../../Arch/FloorLine/BubbleDot121"), NodePath("../../Arch/FloorLine/BubbleDot122"), NodePath("../../Arch/FloorLine/BubbleDot123"), NodePath("../../Arch/FloorLine/BubbleDot124"), NodePath("../../Arch/FloorLine/BubbleDot125"), NodePath("../../Arch/FloorLine/BubbleDot126"), NodePath("../../Arch/FloorLine/BubbleDot127"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
 radius = 2048.0
@@ -1507,7 +1685,7 @@ default_color = Color(0.141176, 0.141176, 0.141176, 1)
 [node name="GroundTilemapLayer" parent="Arch" instance=ExtResource("7_6u58k")]
 tile_map_data = PackedByteArray("AAD+/wAAAAABAAAAAAD9/wAAAAABAAAAAAD8/wAAAAABAAAAAAD7/wAAAAABAAAAAAD6/wAAAAABAAAAAAD5/wAAAAABAAAAAAD4/wAAAAABAAAAAAD3/wAAAAABAAAAAAD2/wAAAAABAAAAAAD1/wAAAAABAAAAAAD0/wAAAAABAAAAAADz/wAAAAABAAAAAADy/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAANAAEAAAABAAAAAAAMAAEAAAABAAAAAAALAAEAAAABAAAAAAAKAAEAAAABAAAAAAAJAAEAAAABAAAAAAAIAAEAAAABAAAAAAAHAAEAAAABAAAAAAAGAAEAAAABAAAAAAAFAAEAAAABAAAAAAAEAAEAAAABAAAAAAADAAEAAAABAAAAAAACAAEAAAABAAAAAAABAAEAAAABAAAAAAAAAAEAAAABAAAAAAD//wEAAAABAAAAAAD+/wEAAAABAAAAAAD9/wEAAAABAAAAAAD8/wEAAAABAAAAAAD7/wEAAAABAAAAAAD6/wEAAAABAAAAAAD5/wEAAAABAAAAAAD4/wEAAAABAAAAAAD3/wEAAAABAAAAAAD2/wEAAAABAAAAAAD1/wEAAAABAAAAAAD0/wEAAAABAAAAAADz/wEAAAABAAAAAADy/wEAAAABAAAAAADy/wIAAAAAAAAAAADz/wIAAAAAAAAAAAD0/wIAAAAAAAAAAAD1/wIAAAAAAAAAAAD2/wIAAAAAAAAAAAD3/wIAAAAAAAAAAAD4/wIAAAAAAAAAAAD5/wIAAAAAAAAAAAD6/wIAAAAAAAAAAAD7/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAIAAAAAAAAAAAA=")
 
-[node name="EnterAnimation" type="AnimationPlayer" parent="."]
+[node name="CinematicAnimation" type="AnimationPlayer" parent="."]
 process_mode = 3
 root_node = NodePath("../Arch/FloorLine/BubbleDot65")
 libraries = {
@@ -1515,5 +1693,44 @@ libraries = {
 }
 autoplay = "main"
 
+[node name="Label" type="Label" parent="CinematicAnimation"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -506.0
+offset_top = -1358.0
+offset_right = 509.0
+offset_bottom = -1009.0
+text = "БЛЁБИК"
+label_settings = SubResource("LabelSettings_2jwjg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BeamOfLight" parent="CinematicAnimation" instance=ExtResource("9_2jwjg")]
+z_index = -250
+points = PackedVector2Array(0, -3600, 0, 966)
+width = 0.0
+
+[node name="Doorway" type="Sprite2D" parent="CinematicAnimation"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 90
+position = Vector2(2269, -483)
+texture = ExtResource("10_5k47o")
+
 [node name="Bleb" parent="." instance=ExtResource("8_eq7jn")]
 position = Vector2(2, -101)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PackedVector2Array(2009, -399, 2048, 0, 3601, 0, 3516, -700)
+
+[node name="FinishArea" parent="." instance=ExtResource("12_vqsvp")]
+position = Vector2(2805, -288)
+collision_layer = 0
+collision_mask = 2
+change_scn = ExtResource("13_xpg5r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea"]
+position = Vector2(76, -105)
+shape = SubResource("RectangleShape2D_5k47o")
+
+[connection signal="death_animation_ended" from="Bleb" to="CinematicAnimation" method="play" binds= ["after_death"]]

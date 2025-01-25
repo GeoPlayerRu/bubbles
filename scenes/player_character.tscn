@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://chruxdkxswxvw"]
+[gd_scene load_steps=106 format=3 uid="uid://chruxdkxswxvw"]
 
 [ext_resource type="Script" uid="uid://glr7i7ef7jkl" path="res://scripts/player/player_controller.gd" id="1_6r27q"]
 [ext_resource type="Texture2D" uid="uid://brjgtrl5syrgp" path="res://sprites/player/Idle/Idle0001.png" id="2_2vmgx"]
@@ -64,6 +64,8 @@
 [ext_resource type="Script" uid="uid://dqt3bgjsyxnts" path="res://scripts/player/offwall_state.gd" id="62_hi0k7"]
 [ext_resource type="Script" uid="uid://o8gcnpy7l8au" path="res://scripts/player/dash_state.gd" id="63_t0km8"]
 [ext_resource type="Script" uid="uid://dovmpcs8yskoc" path="res://scripts/player/attack_state.gd" id="64_t0km8"]
+[ext_resource type="Texture2D" uid="uid://ddc4snfbeapw7" path="res://sprites/heart.png" id="65_tg4u4"]
+[ext_resource type="Script" uid="uid://bbqyef7uel78h" path="res://scripts/hp_bar.gd" id="66_jstqe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pxja8"]
 shader = ExtResource("2_6unfe")
@@ -728,6 +730,17 @@ shape = SubResource("RectangleShape2D_jstqe")
 
 [node name="FlashTimer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HpBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_right = 252.0
+offset_bottom = 86.0
+max_value = 3.0
+value = 3.0
+rounded = true
+texture_progress = ExtResource("65_tg4u4")
+script = ExtResource("66_jstqe")
 
 [connection signal="timeout" from="StateMachine/OffwallJump/OffWallTimer" to="StateMachine/OffwallJump" method="_on_off_wall_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Dash/DashTimer" to="StateMachine/Dash" method="_on_dash_timer_timeout"]
