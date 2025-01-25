@@ -23,10 +23,8 @@ func _physics_process(_delta: float) -> void:
 	if state_machine.get_current_state_name() == "Dash" and playback.get_current_node() != 'dash':
 		playback.start('dash')
 	
-	if state_machine.get_current_state_name() != "Attack":
-		set('parameters/attack/blend_position',Input.get_vector("ch_left",'ch_right','ch_down','ch_up'))
-	
 	if state_machine.get_current_state_name() == "Attack" and playback.get_current_node() != 'attack':
+		set('parameters/attack/blend_position',Input.get_vector("ch_left",'ch_right','ch_down','ch_up'))
 		playback.start('attack')
 		
 	

@@ -24,9 +24,9 @@ radius = 214.995
 [node name="debug_arena" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_5ctbd")]
-offset = Vector2(196, -540)
+offset = Vector2(314.235, -544.87)
 scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, 196, -540)
+transform = Transform2D(2, 0, 0, 2, 314.235, -544.87)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_3sxe6")]
 position = Vector2(755, -479)

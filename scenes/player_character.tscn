@@ -104,19 +104,19 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("RightHitbox:monitoring")
+tracks/2/path = NodePath("DownHitbox:monitoring")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("UpHitbox:monitoring")
+tracks/3/path = NodePath("LeftHitbox:monitoring")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -128,7 +128,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("LeftHitbox:monitoring")
+tracks/4/path = NodePath("RightHitbox:monitoring")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -140,7 +140,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("DownHitbox:monitoring")
+tracks/5/path = NodePath("UpHitbox:monitoring")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -166,6 +166,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("24_oi1jg"), ExtResource("25_pkxds"), ExtResource("26_b8kkg"), ExtResource("27_6rdx2"), ExtResource("28_oi8fm")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_hmtb3"]
 resource_name = "fall"
@@ -182,6 +194,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("8_joi77"), ExtResource("10_xc70a"), ExtResource("9_br6ma"), ExtResource("12_qwq0k"), ExtResource("11_2w5w8"), ExtResource("13_eomf4")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_65uv7"]
@@ -201,6 +225,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("15_epvei"), ExtResource("15_nos2o"), ExtResource("14_8vkra")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_d6jif"]
 resource_name = "grounding"
@@ -217,6 +253,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("17_66bo7"), ExtResource("18_0n276"), ExtResource("19_dpr6s"), ExtResource("20_gyyv3"), ExtResource("21_kwd2h"), ExtResource("22_vjh3r"), ExtResource("23_1hs58")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_73yxw"]
@@ -242,10 +290,10 @@ tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(17.46, 20.605), Vector2(0, 0)]
+"values": [Vector2(17.46, 20.605)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -283,10 +331,10 @@ tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(5.085, 20.605), Vector2(0, 0)]
+"values": [Vector2(5.085, 20.605)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -295,7 +343,7 @@ tracks/2/path = NodePath("LeftHitbox:monitoring")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"times": PackedFloat32Array(0, 0.0982109, 0.198211, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [false, true, true, false]
@@ -324,10 +372,10 @@ tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(5.085, 20.605), Vector2(0, 0)]
+"values": [Vector2(5.085, 20.605)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -365,10 +413,10 @@ tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(17.46, 20.605), Vector2(0, 0)]
+"values": [Vector2(17.46, 20.605)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -400,6 +448,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("2_2vmgx"), ExtResource("3_6unfe"), ExtResource("4_pxja8"), ExtResource("5_iadup"), ExtResource("6_herhr"), ExtResource("2_2vmgx")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_oi8fm"]
 resource_name = "jump"
@@ -416,6 +476,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("27_1hs58"), ExtResource("28_oi1jg"), ExtResource("29_pkxds"), ExtResource("30_b8kkg"), ExtResource("31_6rdx2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c4hvp"]
@@ -617,6 +689,9 @@ one_shot = true
 
 [node name="RightHitbox" type="Area2D" parent="."]
 position = Vector2(-90.5, -74.5)
+collision_layer = 0
+collision_mask = 4
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightHitbox"]
 position = Vector2(192, 3.5)
@@ -624,6 +699,8 @@ shape = SubResource("RectangleShape2D_tg4u4")
 
 [node name="LeftHitbox" type="Area2D" parent="."]
 position = Vector2(6.5, -157)
+collision_layer = 0
+collision_mask = 4
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftHitbox"]
@@ -631,6 +708,8 @@ position = Vector2(-97, 82.5)
 shape = SubResource("RectangleShape2D_t0km8")
 
 [node name="DownHitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DownHitbox"]
@@ -638,6 +717,8 @@ position = Vector2(-3, 53)
 shape = SubResource("RectangleShape2D_hi0k7")
 
 [node name="UpHitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpHitbox"]
@@ -647,3 +728,7 @@ shape = SubResource("RectangleShape2D_jstqe")
 [connection signal="timeout" from="StateMachine/OffwallJump/OffWallTimer" to="StateMachine/OffwallJump" method="_on_off_wall_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Dash/DashTimer" to="StateMachine/Dash" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Attack/AttackTimer" to="StateMachine/Attack" method="_on_attack_timer_timeout"]
+[connection signal="body_entered" from="RightHitbox" to="StateMachine/Attack" method="_on_body_entered"]
+[connection signal="body_entered" from="LeftHitbox" to="StateMachine/Attack" method="_on_body_entered"]
+[connection signal="body_entered" from="DownHitbox" to="StateMachine/Attack" method="_on_body_entered"]
+[connection signal="body_entered" from="UpHitbox" to="StateMachine/Attack" method="_on_body_entered"]

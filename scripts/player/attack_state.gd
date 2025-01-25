@@ -9,3 +9,7 @@ func _enter(_message):
 
 func _on_attack_timer_timeout() -> void:
 	tree.transit("Move")
+
+
+func _on_body_entered(body: Node2D) -> void:
+	print(body)
