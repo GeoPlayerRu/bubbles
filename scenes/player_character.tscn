@@ -598,7 +598,7 @@ states/idle/position = Vector2(95, 101)
 states/jump/node = SubResource("AnimationNodeAnimation_dpw1b")
 states/jump/position = Vector2(124, -17)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_286ip"), "dash", "idle", SubResource("AnimationNodeStateMachineTransition_eebr4"), "grounding", "idle", SubResource("AnimationNodeStateMachineTransition_fx1yi"), "fall", "falling", SubResource("AnimationNodeStateMachineTransition_1hs58"), "falling", "grounding", SubResource("AnimationNodeStateMachineTransition_oi1jg"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_pkxds"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_gm7m8"), "idle", "fall", SubResource("AnimationNodeStateMachineTransition_po4r1"), "fall", "grounding", SubResource("AnimationNodeStateMachineTransition_mkfij")]
-graph_offset = Vector2(-357, 73)
+graph_offset = Vector2(-356, -21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tg4u4"]
 size = Vector2(181, 140)
@@ -613,7 +613,8 @@ size = Vector2(140, 146)
 size = Vector2(141, 160)
 
 [node name="PlayerCharacter" type="CharacterBody2D"]
-collision_layer = 3
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_6r27q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -725,6 +726,9 @@ monitoring = false
 position = Vector2(6.5, -157)
 shape = SubResource("RectangleShape2D_jstqe")
 
+[node name="FlashTimer" type="Timer" parent="."]
+wait_time = 0.1
+
 [connection signal="timeout" from="StateMachine/OffwallJump/OffWallTimer" to="StateMachine/OffwallJump" method="_on_off_wall_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Dash/DashTimer" to="StateMachine/Dash" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Attack/AttackTimer" to="StateMachine/Attack" method="_on_attack_timer_timeout"]
@@ -732,3 +736,4 @@ shape = SubResource("RectangleShape2D_jstqe")
 [connection signal="body_entered" from="LeftHitbox" to="StateMachine/Attack" method="_on_body_entered"]
 [connection signal="body_entered" from="DownHitbox" to="StateMachine/Attack" method="_on_body_entered"]
 [connection signal="body_entered" from="UpHitbox" to="StateMachine/Attack" method="_on_body_entered"]
+[connection signal="timeout" from="FlashTimer" to="." method="_on_flash_timer_timeout"]

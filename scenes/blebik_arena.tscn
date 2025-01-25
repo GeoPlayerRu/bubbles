@@ -1,0 +1,1519 @@
+[gd_scene load_steps=13 format=4 uid="uid://dpwvw7ahntwnh"]
+
+[ext_resource type="PackedScene" uid="uid://dvd014bl2s1ea" path="res://scenes/background.tscn" id="1_71r36"]
+[ext_resource type="Script" uid="uid://cyetop4ntf4gp" path="res://scripts/tool-only/bubble_generator.gd" id="2_0vjkv"]
+[ext_resource type="PackedScene" uid="uid://chruxdkxswxvw" path="res://scenes/player_character.tscn" id="2_71r36"]
+[ext_resource type="Script" uid="uid://pbft0hn0r72n" path="res://scripts/bubble/bubble_polygon.gd" id="4_6u58k"]
+[ext_resource type="PackedScene" uid="uid://cosckn42gn5ey" path="res://scenes/bubble_dot.tscn" id="4_wx1jw"]
+[ext_resource type="Script" uid="uid://bwr702vfv3xg6" path="res://scripts/bubble/bubble_line.gd" id="5_eq7jn"]
+[ext_resource type="PackedScene" uid="uid://b8aiqf7ypwqdh" path="res://scenes/ground_tilemap.tscn" id="7_6u58k"]
+[ext_resource type="PackedScene" uid="uid://dgnnmfv3fnkq1" path="res://scenes/bleb.tscn" id="8_eq7jn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_71r36"]
+
+[sub_resource type="Animation" id="Animation_6u58k"]
+resource_name = "main"
+length = 15.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../PlayerCharacter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 2),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(-2716, 0), Vector2(-1697, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../PlayerCharacter/CinematicCamera:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.2245, 1440.36, 1696, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.50824, 4.50824)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../PlayerCharacter/CinematicCamera:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.627947, -889.246, -806, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.50824, 4.50824)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../PlayerCharacter/CinematicCamera:zoom:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.0657139, -0.378908, 0.33, -0.472156, 0.0169508, 0.25, 0),
+"times": PackedFloat32Array(2.50824, 4.50824)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../PlayerCharacter/CinematicCamera:zoom:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.104572, -0.476622, 0.33, -0.483258, 0.0549505, 0.25, 0),
+"times": PackedFloat32Array(2.50824, 4.50824)
+}
+
+[sub_resource type="Animation" id="Animation_eq7jn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../PlayerCharacter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2716, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../PlayerCharacter/CinematicCamera:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../PlayerCharacter/CinematicCamera:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../PlayerCharacter/CinematicCamera:zoom:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../PlayerCharacter/CinematicCamera:zoom:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eq7jn"]
+_data = {
+&"RESET": SubResource("Animation_eq7jn"),
+&"main": SubResource("Animation_6u58k")
+}
+
+[node name="blebik_arena" type="Node2D"]
+process_mode = 4
+z_index = -100
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_71r36")]
+position = Vector2(-2716, 0)
+
+[node name="Camera2D" type="Camera2D" parent="PlayerCharacter"]
+position = Vector2(0, -63)
+enabled = false
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+
+[node name="CinematicCamera" type="Camera2D" parent="PlayerCharacter"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_71r36")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" node_paths=PackedStringArray("dot_cache")]
+polygon = PackedVector2Array(2048, 0, 2008.65, -399.545, 1892.11, -783.736, 1702.85, -1137.81, 1448.15, -1448.15, 1137.81, -1702.85, 783.736, -1892.11, 399.545, -2008.65, 1.254e-13, -2048, -399.545, -2008.65, -783.736, -1892.11, -1137.81, -1702.85, -1448.15, -1448.15, -1702.85, -1137.81, -1892.11, -783.736, -2008.65, -399.545, -2048, -2.50799e-13, -3584, -4.38899e-13, -3515.13, -699.204, -3311.18, -1371.54, -2979.99, -1991.16, -2534.27, -2534.27, -1991.16, -2979.99, -1371.54, -3311.18, -699.204, -3515.13, 2.19449e-13, -3584, 699.204, -3515.13, 1371.54, -3311.18, 1991.16, -2979.99, 2534.27, -2534.27, 2979.99, -1991.16, 3311.18, -1371.54, 3515.13, -699.204, 3584, 0)
+script = ExtResource("2_0vjkv")
+dot_cache = [NodePath("../../Arch/InnerLine/BubbleDot"), NodePath("../../Arch/InnerLine/BubbleDot2"), NodePath("../../Arch/InnerLine/BubbleDot3"), NodePath("../../Arch/InnerLine/BubbleDot4"), NodePath("../../Arch/InnerLine/BubbleDot5"), NodePath("../../Arch/InnerLine/BubbleDot6"), NodePath("../../Arch/InnerLine/BubbleDot7"), NodePath("../../Arch/InnerLine/BubbleDot8"), NodePath("../../Arch/InnerLine/BubbleDot9"), NodePath("../../Arch/InnerLine/BubbleDot10"), NodePath("../../Arch/InnerLine/BubbleDot11"), NodePath("../../Arch/InnerLine/BubbleDot12"), NodePath("../../Arch/InnerLine/BubbleDot13"), NodePath("../../Arch/InnerLine/BubbleDot14"), NodePath("../../Arch/InnerLine/BubbleDot15"), NodePath("../../Arch/InnerLine/BubbleDot16"), NodePath("../../Arch/InnerLine/BubbleDot17"), NodePath("../../Arch/InnerLine/BubbleDot18"), NodePath("../../Arch/InnerLine/BubbleDot19"), NodePath("../../Arch/InnerLine/BubbleDot20"), NodePath("../../Arch/InnerLine/BubbleDot21"), NodePath("../../Arch/InnerLine/BubbleDot22"), NodePath("../../Arch/InnerLine/BubbleDot23"), NodePath("../../Arch/InnerLine/BubbleDot24"), NodePath("../../Arch/InnerLine/BubbleDot25"), NodePath("../../Arch/InnerLine/BubbleDot26"), NodePath("../../Arch/InnerLine/BubbleDot27"), NodePath("../../Arch/InnerLine/BubbleDot28"), NodePath("../../Arch/InnerLine/BubbleDot29"), NodePath("../../Arch/InnerLine/BubbleDot30"), NodePath("../../Arch/InnerLine/BubbleDot31"), NodePath("../../Arch/InnerLine/BubbleDot32"), NodePath("../../Arch/InnerLine/BubbleDot33"), NodePath("../../Arch/InnerLine/BubbleDot34"), NodePath("../../Arch/InnerLine/BubbleDot35"), NodePath("../../Arch/InnerLine/BubbleDot36"), NodePath("../../Arch/InnerLine/BubbleDot37"), NodePath("../../Arch/InnerLine/BubbleDot38"), NodePath("../../Arch/InnerLine/BubbleDot39"), NodePath("../../Arch/InnerLine/BubbleDot40"), NodePath("../../Arch/InnerLine/BubbleDot41"), NodePath("../../Arch/InnerLine/BubbleDot42"), NodePath("../../Arch/InnerLine/BubbleDot43"), NodePath("../../Arch/InnerLine/BubbleDot44"), NodePath("../../Arch/InnerLine/BubbleDot45"), NodePath("../../Arch/InnerLine/BubbleDot46"), NodePath("../../Arch/InnerLine/BubbleDot47"), NodePath("../../Arch/InnerLine/BubbleDot48"), NodePath("../../Arch/InnerLine/BubbleDot49"), NodePath("../../Arch/InnerLine/BubbleDot50"), NodePath("../../Arch/InnerLine/BubbleDot51"), NodePath("../../Arch/InnerLine/BubbleDot52"), NodePath("../../Arch/InnerLine/BubbleDot53"), NodePath("../../Arch/InnerLine/BubbleDot54"), NodePath("../../Arch/InnerLine/BubbleDot55"), NodePath("../../Arch/InnerLine/BubbleDot56"), NodePath("../../Arch/InnerLine/BubbleDot57"), NodePath("../../Arch/InnerLine/BubbleDot58"), NodePath("../../Arch/InnerLine/BubbleDot59"), NodePath("../../Arch/InnerLine/BubbleDot60"), NodePath("../../Arch/InnerLine/BubbleDot61"), NodePath("../../Arch/InnerLine/BubbleDot62"), NodePath("../../Arch/InnerLine/BubbleDot63"), NodePath("../../Arch/InnerLine/BubbleDot64"), NodePath("../../Arch/InnerLine/BubbleDot65"), NodePath("../../Arch/InnerLine/BubbleDot66"), NodePath("../../Arch/InnerLine/BubbleDot67"), NodePath("../../Arch/InnerLine/BubbleDot68"), NodePath("../../Arch/InnerLine/BubbleDot69"), NodePath("../../Arch/InnerLine/BubbleDot70"), NodePath("../../Arch/InnerLine/BubbleDot71"), NodePath("../../Arch/InnerLine/BubbleDot72"), NodePath("../../Arch/InnerLine/BubbleDot73"), NodePath("../../Arch/InnerLine/BubbleDot74"), NodePath("../../Arch/InnerLine/BubbleDot75"), NodePath("../../Arch/InnerLine/BubbleDot76"), NodePath("../../Arch/InnerLine/BubbleDot77"), NodePath("../../Arch/InnerLine/BubbleDot78"), NodePath("../../Arch/InnerLine/BubbleDot79"), NodePath("../../Arch/InnerLine/BubbleDot80"), NodePath("../../Arch/InnerLine/BubbleDot81"), NodePath("../../Arch/InnerLine/BubbleDot82"), NodePath("../../Arch/InnerLine/BubbleDot83"), NodePath("../../Arch/InnerLine/BubbleDot84"), NodePath("../../Arch/InnerLine/BubbleDot85"), NodePath("../../Arch/InnerLine/BubbleDot86"), NodePath("../../Arch/InnerLine/BubbleDot87"), NodePath("../../Arch/InnerLine/BubbleDot88"), NodePath("../../Arch/InnerLine/BubbleDot89"), NodePath("../../Arch/InnerLine/BubbleDot90"), NodePath("../../Arch/InnerLine/BubbleDot91"), NodePath("../../Arch/InnerLine/BubbleDot92"), NodePath("../../Arch/InnerLine/BubbleDot93"), NodePath("../../Arch/InnerLine/BubbleDot94"), NodePath("../../Arch/InnerLine/BubbleDot95"), NodePath("../../Arch/InnerLine/BubbleDot96"), NodePath("../../Arch/InnerLine/BubbleDot97"), NodePath("../../Arch/InnerLine/BubbleDot98"), NodePath("../../Arch/InnerLine/BubbleDot99"), NodePath("../../Arch/InnerLine/BubbleDot100"), NodePath("../../Arch/InnerLine/BubbleDot101"), NodePath("../../Arch/InnerLine/BubbleDot102"), NodePath("../../Arch/InnerLine/BubbleDot103"), NodePath("../../Arch/InnerLine/BubbleDot104"), NodePath("../../Arch/InnerLine/BubbleDot105"), NodePath("../../Arch/InnerLine/BubbleDot106"), NodePath("../../Arch/InnerLine/BubbleDot107"), NodePath("../../Arch/InnerLine/BubbleDot108"), NodePath("../../Arch/InnerLine/BubbleDot109"), NodePath("../../Arch/InnerLine/BubbleDot110"), NodePath("../../Arch/InnerLine/BubbleDot111"), NodePath("../../Arch/InnerLine/BubbleDot112"), NodePath("../../Arch/InnerLine/BubbleDot113"), NodePath("../../Arch/InnerLine/BubbleDot114"), NodePath("../../Arch/InnerLine/BubbleDot115"), NodePath("../../Arch/InnerLine/BubbleDot116"), NodePath("../../Arch/InnerLine/BubbleDot117"), NodePath("../../Arch/InnerLine/BubbleDot118"), NodePath("../../Arch/InnerLine/BubbleDot119"), NodePath("../../Arch/InnerLine/BubbleDot120"), NodePath("../../Arch/InnerLine/BubbleDot121"), NodePath("../../Arch/InnerLine/BubbleDot122"), NodePath("../../Arch/InnerLine/BubbleDot123"), NodePath("../../Arch/InnerLine/BubbleDot124"), NodePath("../../Arch/InnerLine/BubbleDot125"), NodePath("../../Arch/InnerLine/BubbleDot126"), NodePath("../../Arch/InnerLine/BubbleDot127"), NodePath("../../Arch/InnerLine/BubbleDot128"), NodePath("../../Arch/InnerLine/BubbleDot129"), NodePath("../../Arch/InnerLine/BubbleDot130"), NodePath("../../Arch/InnerLine/BubbleDot131"), NodePath("../../Arch/InnerLine/BubbleDot132"), NodePath("../../Arch/InnerLine/BubbleDot133"), NodePath("../../Arch/InnerLine/BubbleDot134"), NodePath("../../Arch/InnerLine/BubbleDot135"), NodePath("../../Arch/InnerLine/BubbleDot136"), NodePath("../../Arch/InnerLine/BubbleDot137"), NodePath("../../Arch/InnerLine/BubbleDot138"), NodePath("../../Arch/InnerLine/BubbleDot139"), NodePath("../../Arch/InnerLine/BubbleDot140"), NodePath("../../Arch/InnerLine/BubbleDot141"), NodePath("../../Arch/InnerLine/BubbleDot142"), NodePath("../../Arch/InnerLine/BubbleDot143"), NodePath("../../Arch/InnerLine/BubbleDot144"), NodePath("../../Arch/InnerLine/BubbleDot145"), NodePath("../../Arch/InnerLine/BubbleDot146"), NodePath("../../Arch/InnerLine/BubbleDot147"), NodePath("../../Arch/InnerLine/BubbleDot148"), NodePath("../../Arch/InnerLine/BubbleDot149"), NodePath("../../Arch/InnerLine/BubbleDot150"), NodePath("../../Arch/InnerLine/BubbleDot151"), NodePath("../../Arch/InnerLine/BubbleDot152"), NodePath("../../Arch/InnerLine/BubbleDot153"), NodePath("../../Arch/InnerLine/BubbleDot154"), NodePath("../../Arch/InnerLine/BubbleDot155"), NodePath("../../Arch/InnerLine/BubbleDot156"), NodePath("../../Arch/InnerLine/BubbleDot157"), NodePath("../../Arch/InnerLine/BubbleDot158"), NodePath("../../Arch/InnerLine/BubbleDot159"), NodePath("../../Arch/InnerLine/BubbleDot160"), NodePath("../../Arch/InnerLine/BubbleDot161"), NodePath("../../Arch/InnerLine/BubbleDot162"), NodePath("../../Arch/InnerLine/BubbleDot163"), NodePath("../../Arch/InnerLine/BubbleDot164"), NodePath("../../Arch/InnerLine/BubbleDot165"), NodePath("../../Arch/InnerLine/BubbleDot166"), NodePath("../../Arch/InnerLine/BubbleDot167"), NodePath("../../Arch/InnerLine/BubbleDot168"), NodePath("../../Arch/InnerLine/BubbleDot169"), NodePath("../../Arch/InnerLine/BubbleDot170"), NodePath("../../Arch/InnerLine/BubbleDot171"), NodePath("../../Arch/InnerLine/BubbleDot172"), NodePath("../../Arch/InnerLine/BubbleDot173"), NodePath("../../Arch/InnerLine/BubbleDot174"), NodePath("../../Arch/InnerLine/BubbleDot175"), NodePath("../../Arch/InnerLine/BubbleDot176"), NodePath("../../Arch/InnerLine/BubbleDot177"), NodePath("../../Arch/InnerLine/BubbleDot178"), NodePath("../../Arch/InnerLine/BubbleDot179"), NodePath("../../Arch/InnerLine/BubbleDot180"), NodePath("../../Arch/InnerLine/BubbleDot181"), NodePath("../../Arch/InnerLine/BubbleDot182"), NodePath("../../Arch/InnerLine/BubbleDot183"), NodePath("../../Arch/InnerLine/BubbleDot184"), NodePath("../../Arch/InnerLine/BubbleDot185"), NodePath("../../Arch/InnerLine/BubbleDot186"), NodePath("../../Arch/InnerLine/BubbleDot187"), NodePath("../../Arch/InnerLine/BubbleDot188"), NodePath("../../Arch/InnerLine/BubbleDot189"), NodePath("../../Arch/InnerLine/BubbleDot190"), NodePath("../../Arch/InnerLine/BubbleDot191"), NodePath("../../Arch/InnerLine/BubbleDot192"), NodePath("../../Arch/InnerLine/BubbleDot193"), NodePath("../../Arch/InnerLine/BubbleDot194"), NodePath("../../Arch/InnerLine/BubbleDot195"), NodePath("../../Arch/InnerLine/BubbleDot196"), NodePath("../../Arch/InnerLine/BubbleDot197"), NodePath("../../Arch/InnerLine/BubbleDot198"), NodePath("../../Arch/InnerLine/BubbleDot199"), NodePath("../../Arch/InnerLine/BubbleDot200"), NodePath("../../Arch/InnerLine/BubbleDot201"), NodePath("../../Arch/InnerLine/BubbleDot202"), NodePath("../../Arch/FloorLine/BubbleDot"), NodePath("../../Arch/FloorLine/BubbleDot2"), NodePath("../../Arch/FloorLine/BubbleDot3"), NodePath("../../Arch/FloorLine/BubbleDot4"), NodePath("../../Arch/FloorLine/BubbleDot5"), NodePath("../../Arch/FloorLine/BubbleDot6"), NodePath("../../Arch/FloorLine/BubbleDot7"), NodePath("../../Arch/FloorLine/BubbleDot8"), NodePath("../../Arch/FloorLine/BubbleDot9"), NodePath("../../Arch/FloorLine/BubbleDot10"), NodePath("../../Arch/FloorLine/BubbleDot11"), NodePath("../../Arch/FloorLine/BubbleDot12"), NodePath("../../Arch/FloorLine/BubbleDot13"), NodePath("../../Arch/FloorLine/BubbleDot14"), NodePath("../../Arch/FloorLine/BubbleDot15"), NodePath("../../Arch/FloorLine/BubbleDot16"), NodePath("../../Arch/FloorLine/BubbleDot17"), NodePath("../../Arch/FloorLine/BubbleDot18"), NodePath("../../Arch/FloorLine/BubbleDot19"), NodePath("../../Arch/FloorLine/BubbleDot20"), NodePath("../../Arch/FloorLine/BubbleDot21"), NodePath("../../Arch/FloorLine/BubbleDot22"), NodePath("../../Arch/FloorLine/BubbleDot23"), NodePath("../../Arch/FloorLine/BubbleDot24"), NodePath("../../Arch/FloorLine/BubbleDot25"), NodePath("../../Arch/FloorLine/BubbleDot26"), NodePath("../../Arch/FloorLine/BubbleDot27"), NodePath("../../Arch/FloorLine/BubbleDot28"), NodePath("../../Arch/FloorLine/BubbleDot29"), NodePath("../../Arch/FloorLine/BubbleDot30"), NodePath("../../Arch/FloorLine/BubbleDot31"), NodePath("../../Arch/FloorLine/BubbleDot32"), NodePath("../../Arch/FloorLine/BubbleDot33"), NodePath("../../Arch/FloorLine/BubbleDot34"), NodePath("../../Arch/FloorLine/BubbleDot35"), NodePath("../../Arch/FloorLine/BubbleDot36"), NodePath("../../Arch/FloorLine/BubbleDot37"), NodePath("../../Arch/FloorLine/BubbleDot38"), NodePath("../../Arch/FloorLine/BubbleDot39"), NodePath("../../Arch/FloorLine/BubbleDot40"), NodePath("../../Arch/FloorLine/BubbleDot41"), NodePath("../../Arch/FloorLine/BubbleDot42"), NodePath("../../Arch/FloorLine/BubbleDot43"), NodePath("../../Arch/FloorLine/BubbleDot44"), NodePath("../../Arch/FloorLine/BubbleDot45"), NodePath("../../Arch/FloorLine/BubbleDot46"), NodePath("../../Arch/FloorLine/BubbleDot47"), NodePath("../../Arch/FloorLine/BubbleDot48"), NodePath("../../Arch/FloorLine/BubbleDot49"), NodePath("../../Arch/FloorLine/BubbleDot50"), NodePath("../../Arch/FloorLine/BubbleDot51"), NodePath("../../Arch/FloorLine/BubbleDot52"), NodePath("../../Arch/FloorLine/BubbleDot53"), NodePath("../../Arch/FloorLine/BubbleDot54"), NodePath("../../Arch/FloorLine/BubbleDot55"), NodePath("../../Arch/FloorLine/BubbleDot56"), NodePath("../../Arch/FloorLine/BubbleDot57"), NodePath("../../Arch/FloorLine/BubbleDot58"), NodePath("../../Arch/FloorLine/BubbleDot59"), NodePath("../../Arch/FloorLine/BubbleDot60"), NodePath("../../Arch/FloorLine/BubbleDot61"), NodePath("../../Arch/FloorLine/BubbleDot62"), NodePath("../../Arch/FloorLine/BubbleDot63"), NodePath("../../Arch/FloorLine/BubbleDot64"), NodePath("../../Arch/FloorLine/BubbleDot65"), NodePath("../../Arch/FloorLine/BubbleDot66"), NodePath("../../Arch/FloorLine/BubbleDot67"), NodePath("../../Arch/FloorLine/BubbleDot68"), NodePath("../../Arch/FloorLine/BubbleDot69"), NodePath("../../Arch/FloorLine/BubbleDot70"), NodePath("../../Arch/FloorLine/BubbleDot71"), NodePath("../../Arch/FloorLine/BubbleDot72"), NodePath("../../Arch/FloorLine/BubbleDot73"), NodePath("../../Arch/FloorLine/BubbleDot74"), NodePath("../../Arch/FloorLine/BubbleDot75"), NodePath("../../Arch/FloorLine/BubbleDot76"), NodePath("../../Arch/FloorLine/BubbleDot77"), NodePath("../../Arch/FloorLine/BubbleDot78"), NodePath("../../Arch/FloorLine/BubbleDot79"), NodePath("../../Arch/FloorLine/BubbleDot80"), NodePath("../../Arch/FloorLine/BubbleDot81"), NodePath("../../Arch/FloorLine/BubbleDot82"), NodePath("../../Arch/FloorLine/BubbleDot83"), NodePath("../../Arch/FloorLine/BubbleDot84"), NodePath("../../Arch/FloorLine/BubbleDot85"), NodePath("../../Arch/FloorLine/BubbleDot86"), NodePath("../../Arch/FloorLine/BubbleDot87"), NodePath("../../Arch/FloorLine/BubbleDot88"), NodePath("../../Arch/FloorLine/BubbleDot89"), NodePath("../../Arch/FloorLine/BubbleDot90"), NodePath("../../Arch/FloorLine/BubbleDot91"), NodePath("../../Arch/FloorLine/BubbleDot92"), NodePath("../../Arch/FloorLine/BubbleDot93"), NodePath("../../Arch/FloorLine/BubbleDot94"), NodePath("../../Arch/FloorLine/BubbleDot95"), NodePath("../../Arch/FloorLine/BubbleDot96"), NodePath("../../Arch/FloorLine/BubbleDot97"), NodePath("../../Arch/FloorLine/BubbleDot98"), NodePath("../../Arch/FloorLine/BubbleDot99"), NodePath("../../Arch/FloorLine/BubbleDot100"), NodePath("../../Arch/FloorLine/BubbleDot101"), NodePath("../../Arch/FloorLine/BubbleDot102"), NodePath("../../Arch/FloorLine/BubbleDot103"), NodePath("../../Arch/FloorLine/BubbleDot104"), NodePath("../../Arch/FloorLine/BubbleDot105"), NodePath("../../Arch/FloorLine/BubbleDot106"), NodePath("../../Arch/FloorLine/BubbleDot107"), NodePath("../../Arch/FloorLine/BubbleDot108"), NodePath("../../Arch/FloorLine/BubbleDot109"), NodePath("../../Arch/FloorLine/BubbleDot110"), NodePath("../../Arch/FloorLine/BubbleDot111"), NodePath("../../Arch/FloorLine/BubbleDot112"), NodePath("../../Arch/FloorLine/BubbleDot113"), NodePath("../../Arch/FloorLine/BubbleDot114"), NodePath("../../Arch/FloorLine/BubbleDot115"), NodePath("../../Arch/FloorLine/BubbleDot116"), NodePath("../../Arch/FloorLine/BubbleDot117"), NodePath("../../Arch/FloorLine/BubbleDot118"), NodePath("../../Arch/FloorLine/BubbleDot119"), NodePath("../../Arch/FloorLine/BubbleDot120"), NodePath("../../Arch/FloorLine/BubbleDot121"), NodePath("../../Arch/FloorLine/BubbleDot122"), NodePath("../../Arch/FloorLine/BubbleDot123"), NodePath("../../Arch/FloorLine/BubbleDot124"), NodePath("../../Arch/FloorLine/BubbleDot125"), NodePath("../../Arch/FloorLine/BubbleDot126"), NodePath("../../Arch/FloorLine/BubbleDot127"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+radius = 2048.0
+thickness = 1536.0
+steps = 16
+
+[node name="Background" parent="." instance=ExtResource("1_71r36")]
+z_index = -1000
+
+[node name="Arch" type="Polygon2D" parent="."]
+z_index = 3
+script = ExtResource("4_6u58k")
+
+[node name="InnerLine" type="Line2D" parent="Arch"]
+default_color = Color(0.141176, 0.141176, 0.141176, 1)
+script = ExtResource("5_eq7jn")
+
+[node name="BubbleDot" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(2032, 0)
+displace_position = Vector2(2048, 0)
+
+[node name="BubbleDot2" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(2031.75, -31.7487)
+displace_position = Vector2(2047.75, -31.9987)
+
+[node name="BubbleDot3" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(2031.01, -63.4897)
+displace_position = Vector2(2047, -63.9896)
+
+[node name="BubbleDot4" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(2029.77, -95.2151)
+displace_position = Vector2(2045.75, -95.9649)
+
+[node name="BubbleDot5" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(2028.03, -126.917)
+displace_position = Vector2(2044, -127.917)
+
+[node name="BubbleDot6" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(2025.8, -158.589)
+displace_position = Vector2(2041.75, -159.837)
+
+[node name="BubbleDot7" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(2023.08, -190.221)
+displace_position = Vector2(2039.01, -191.719)
+
+[node name="BubbleDot8" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(2019.86, -221.807)
+displace_position = Vector2(2035.76, -223.554)
+
+[node name="BubbleDot9" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(2016.15, -253.339)
+displace_position = Vector2(2032.02, -255.334)
+
+[node name="BubbleDot10" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(2011.94, -284.809)
+displace_position = Vector2(2027.78, -287.052)
+
+[node name="BubbleDot11" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(2007.25, -316.21)
+displace_position = Vector2(2023.05, -318.699)
+
+[node name="BubbleDot12" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(2002.06, -347.533)
+displace_position = Vector2(2017.82, -350.269)
+
+[node name="BubbleDot13" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1996.39, -378.771)
+displace_position = Vector2(2012.11, -381.754)
+
+[node name="BubbleDot14" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1990.22, -409.918)
+displace_position = Vector2(2005.9, -413.145)
+
+[node name="BubbleDot15" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1983.58, -440.963)
+displace_position = Vector2(1999.2, -444.436)
+
+[node name="BubbleDot16" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1976.44, -471.902)
+displace_position = Vector2(1992.01, -475.618)
+
+[node name="BubbleDot17" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1968.83, -502.725)
+displace_position = Vector2(1984.33, -506.683)
+
+[node name="BubbleDot18" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1960.73, -533.425)
+displace_position = Vector2(1976.17, -537.625)
+
+[node name="BubbleDot19" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1952.16, -563.995)
+displace_position = Vector2(1967.53, -568.436)
+
+[node name="BubbleDot20" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1943.11, -594.428)
+displace_position = Vector2(1958.41, -599.108)
+
+[node name="BubbleDot21" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1933.59, -624.715)
+displace_position = Vector2(1948.81, -629.634)
+
+[node name="BubbleDot22" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1923.59, -654.85)
+displace_position = Vector2(1938.74, -660.006)
+
+[node name="BubbleDot23" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1913.12, -684.825)
+displace_position = Vector2(1928.19, -690.217)
+
+[node name="BubbleDot24" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1902.19, -714.633)
+displace_position = Vector2(1917.17, -720.26)
+
+[node name="BubbleDot25" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1890.79, -744.266)
+displace_position = Vector2(1905.68, -750.126)
+
+[node name="BubbleDot26" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1878.93, -773.717)
+displace_position = Vector2(1893.73, -779.81)
+
+[node name="BubbleDot27" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1866.61, -802.98)
+displace_position = Vector2(1881.31, -809.303)
+
+[node name="BubbleDot28" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1853.84, -832.047)
+displace_position = Vector2(1868.44, -838.598)
+
+[node name="BubbleDot29" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1840.61, -860.91)
+displace_position = Vector2(1855.11, -867.689)
+
+[node name="BubbleDot30" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1826.94, -889.563)
+displace_position = Vector2(1841.32, -896.568)
+
+[node name="BubbleDot31" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1812.82, -918)
+displace_position = Vector2(1827.09, -925.228)
+
+[node name="BubbleDot32" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1798.25, -946.212)
+displace_position = Vector2(1812.41, -953.662)
+
+[node name="BubbleDot33" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1783.25, -974.193)
+displace_position = Vector2(1797.29, -981.864)
+
+[node name="BubbleDot34" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1767.81, -1001.94)
+displace_position = Vector2(1781.73, -1009.83)
+
+[node name="BubbleDot35" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1751.94, -1029.43)
+displace_position = Vector2(1765.73, -1037.54)
+
+[node name="BubbleDot36" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1735.64, -1056.68)
+displace_position = Vector2(1749.31, -1065)
+
+[node name="BubbleDot37" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1718.92, -1083.67)
+displace_position = Vector2(1732.45, -1092.2)
+
+[node name="BubbleDot38" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1701.78, -1110.4)
+displace_position = Vector2(1715.18, -1119.14)
+
+[node name="BubbleDot39" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1684.22, -1136.85)
+displace_position = Vector2(1697.48, -1145.8)
+
+[node name="BubbleDot40" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1666.25, -1163.03)
+displace_position = Vector2(1679.37, -1172.18)
+
+[node name="BubbleDot41" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1647.88, -1188.92)
+displace_position = Vector2(1660.85, -1198.28)
+
+[node name="BubbleDot42" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1629.1, -1214.52)
+displace_position = Vector2(1641.93, -1224.08)
+
+[node name="BubbleDot43" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1609.92, -1239.82)
+displace_position = Vector2(1622.6, -1249.59)
+
+[node name="BubbleDot44" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1590.36, -1264.83)
+displace_position = Vector2(1602.88, -1274.79)
+
+[node name="BubbleDot45" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1570.4, -1289.52)
+displace_position = Vector2(1582.77, -1299.68)
+
+[node name="BubbleDot46" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1550.06, -1313.9)
+displace_position = Vector2(1562.27, -1324.25)
+
+[node name="BubbleDot47" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1529.34, -1337.96)
+displace_position = Vector2(1541.39, -1348.49)
+
+[node name="BubbleDot48" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1508.25, -1361.69)
+displace_position = Vector2(1520.13, -1372.41)
+
+[node name="BubbleDot49" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1486.79, -1385.09)
+displace_position = Vector2(1498.5, -1396)
+
+[node name="BubbleDot50" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1464.97, -1408.15)
+displace_position = Vector2(1476.5, -1419.24)
+
+[node name="BubbleDot51" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1442.79, -1430.87)
+displace_position = Vector2(1454.15, -1442.14)
+
+[node name="BubbleDot52" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1420.26, -1453.24)
+displace_position = Vector2(1431.44, -1464.68)
+
+[node name="BubbleDot53" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1397.38, -1475.25)
+displace_position = Vector2(1408.38, -1486.87)
+
+[node name="BubbleDot54" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1374.16, -1496.9)
+displace_position = Vector2(1384.98, -1508.69)
+
+[node name="BubbleDot55" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1350.6, -1518.19)
+displace_position = Vector2(1361.24, -1530.14)
+
+[node name="BubbleDot56" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1326.72, -1539.11)
+displace_position = Vector2(1337.16, -1551.23)
+
+[node name="BubbleDot57" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1302.51, -1559.65)
+displace_position = Vector2(1312.76, -1571.93)
+
+[node name="BubbleDot58" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1277.98, -1579.81)
+displace_position = Vector2(1288.04, -1592.25)
+
+[node name="BubbleDot59" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1253.14, -1599.58)
+displace_position = Vector2(1263.01, -1612.18)
+
+[node name="BubbleDot60" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1227.99, -1618.97)
+displace_position = Vector2(1237.66, -1631.72)
+
+[node name="BubbleDot61" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1202.55, -1637.96)
+displace_position = Vector2(1212.02, -1650.85)
+
+[node name="BubbleDot62" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1176.81, -1656.55)
+displace_position = Vector2(1186.08, -1669.59)
+
+[node name="BubbleDot63" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1150.78, -1674.73)
+displace_position = Vector2(1159.84, -1687.92)
+
+[node name="BubbleDot64" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1124.48, -1692.51)
+displace_position = Vector2(1133.33, -1705.83)
+
+[node name="BubbleDot65" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1097.89, -1709.87)
+displace_position = Vector2(1106.54, -1723.33)
+
+[node name="BubbleDot66" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1071.04, -1726.81)
+displace_position = Vector2(1079.48, -1740.41)
+
+[node name="BubbleDot67" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1043.93, -1743.34)
+displace_position = Vector2(1052.15, -1757.06)
+
+[node name="BubbleDot68" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1016.57, -1759.44)
+displace_position = Vector2(1024.57, -1773.29)
+
+[node name="BubbleDot69" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(988.953, -1775.1)
+displace_position = Vector2(996.74, -1789.08)
+
+[node name="BubbleDot70" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(961.098, -1790.34)
+displace_position = Vector2(968.666, -1804.44)
+
+[node name="BubbleDot71" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(933.008, -1805.14)
+displace_position = Vector2(940.354, -1819.35)
+
+[node name="BubbleDot72" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(904.69, -1819.49)
+displace_position = Vector2(911.813, -1833.82)
+
+[node name="BubbleDot73" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(876.151, -1833.41)
+displace_position = Vector2(883.049, -1847.84)
+
+[node name="BubbleDot74" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(847.398, -1846.87)
+displace_position = Vector2(854.07, -1861.42)
+
+[node name="BubbleDot75" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(818.438, -1859.89)
+displace_position = Vector2(824.883, -1874.53)
+
+[node name="BubbleDot76" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(789.279, -1872.45)
+displace_position = Vector2(795.494, -1887.19)
+
+[node name="BubbleDot77" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(759.927, -1884.55)
+displace_position = Vector2(765.91, -1899.39)
+
+[node name="BubbleDot78" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(730.389, -1896.2)
+displace_position = Vector2(736.14, -1911.13)
+
+[node name="BubbleDot79" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(700.673, -1907.38)
+displace_position = Vector2(706.19, -1922.39)
+
+[node name="BubbleDot80" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(670.786, -1918.09)
+displace_position = Vector2(676.068, -1933.19)
+
+[node name="BubbleDot81" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(640.735, -1928.34)
+displace_position = Vector2(645.78, -1943.52)
+
+[node name="BubbleDot82" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(610.528, -1938.11)
+displace_position = Vector2(615.335, -1953.37)
+
+[node name="BubbleDot83" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(580.172, -1947.41)
+displace_position = Vector2(584.74, -1962.75)
+
+[node name="BubbleDot84" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(549.674, -1956.24)
+displace_position = Vector2(554.002, -1971.65)
+
+[node name="BubbleDot85" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(519.041, -1964.59)
+displace_position = Vector2(523.128, -1980.06)
+
+[node name="BubbleDot86" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(488.283, -1972.46)
+displace_position = Vector2(492.127, -1987.99)
+
+[node name="BubbleDot87" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(457.405, -1979.85)
+displace_position = Vector2(461.006, -1995.44)
+
+[node name="BubbleDot88" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(426.415, -1986.75)
+displace_position = Vector2(429.772, -2002.4)
+
+[node name="BubbleDot89" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(395.321, -1993.17)
+displace_position = Vector2(398.434, -2008.87)
+
+[node name="BubbleDot90" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(364.131, -1999.11)
+displace_position = Vector2(366.998, -2014.85)
+
+[node name="BubbleDot91" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(332.851, -2004.55)
+displace_position = Vector2(335.472, -2020.34)
+
+[node name="BubbleDot92" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(301.491, -2009.51)
+displace_position = Vector2(303.865, -2025.33)
+
+[node name="BubbleDot93" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(270.057, -2013.97)
+displace_position = Vector2(272.183, -2029.83)
+
+[node name="BubbleDot94" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(238.557, -2017.95)
+displace_position = Vector2(240.435, -2033.84)
+
+[node name="BubbleDot95" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(206.998, -2021.43)
+displace_position = Vector2(208.628, -2037.35)
+
+[node name="BubbleDot96" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(175.39, -2024.42)
+displace_position = Vector2(176.771, -2040.36)
+
+[node name="BubbleDot97" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(143.738, -2026.91)
+displace_position = Vector2(144.87, -2042.87)
+
+[node name="BubbleDot98" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(112.051, -2028.91)
+displace_position = Vector2(112.934, -2044.88)
+
+[node name="BubbleDot99" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(80.3372, -2030.41)
+displace_position = Vector2(80.9698, -2046.4)
+
+[node name="BubbleDot100" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(48.6035, -2031.42)
+displace_position = Vector2(48.9862, -2047.41)
+
+[node name="BubbleDot101" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(16.8579, -2031.93)
+displace_position = Vector2(16.9907, -2047.93)
+
+[node name="BubbleDot102" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-14.8917, -2031.95)
+displace_position = Vector2(-15.009, -2047.94)
+
+[node name="BubbleDot103" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-46.6378, -2031.46)
+displace_position = Vector2(-47.005, -2047.46)
+
+[node name="BubbleDot104" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-78.3724, -2030.49)
+displace_position = Vector2(-78.9895, -2046.48)
+
+[node name="BubbleDot105" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-110.088, -2029.02)
+displace_position = Vector2(-110.955, -2044.99)
+
+[node name="BubbleDot106" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-141.777, -2027.05)
+displace_position = Vector2(-142.893, -2043.01)
+
+[node name="BubbleDot107" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-173.431, -2024.59)
+displace_position = Vector2(-174.796, -2040.53)
+
+[node name="BubbleDot108" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-205.042, -2021.63)
+displace_position = Vector2(-206.657, -2037.55)
+
+[node name="BubbleDot109" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-236.604, -2018.18)
+displace_position = Vector2(-238.467, -2034.07)
+
+[node name="BubbleDot110" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-268.108, -2014.23)
+displace_position = Vector2(-270.219, -2030.09)
+
+[node name="BubbleDot111" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-299.546, -2009.8)
+displace_position = Vector2(-301.905, -2025.63)
+
+[node name="BubbleDot112" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-330.911, -2004.87)
+displace_position = Vector2(-333.517, -2020.66)
+
+[node name="BubbleDot113" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-362.196, -1999.46)
+displace_position = Vector2(-365.048, -2015.2)
+
+[node name="BubbleDot114" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-393.392, -1993.56)
+displace_position = Vector2(-396.49, -2009.25)
+
+[node name="BubbleDot115" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-424.492, -1987.17)
+displace_position = Vector2(-427.835, -2002.81)
+
+[node name="BubbleDot116" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-455.488, -1980.29)
+displace_position = Vector2(-459.075, -1995.88)
+
+[node name="BubbleDot117" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-486.374, -1972.93)
+displace_position = Vector2(-490.203, -1988.47)
+
+[node name="BubbleDot118" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-517.14, -1965.09)
+displace_position = Vector2(-521.212, -1980.57)
+
+[node name="BubbleDot119" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-547.78, -1956.77)
+displace_position = Vector2(-552.094, -1972.18)
+
+[node name="BubbleDot120" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-578.287, -1947.98)
+displace_position = Vector2(-582.84, -1963.31)
+
+[node name="BubbleDot121" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-608.652, -1938.7)
+displace_position = Vector2(-613.445, -1953.97)
+
+[node name="BubbleDot122" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-638.869, -1928.96)
+displace_position = Vector2(-643.899, -1944.14)
+
+[node name="BubbleDot123" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-668.93, -1918.74)
+displace_position = Vector2(-674.197, -1933.85)
+
+[node name="BubbleDot124" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-698.827, -1908.05)
+displace_position = Vector2(-704.329, -1923.08)
+
+[node name="BubbleDot125" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-728.554, -1896.9)
+displace_position = Vector2(-734.29, -1911.84)
+
+[node name="BubbleDot126" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-758.103, -1885.29)
+displace_position = Vector2(-764.072, -1900.13)
+
+[node name="BubbleDot127" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-787.466, -1873.21)
+displace_position = Vector2(-793.667, -1887.96)
+
+[node name="BubbleDot128" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-816.638, -1860.68)
+displace_position = Vector2(-823.068, -1875.33)
+
+[node name="BubbleDot129" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-845.61, -1847.69)
+displace_position = Vector2(-852.269, -1862.24)
+
+[node name="BubbleDot130" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-874.376, -1834.25)
+displace_position = Vector2(-881.261, -1848.7)
+
+[node name="BubbleDot131" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-902.929, -1820.37)
+displace_position = Vector2(-910.038, -1834.7)
+
+[node name="BubbleDot132" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-931.26, -1806.04)
+displace_position = Vector2(-938.593, -1820.26)
+
+[node name="BubbleDot133" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-959.365, -1791.27)
+displace_position = Vector2(-966.919, -1805.37)
+
+[node name="BubbleDot134" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-987.235, -1776.06)
+displace_position = Vector2(-995.009, -1790.05)
+
+[node name="BubbleDot135" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1014.86, -1760.42)
+displace_position = Vector2(-1022.86, -1774.28)
+
+[node name="BubbleDot136" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1042.25, -1744.35)
+displace_position = Vector2(-1050.45, -1758.08)
+
+[node name="BubbleDot137" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1069.37, -1727.85)
+displace_position = Vector2(-1077.79, -1741.45)
+
+[node name="BubbleDot138" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1096.24, -1710.93)
+displace_position = Vector2(-1104.87, -1724.4)
+
+[node name="BubbleDot139" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1122.84, -1693.59)
+displace_position = Vector2(-1131.68, -1706.93)
+
+[node name="BubbleDot140" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1149.16, -1675.84)
+displace_position = Vector2(-1158.21, -1689.04)
+
+[node name="BubbleDot141" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1175.21, -1657.68)
+displace_position = Vector2(-1184.46, -1670.74)
+
+[node name="BubbleDot142" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1200.96, -1639.12)
+displace_position = Vector2(-1210.42, -1652.03)
+
+[node name="BubbleDot143" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1226.43, -1620.16)
+displace_position = Vector2(-1236.08, -1632.91)
+
+[node name="BubbleDot144" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1251.59, -1600.8)
+displace_position = Vector2(-1261.45, -1613.4)
+
+[node name="BubbleDot145" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1276.45, -1581.04)
+displace_position = Vector2(-1286.5, -1593.49)
+
+[node name="BubbleDot146" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1301, -1560.91)
+displace_position = Vector2(-1311.24, -1573.2)
+
+[node name="BubbleDot147" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1325.23, -1540.39)
+displace_position = Vector2(-1335.66, -1552.52)
+
+[node name="BubbleDot148" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1349.13, -1519.5)
+displace_position = Vector2(-1359.75, -1531.46)
+
+[node name="BubbleDot149" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1372.71, -1498.23)
+displace_position = Vector2(-1383.52, -1510.03)
+
+[node name="BubbleDot150" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1395.95, -1476.6)
+displace_position = Vector2(-1406.94, -1488.23)
+
+[node name="BubbleDot151" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1418.85, -1454.61)
+displace_position = Vector2(-1430.02, -1466.06)
+
+[node name="BubbleDot152" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1441.4, -1432.26)
+displace_position = Vector2(-1452.75, -1443.54)
+
+[node name="BubbleDot153" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1463.61, -1409.57)
+displace_position = Vector2(-1475.13, -1420.67)
+
+[node name="BubbleDot154" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1485.45, -1386.53)
+displace_position = Vector2(-1497.15, -1397.45)
+
+[node name="BubbleDot155" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1506.93, -1363.15)
+displace_position = Vector2(-1518.8, -1373.88)
+
+[node name="BubbleDot156" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1528.05, -1339.44)
+displace_position = Vector2(-1540.08, -1349.98)
+
+[node name="BubbleDot157" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1548.79, -1315.4)
+displace_position = Vector2(-1560.98, -1325.76)
+
+[node name="BubbleDot158" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1569.15, -1291.04)
+displace_position = Vector2(-1581.51, -1301.21)
+
+[node name="BubbleDot159" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1589.13, -1266.37)
+displace_position = Vector2(-1601.65, -1276.34)
+
+[node name="BubbleDot160" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1608.72, -1241.38)
+displace_position = Vector2(-1621.39, -1251.16)
+
+[node name="BubbleDot161" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1627.92, -1216.1)
+displace_position = Vector2(-1640.74, -1225.67)
+
+[node name="BubbleDot162" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1646.73, -1190.51)
+displace_position = Vector2(-1659.69, -1199.89)
+
+[node name="BubbleDot163" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1665.13, -1164.64)
+displace_position = Vector2(-1678.24, -1173.81)
+
+[node name="BubbleDot164" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1683.12, -1138.48)
+displace_position = Vector2(-1696.37, -1147.44)
+
+[node name="BubbleDot165" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1700.7, -1112.04)
+displace_position = Vector2(-1714.09, -1120.8)
+
+[node name="BubbleDot166" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1717.87, -1085.33)
+displace_position = Vector2(-1731.4, -1093.88)
+
+[node name="BubbleDot167" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1734.62, -1058.36)
+displace_position = Vector2(-1748.28, -1066.69)
+
+[node name="BubbleDot168" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1750.94, -1031.13)
+displace_position = Vector2(-1764.73, -1039.25)
+
+[node name="BubbleDot169" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1766.84, -1003.65)
+displace_position = Vector2(-1780.75, -1011.55)
+
+[node name="BubbleDot170" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1782.3, -975.918)
+displace_position = Vector2(-1796.34, -983.602)
+
+[node name="BubbleDot171" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1797.33, -947.951)
+displace_position = Vector2(-1811.49, -955.415)
+
+[node name="BubbleDot172" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1811.93, -919.753)
+displace_position = Vector2(-1826.19, -926.996)
+
+[node name="BubbleDot173" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1826.08, -891.331)
+displace_position = Vector2(-1840.45, -898.349)
+
+[node name="BubbleDot174" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1839.78, -862.691)
+displace_position = Vector2(-1854.27, -869.484)
+
+[node name="BubbleDot175" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1853.03, -833.84)
+displace_position = Vector2(-1867.62, -840.406)
+
+[node name="BubbleDot176" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1865.84, -804.786)
+displace_position = Vector2(-1880.53, -811.123)
+
+[node name="BubbleDot177" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1878.18, -775.535)
+displace_position = Vector2(-1892.97, -781.642)
+
+[node name="BubbleDot178" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1890.07, -746.095)
+displace_position = Vector2(-1904.95, -751.97)
+
+[node name="BubbleDot179" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1901.5, -716.473)
+displace_position = Vector2(-1916.47, -722.114)
+
+[node name="BubbleDot180" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1912.46, -686.676)
+displace_position = Vector2(-1927.52, -692.083)
+
+[node name="BubbleDot181" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1922.95, -656.711)
+displace_position = Vector2(-1938.1, -661.882)
+
+[node name="BubbleDot182" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1932.98, -626.586)
+displace_position = Vector2(-1948.2, -631.52)
+
+[node name="BubbleDot183" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1942.53, -596.308)
+displace_position = Vector2(-1957.83, -601.003)
+
+[node name="BubbleDot184" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1951.61, -565.884)
+displace_position = Vector2(-1966.98, -570.34)
+
+[node name="BubbleDot185" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1960.22, -535.322)
+displace_position = Vector2(-1975.65, -539.537)
+
+[node name="BubbleDot186" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1968.34, -504.63)
+displace_position = Vector2(-1983.84, -508.603)
+
+[node name="BubbleDot187" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1975.99, -473.814)
+displace_position = Vector2(-1991.55, -477.545)
+
+[node name="BubbleDot188" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1983.15, -442.883)
+displace_position = Vector2(-1998.76, -446.37)
+
+[node name="BubbleDot189" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1989.83, -411.843)
+displace_position = Vector2(-2005.49, -415.086)
+
+[node name="BubbleDot190" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1996.02, -380.703)
+displace_position = Vector2(-2011.73, -383.701)
+
+[node name="BubbleDot191" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-2001.72, -349.47)
+displace_position = Vector2(-2017.48, -352.222)
+
+[node name="BubbleDot192" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-2006.94, -318.152)
+displace_position = Vector2(-2022.74, -320.657)
+
+[node name="BubbleDot193" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-2011.66, -286.756)
+displace_position = Vector2(-2027.5, -289.014)
+
+[node name="BubbleDot194" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-2015.9, -255.29)
+displace_position = Vector2(-2031.77, -257.3)
+
+[node name="BubbleDot195" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-2019.64, -223.762)
+displace_position = Vector2(-2035.54, -225.523)
+
+[node name="BubbleDot196" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-2022.89, -192.179)
+displace_position = Vector2(-2038.82, -193.692)
+
+[node name="BubbleDot197" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-2025.65, -160.549)
+displace_position = Vector2(-2041.6, -161.813)
+
+[node name="BubbleDot198" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-2027.91, -128.88)
+displace_position = Vector2(-2043.88, -129.895)
+
+[node name="BubbleDot199" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-2029.67, -97.1792)
+displace_position = Vector2(-2045.66, -97.9444)
+
+[node name="BubbleDot200" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-2030.95, -65.4549)
+displace_position = Vector2(-2046.94, -65.9703)
+
+[node name="BubbleDot201" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-2031.72, -33.7147)
+displace_position = Vector2(-2047.72, -33.9802)
+
+[node name="BubbleDot202" parent="Arch/InnerLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-2032, -1.96627)
+displace_position = Vector2(-2048, -1.98175)
+
+[node name="FloorLine" type="Line2D" parent="Arch"]
+width = 32.0
+default_color = Color(0.141176, 0.141176, 0.141176, 1)
+joint_mode = 1
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("5_eq7jn")
+
+[node name="BubbleDot" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-2016, -16)
+displace_position = Vector2(-2016, 0)
+
+[node name="BubbleDot2" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1984, -16)
+displace_position = Vector2(-1984, 0)
+
+[node name="BubbleDot3" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1952, -16)
+displace_position = Vector2(-1952, 0)
+
+[node name="BubbleDot4" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1920, -16)
+displace_position = Vector2(-1920, 0)
+
+[node name="BubbleDot5" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1888, -16)
+displace_position = Vector2(-1888, 0)
+
+[node name="BubbleDot6" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1856, -16)
+displace_position = Vector2(-1856, 0)
+
+[node name="BubbleDot7" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1824, -16)
+displace_position = Vector2(-1824, 0)
+
+[node name="BubbleDot8" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1792, -16)
+displace_position = Vector2(-1792, 0)
+
+[node name="BubbleDot9" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1760, -16)
+displace_position = Vector2(-1760, 0)
+
+[node name="BubbleDot10" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1728, -16)
+displace_position = Vector2(-1728, 0)
+
+[node name="BubbleDot11" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1696, -16)
+displace_position = Vector2(-1696, 0)
+
+[node name="BubbleDot12" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1664, -16)
+displace_position = Vector2(-1664, 0)
+
+[node name="BubbleDot13" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1632, -16)
+displace_position = Vector2(-1632, 0)
+
+[node name="BubbleDot14" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1600, -16)
+displace_position = Vector2(-1600, 0)
+
+[node name="BubbleDot15" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1568, -16)
+displace_position = Vector2(-1568, 0)
+
+[node name="BubbleDot16" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1536, -16)
+displace_position = Vector2(-1536, 0)
+
+[node name="BubbleDot17" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1504, -16)
+displace_position = Vector2(-1504, 0)
+
+[node name="BubbleDot18" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1472, -16)
+displace_position = Vector2(-1472, 0)
+
+[node name="BubbleDot19" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1440, -16)
+displace_position = Vector2(-1440, 0)
+
+[node name="BubbleDot20" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1408, -16)
+displace_position = Vector2(-1408, 0)
+
+[node name="BubbleDot21" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1376, -16)
+displace_position = Vector2(-1376, 0)
+
+[node name="BubbleDot22" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1344, -16)
+displace_position = Vector2(-1344, 0)
+
+[node name="BubbleDot23" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1312, -16)
+displace_position = Vector2(-1312, 0)
+
+[node name="BubbleDot24" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1280, -16)
+displace_position = Vector2(-1280, 0)
+
+[node name="BubbleDot25" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1248, -16)
+displace_position = Vector2(-1248, 0)
+
+[node name="BubbleDot26" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1216, -16)
+displace_position = Vector2(-1216, 0)
+
+[node name="BubbleDot27" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1184, -16)
+displace_position = Vector2(-1184, 0)
+
+[node name="BubbleDot28" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1152, -16)
+displace_position = Vector2(-1152, 0)
+
+[node name="BubbleDot29" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1120, -16)
+displace_position = Vector2(-1120, 0)
+
+[node name="BubbleDot30" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1088, -16)
+displace_position = Vector2(-1088, 0)
+
+[node name="BubbleDot31" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1056, -16)
+displace_position = Vector2(-1056, 0)
+
+[node name="BubbleDot32" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-1024, -16)
+displace_position = Vector2(-1024, 0)
+
+[node name="BubbleDot33" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-992, -16)
+displace_position = Vector2(-992, 0)
+
+[node name="BubbleDot34" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-960, -16)
+displace_position = Vector2(-960, 0)
+
+[node name="BubbleDot35" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-928, -16)
+displace_position = Vector2(-928, 0)
+
+[node name="BubbleDot36" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-896, -16)
+displace_position = Vector2(-896, 0)
+
+[node name="BubbleDot37" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-864, -16)
+displace_position = Vector2(-864, 0)
+
+[node name="BubbleDot38" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-832, -16)
+displace_position = Vector2(-832, 0)
+
+[node name="BubbleDot39" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-800, -16)
+displace_position = Vector2(-800, 0)
+
+[node name="BubbleDot40" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-768, -16)
+displace_position = Vector2(-768, 0)
+
+[node name="BubbleDot41" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-736, -16)
+displace_position = Vector2(-736, 0)
+
+[node name="BubbleDot42" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-704, -16)
+displace_position = Vector2(-704, 0)
+
+[node name="BubbleDot43" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-672, -16)
+displace_position = Vector2(-672, 0)
+
+[node name="BubbleDot44" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-640, -16)
+displace_position = Vector2(-640, 0)
+
+[node name="BubbleDot45" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-608, -16)
+displace_position = Vector2(-608, 0)
+
+[node name="BubbleDot46" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-576, -16)
+displace_position = Vector2(-576, 0)
+
+[node name="BubbleDot47" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-544, -16)
+displace_position = Vector2(-544, 0)
+
+[node name="BubbleDot48" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-512, -16)
+displace_position = Vector2(-512, 0)
+
+[node name="BubbleDot49" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-480, -16)
+displace_position = Vector2(-480, 0)
+
+[node name="BubbleDot50" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-448, -16)
+displace_position = Vector2(-448, 0)
+
+[node name="BubbleDot51" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-416, -16)
+displace_position = Vector2(-416, 0)
+
+[node name="BubbleDot52" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-384, -16)
+displace_position = Vector2(-384, 0)
+
+[node name="BubbleDot53" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-352, -16)
+displace_position = Vector2(-352, 0)
+
+[node name="BubbleDot54" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-320, -16)
+displace_position = Vector2(-320, 0)
+
+[node name="BubbleDot55" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-288, -16)
+displace_position = Vector2(-288, 0)
+
+[node name="BubbleDot56" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-256, -16)
+displace_position = Vector2(-256, 0)
+
+[node name="BubbleDot57" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-224, -16)
+displace_position = Vector2(-224, 0)
+
+[node name="BubbleDot58" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-192, -16)
+displace_position = Vector2(-192, 0)
+
+[node name="BubbleDot59" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-160, -16)
+displace_position = Vector2(-160, 0)
+
+[node name="BubbleDot60" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-128, -16)
+displace_position = Vector2(-128, 0)
+
+[node name="BubbleDot61" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-96, -16)
+displace_position = Vector2(-96, 0)
+
+[node name="BubbleDot62" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-64, -16)
+displace_position = Vector2(-64, 0)
+
+[node name="BubbleDot63" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(-32, -16)
+displace_position = Vector2(-32, 0)
+
+[node name="BubbleDot64" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(0, -16)
+displace_position = Vector2(0, 0)
+
+[node name="BubbleDot65" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(32, -16)
+displace_position = Vector2(32, 0)
+
+[node name="BubbleDot66" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(64, -16)
+displace_position = Vector2(64, 0)
+
+[node name="BubbleDot67" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(96, -16)
+displace_position = Vector2(96, 0)
+
+[node name="BubbleDot68" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(128, -16)
+displace_position = Vector2(128, 0)
+
+[node name="BubbleDot69" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(160, -16)
+displace_position = Vector2(160, 0)
+
+[node name="BubbleDot70" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(192, -16)
+displace_position = Vector2(192, 0)
+
+[node name="BubbleDot71" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(224, -16)
+displace_position = Vector2(224, 0)
+
+[node name="BubbleDot72" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(256, -16)
+displace_position = Vector2(256, 0)
+
+[node name="BubbleDot73" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(288, -16)
+displace_position = Vector2(288, 0)
+
+[node name="BubbleDot74" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(320, -16)
+displace_position = Vector2(320, 0)
+
+[node name="BubbleDot75" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(352, -16)
+displace_position = Vector2(352, 0)
+
+[node name="BubbleDot76" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(384, -16)
+displace_position = Vector2(384, 0)
+
+[node name="BubbleDot77" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(416, -16)
+displace_position = Vector2(416, 0)
+
+[node name="BubbleDot78" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(448, -16)
+displace_position = Vector2(448, 0)
+
+[node name="BubbleDot79" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(480, -16)
+displace_position = Vector2(480, 0)
+
+[node name="BubbleDot80" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(512, -16)
+displace_position = Vector2(512, 0)
+
+[node name="BubbleDot81" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(544, -16)
+displace_position = Vector2(544, 0)
+
+[node name="BubbleDot82" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(576, -16)
+displace_position = Vector2(576, 0)
+
+[node name="BubbleDot83" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(608, -16)
+displace_position = Vector2(608, 0)
+
+[node name="BubbleDot84" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(640, -16)
+displace_position = Vector2(640, 0)
+
+[node name="BubbleDot85" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(672, -16)
+displace_position = Vector2(672, 0)
+
+[node name="BubbleDot86" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(704, -16)
+displace_position = Vector2(704, 0)
+
+[node name="BubbleDot87" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(736, -16)
+displace_position = Vector2(736, 0)
+
+[node name="BubbleDot88" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(768, -16)
+displace_position = Vector2(768, 0)
+
+[node name="BubbleDot89" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(800, -16)
+displace_position = Vector2(800, 0)
+
+[node name="BubbleDot90" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(832, -16)
+displace_position = Vector2(832, 0)
+
+[node name="BubbleDot91" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(864, -16)
+displace_position = Vector2(864, 0)
+
+[node name="BubbleDot92" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(896, -16)
+displace_position = Vector2(896, 0)
+
+[node name="BubbleDot93" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(928, -16)
+displace_position = Vector2(928, 0)
+
+[node name="BubbleDot94" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(960, -16)
+displace_position = Vector2(960, 0)
+
+[node name="BubbleDot95" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(992, -16)
+displace_position = Vector2(992, 0)
+
+[node name="BubbleDot96" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1024, -16)
+displace_position = Vector2(1024, 0)
+
+[node name="BubbleDot97" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1056, -16)
+displace_position = Vector2(1056, 0)
+
+[node name="BubbleDot98" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1088, -16)
+displace_position = Vector2(1088, 0)
+
+[node name="BubbleDot99" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1120, -16)
+displace_position = Vector2(1120, 0)
+
+[node name="BubbleDot100" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1152, -16)
+displace_position = Vector2(1152, 0)
+
+[node name="BubbleDot101" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1184, -16)
+displace_position = Vector2(1184, 0)
+
+[node name="BubbleDot102" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1216, -16)
+displace_position = Vector2(1216, 0)
+
+[node name="BubbleDot103" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1248, -16)
+displace_position = Vector2(1248, 0)
+
+[node name="BubbleDot104" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1280, -16)
+displace_position = Vector2(1280, 0)
+
+[node name="BubbleDot105" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1312, -16)
+displace_position = Vector2(1312, 0)
+
+[node name="BubbleDot106" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1344, -16)
+displace_position = Vector2(1344, 0)
+
+[node name="BubbleDot107" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1376, -16)
+displace_position = Vector2(1376, 0)
+
+[node name="BubbleDot108" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1408, -16)
+displace_position = Vector2(1408, 0)
+
+[node name="BubbleDot109" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1440, -16)
+displace_position = Vector2(1440, 0)
+
+[node name="BubbleDot110" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1472, -16)
+displace_position = Vector2(1472, 0)
+
+[node name="BubbleDot111" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1504, -16)
+displace_position = Vector2(1504, 0)
+
+[node name="BubbleDot112" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1536, -16)
+displace_position = Vector2(1536, 0)
+
+[node name="BubbleDot113" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1568, -16)
+displace_position = Vector2(1568, 0)
+
+[node name="BubbleDot114" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1600, -16)
+displace_position = Vector2(1600, 0)
+
+[node name="BubbleDot115" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1632, -16)
+displace_position = Vector2(1632, 0)
+
+[node name="BubbleDot116" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1664, -16)
+displace_position = Vector2(1664, 0)
+
+[node name="BubbleDot117" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1696, -16)
+displace_position = Vector2(1696, 0)
+
+[node name="BubbleDot118" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1728, -16)
+displace_position = Vector2(1728, 0)
+
+[node name="BubbleDot119" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1760, -16)
+displace_position = Vector2(1760, 0)
+
+[node name="BubbleDot120" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1792, -16)
+displace_position = Vector2(1792, 0)
+
+[node name="BubbleDot121" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1824, -16)
+displace_position = Vector2(1824, 0)
+
+[node name="BubbleDot122" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1856, -16)
+displace_position = Vector2(1856, 0)
+
+[node name="BubbleDot123" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1888, -16)
+displace_position = Vector2(1888, 0)
+
+[node name="BubbleDot124" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1920, -16)
+displace_position = Vector2(1920, 0)
+
+[node name="BubbleDot125" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1952, -16)
+displace_position = Vector2(1952, 0)
+
+[node name="BubbleDot126" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(1984, -16)
+displace_position = Vector2(1984, 0)
+
+[node name="BubbleDot127" parent="Arch/FloorLine" instance=ExtResource("4_wx1jw")]
+position = Vector2(2016, -16)
+displace_position = Vector2(2016, 0)
+
+[node name="OuterLine" type="Line2D" parent="Arch"]
+points = PackedVector2Array(3600, 0, 3599.86, -32.1424, 3599.43, -64.2823, 3598.71, -96.417, 3597.7, -128.544, 3596.41, -160.661, 3594.84, -192.765, 3592.97, -224.854, 3590.82, -256.924, 3588.38, -288.974, 3585.66, -321.002, 3582.65, -353.003, 3579.36, -384.977, 3575.78, -416.919, 3571.91, -448.829, 3567.76, -480.703, 3563.33, -512.538, 3558.61, -544.333, 3553.61, -576.084, 3548.32, -607.789, 3542.75, -639.446, 3536.9, -671.052, 3530.77, -702.604, 3524.36, -734.101, 3517.66, -765.538, 3510.69, -796.915, 3503.43, -828.228, 3495.9, -859.476, 3488.08, -890.654, 3479.99, -921.762, 3471.63, -952.796, 3462.98, -983.754, 3454.06, -1014.63, 3444.86, -1045.43, 3435.39, -1076.15, 3425.64, -1106.78, 3415.63, -1137.32, 3405.34, -1167.77, 3394.77, -1198.13, 3383.94, -1228.39, 3372.84, -1258.56, 3361.47, -1288.62, 3349.83, -1318.58, 3337.92, -1348.44, 3325.75, -1378.19, 3313.31, -1407.82, 3300.61, -1437.35, 3287.64, -1466.76, 3274.42, -1496.06, 3260.93, -1525.23, 3247.18, -1554.29, 3233.17, -1583.22, 3218.91, -1612.02, 3204.39, -1640.7, 3189.61, -1669.24, 3174.58, -1697.66, 3159.3, -1725.93, 3143.76, -1754.07, 3127.97, -1782.07, 3111.94, -1809.93, 3095.66, -1837.64, 3079.12, -1865.21, 3062.35, -1892.62, 3045.33, -1919.89, 3028.07, -1947, 3010.56, -1973.96, 2992.82, -2000.76, 2974.83, -2027.4, 2956.61, -2053.88, 2938.16, -2080.2, 2919.47, -2106.35, 2900.54, -2132.33, 2881.39, -2158.15, 2862.01, -2183.79, 2842.39, -2209.25, 2822.56, -2234.54, 2802.49, -2259.65, 2782.21, -2284.59, 2761.7, -2309.34, 2740.97, -2333.9, 2720.02, -2358.28, 2698.86, -2382.47, 2677.48, -2406.47, 2655.88, -2430.28, 2634.08, -2453.9, 2612.07, -2477.32, 2589.84, -2500.54, 2567.41, -2523.57, 2544.78, -2546.39, 2521.94, -2569.01, 2498.91, -2591.42, 2475.67, -2613.63, 2452.23, -2635.63, 2428.6, -2657.42, 2404.78, -2679, 2380.77, -2700.36, 2356.56, -2721.51, 2332.17, -2742.44, 2307.59, -2763.16, 2282.83, -2783.65, 2257.88, -2803.92, 2232.76, -2823.97, 2207.45, -2843.79, 2181.98, -2863.39, 2156.32, -2882.75, 2130.5, -2901.89, 2104.5, -2920.8, 2078.34, -2939.47, 2052.01, -2957.91, 2025.52, -2976.11, 1998.87, -2994.08, 1972.06, -3011.81, 1945.09, -3029.3, 1917.96, -3046.54, 1890.69, -3063.54, 1863.26, -3080.3, 1835.68, -3096.82, 1807.96, -3113.08, 1780.09, -3129.1, 1752.08, -3144.87, 1723.93, -3160.39, 1695.65, -3175.65, 1667.23, -3190.67, 1638.67, -3205.43, 1609.99, -3219.93, 1581.17, -3234.17, 1552.24, -3248.16, 1523.17, -3261.89, 1493.99, -3275.36, 1464.68, -3288.57, 1435.26, -3301.52, 1405.73, -3314.2, 1376.08, -3326.62, 1346.33, -3338.77, 1316.46, -3350.66, 1286.49, -3362.28, 1256.42, -3373.63, 1226.25, -3384.72, 1195.98, -3395.53, 1165.62, -3406.07, 1135.16, -3416.34, 1104.61, -3426.34, 1073.98, -3436.07, 1043.26, -3445.52, 1012.45, -3454.7, 981.565, -3463.6, 950.601, -3472.23, 919.562, -3480.58, 888.449, -3488.65, 857.265, -3496.44, 826.013, -3503.96, 794.695, -3511.19, 763.314, -3518.15, 731.872, -3524.82, 700.372, -3531.22, 668.816, -3537.33, 637.206, -3543.16, 605.546, -3548.71, 573.837, -3553.97, 542.083, -3558.95, 510.285, -3563.65, 478.447, -3568.07, 446.571, -3572.19, 414.659, -3576.04, 382.714, -3579.6, 350.738, -3582.87, 318.735, -3585.86, 286.706, -3588.57, 254.654, -3590.98, 222.582, -3593.11, 190.492, -3594.96, 158.387, -3596.51, 126.269, -3597.78, 94.1418, -3598.77, 62.0066, -3599.47, 29.8664, -3599.88, -2.27608, -3600, -34.4184, -3599.84, -66.558, -3599.38, -98.6923, -3598.65, -130.819, -3597.62, -162.935, -3596.31, -195.038, -3594.71, -227.125, -3592.83, -259.194, -3590.66, -291.243, -3588.2, -323.269, -3585.46, -355.268, -3582.43, -387.24, -3579.11, -419.18, -3575.51, -451.087, -3571.63, -482.958, -3567.46, -514.791, -3563, -546.583, -3558.26, -578.331, -3553.24, -610.033, -3547.94, -641.686, -3542.35, -673.288, -3536.48, -704.836, -3530.33, -736.329, -3523.89, -767.762, -3517.18, -799.135, -3510.18, -830.443, -3502.91, -861.686, -3495.35, -892.859, -3487.52, -923.962, -3479.41, -954.991, -3471.02, -985.944, -3462.36, -1016.82, -3453.42, -1047.61, -3444.2, -1078.32, -3434.71, -1108.94, -3424.94, -1139.48, -3414.91, -1169.92, -3404.6, -1200.28, -3394.02, -1230.53, -3383.16, -1260.69, -3372.04, -1290.74, -3360.65, -1320.7, -3348.99, -1350.55, -3337.07, -1380.29, -3324.88, -1409.92, -3312.42, -1439.44, -3299.7, -1468.84, -3286.72, -1498.13, -3273.47, -1527.3, -3259.96, -1556.34, -3246.2, -1585.26, -3232.17, -1614.06, -3217.89, -1642.72, -3203.35, -1671.26, -3188.56, -1699.66, -3173.51, -1727.93, -3158.21, -1756.06, -3142.65, -1784.05, -3126.85, -1811.89, -3110.79, -1839.6, -3094.49, -1867.15, -3077.94, -1894.56, -3061.15, -1921.81, -3044.11, -1948.92, -3026.83, -1975.86, -3009.31, -2002.65, -2991.55, -2029.28, -2973.55, -2055.75, -2955.31, -2082.06, -2936.84, -2108.2, -2918.14, -2134.17, -2899.2, -2159.97, -2880.03, -2185.59, -2860.63, -2211.05, -2841, -2236.33, -2821.14, -2261.43, -2801.06, -2286.34, -2780.76, -2311.08, -2760.24, -2335.63, -2739.49, -2360, -2718.53, -2384.18, -2697.35, -2408.17, -2675.96, -2431.96, -2654.35, -2455.56, -2632.53, -2478.97, -2610.5, -2502.18, -2588.26, -2525.19, -2565.82, -2548, -2543.17, -2570.6, -2520.32, -2593, -2497.27, -2615.2, -2474.02, -2637.18, -2450.57, -2658.96, -2426.92, -2680.52, -2403.09, -2701.87, -2379.06, -2723, -2354.84, -2743.92, -2330.43, -2764.61, -2305.84, -2785.09, -2281.07, -2805.35, -2256.11, -2825.38, -2230.97, -2845.19, -2205.66, -2864.77, -2180.16, -2884.12, -2154.5, -2903.24, -2128.66, -2922.13, -2102.66, -2940.79, -2076.48, -2959.21, -2050.14, -2977.39, -2023.64, -2995.34, -1996.98, -3013.05, -1970.15, -3030.52, -1943.17, -3047.75, -1916.04, -3064.74, -1888.75, -3081.48, -1861.31, -3097.98, -1833.72, -3114.23, -1805.99, -3130.23, -1778.11, -3145.98, -1750.09, -3161.48, -1721.94, -3176.73, -1693.64, -3191.72, -1665.21, -3206.46, -1636.65, -3220.95, -1607.95, -3235.17, -1579.13, -3249.14, -1550.18, -3262.86, -1521.11, -3276.31, -1491.92, -3289.5, -1462.61, -3302.42, -1433.18, -3315.09, -1403.63, -3327.49, -1373.98, -3339.62, -1344.22, -3351.49, -1314.34, -3363.09, -1284.37, -3374.43, -1254.29, -3385.49, -1224.11, -3396.29, -1193.84, -3406.81, -1163.46, -3417.06, -1133, -3427.04, -1102.45, -3436.75, -1071.8, -3446.18, -1041.08, -3455.34, -1010.27, -3464.22, -979.375, -3472.83, -948.406, -3481.16, -917.361, -3489.21, -886.243, -3496.98, -855.054, -3504.48, -823.798, -3511.69, -792.475, -3518.63, -761.09, -3525.28, -729.643, -3531.66, -698.139, -3537.75, -666.579, -3543.56, -634.966, -3549.09, -603.302, -3554.33, -571.59, -3559.29, -539.833, -3563.97, -508.032, -3568.37, -476.191, -3572.48, -444.312, -3576.3, -412.398, -3579.84, -380.45, -3583.09, -348.473, -3586.06, -316.467, -3588.75, -284.437, -3591.14, -252.383, -3593.25, -220.31, -3595.08, -188.219, -3596.61, -156.113, -3597.86, -123.995, -3598.83, -91.8664, -3599.5, -59.7308, -3599.89, 0)
+default_color = Color(0.141176, 0.141176, 0.141176, 1)
+
+[node name="GroundTilemapLayer" parent="Arch" instance=ExtResource("7_6u58k")]
+tile_map_data = PackedByteArray("AAD+/wAAAAABAAAAAAD9/wAAAAABAAAAAAD8/wAAAAABAAAAAAD7/wAAAAABAAAAAAD6/wAAAAABAAAAAAD5/wAAAAABAAAAAAD4/wAAAAABAAAAAAD3/wAAAAABAAAAAAD2/wAAAAABAAAAAAD1/wAAAAABAAAAAAD0/wAAAAABAAAAAADz/wAAAAABAAAAAADy/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAANAAEAAAABAAAAAAAMAAEAAAABAAAAAAALAAEAAAABAAAAAAAKAAEAAAABAAAAAAAJAAEAAAABAAAAAAAIAAEAAAABAAAAAAAHAAEAAAABAAAAAAAGAAEAAAABAAAAAAAFAAEAAAABAAAAAAAEAAEAAAABAAAAAAADAAEAAAABAAAAAAACAAEAAAABAAAAAAABAAEAAAABAAAAAAAAAAEAAAABAAAAAAD//wEAAAABAAAAAAD+/wEAAAABAAAAAAD9/wEAAAABAAAAAAD8/wEAAAABAAAAAAD7/wEAAAABAAAAAAD6/wEAAAABAAAAAAD5/wEAAAABAAAAAAD4/wEAAAABAAAAAAD3/wEAAAABAAAAAAD2/wEAAAABAAAAAAD1/wEAAAABAAAAAAD0/wEAAAABAAAAAADz/wEAAAABAAAAAADy/wEAAAABAAAAAADy/wIAAAAAAAAAAADz/wIAAAAAAAAAAAD0/wIAAAAAAAAAAAD1/wIAAAAAAAAAAAD2/wIAAAAAAAAAAAD3/wIAAAAAAAAAAAD4/wIAAAAAAAAAAAD5/wIAAAAAAAAAAAD6/wIAAAAAAAAAAAD7/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAAAAAAAAALAAIAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAIAAAAAAAAAAAA=")
+
+[node name="EnterAnimation" type="AnimationPlayer" parent="."]
+process_mode = 3
+root_node = NodePath("../Arch/FloorLine/BubbleDot65")
+libraries = {
+&"": SubResource("AnimationLibrary_eq7jn")
+}
+autoplay = "main"
+
+[node name="Bleb" parent="." instance=ExtResource("8_eq7jn")]
+position = Vector2(2, -101)

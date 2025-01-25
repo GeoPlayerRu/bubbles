@@ -12,4 +12,5 @@ func _on_attack_timer_timeout() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print(body)
+	if body is Enemy:
+		body.hp -= 1

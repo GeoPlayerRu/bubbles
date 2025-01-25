@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://da8ugb1qr2mkt"]
 
 [ext_resource type="Script" uid="uid://drytwd0axke2j" path="res://scripts/gui/main_menu/play_button.gd" id="1_jl0ue"]
-[ext_resource type="Script" uid="uid://q3i2t1t3p47v" path="res://scripts/globals/audio_service_provider.gd" id="1_xbu81"]
 [ext_resource type="Script" uid="uid://loa0mj3ymi0p" path="res://scripts/gui/main_menu/jiggle_button.gd" id="2_yx4et"]
+[ext_resource type="PackedScene" uid="uid://cgljog6d1eprj" path="res://scenes/audio_provider.tscn" id="3_yx4et"]
 
 [sub_resource type="GDScript" id="GDScript_yx4et"]
 script/source = "extends Node
@@ -40,5 +40,4 @@ button_pressed = true
 text = "Переключить блёбовость"
 script = ExtResource("2_yx4et")
 
-[node name="AudioProvider" type="Node" parent="."]
-script = ExtResource("1_xbu81")
+[node name="AudioProvider" parent="." instance=ExtResource("3_yx4et")]

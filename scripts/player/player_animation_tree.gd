@@ -17,14 +17,17 @@ func _physics_process(_delta: float) -> void:
 	set('parameters/conditions/falling',falling)
 	set('parameters/conditions/ground',prev_falling == true and prev_grounded == false and grounded)
 	
-	if state_machine.get_current_state_name() == "Move" and state_machine.get_current_state().jumped:
+	if state_machine.get_current_state_name() == "Move" and ((player.velocity.y < 0 and playback.get_current_node() != 'jump') or state_machine.get_current_state().jumped):
 		playback.start('jump')
 	
 	if state_machine.get_current_state_name() == "Dash" and playback.get_current_node() != 'dash':
 		playback.start('dash')
 	
 	if state_machine.get_current_state_name() == "Attack" and playback.get_current_node() != 'attack':
-		set('parameters/attack/blend_position',Input.get_vector("ch_left",'ch_right','ch_down','ch_up'))
+		var vector = Input.get_vector("ch_left",'ch_right','ch_down','ch_up')
+		if vector == Vector2.ZERO:
+			vector = Vector2(player.axis_cache,0)
+		set('parameters/attack/blend_position',vector)
 		playback.start('attack')
 		
 	

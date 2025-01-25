@@ -19,6 +19,7 @@ config/icon="res://sprites/icon.svg"
 
 AudioService="*res://scripts/globals/audio_service.gd"
 GlobalVariables="*res://scripts/globals/global_variables.gd"
+SceneHandler="*res://scripts/globals/scene_handler.gd"
 
 [display]
 

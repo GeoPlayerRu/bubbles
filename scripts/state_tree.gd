@@ -10,6 +10,10 @@ func _ready() -> void:
 	for child in get_children():
 		states[child.name] = child
 		child.tree = self
+	
+	
+	current_state.active = true
+	current_state._enter({})
 
 func _process(delta: float) -> void:
 	current_state._update(delta)
@@ -24,8 +28,10 @@ func _physics_process(delta: float) -> void:
 func transit(to : String,message : Dictionary = {}) -> void:
 	subroutine = null
 	current_state._exit()
+	current_state.active = false
 	current_state = states[to]
 	current_state._enter(message)
+	current_state.active = true
 	
 
 func get_current_state() -> State:
