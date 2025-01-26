@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dpwvw7ahntwnh"]
+[gd_scene load_steps=22 format=4 uid="uid://dpwvw7ahntwnh"]
 
 [ext_resource type="PackedScene" uid="uid://dvd014bl2s1ea" path="res://scenes/background.tscn" id="1_71r36"]
 [ext_resource type="PackedScene" uid="uid://chruxdkxswxvw" path="res://scenes/player_character.tscn" id="2_71r36"]
@@ -6,12 +6,14 @@
 [ext_resource type="Script" uid="uid://bwr702vfv3xg6" path="res://scripts/bubble/bubble_line.gd" id="5_eq7jn"]
 [ext_resource type="PackedScene" uid="uid://cosckn42gn5ey" path="res://scenes/bubble_dot.tscn" id="6_tnsns"]
 [ext_resource type="PackedScene" uid="uid://b8aiqf7ypwqdh" path="res://scenes/ground_tilemap.tscn" id="7_6u58k"]
+[ext_resource type="AudioStream" uid="uid://df1qslfn8dadk" path="res://audio/checkpoint.mp3" id="7_tnsns"]
 [ext_resource type="FontFile" uid="uid://3a4vwmcvg7dv" path="res://font/Roboto_Condensed/static/RobotoCondensed-Medium.ttf" id="8_06crg"]
 [ext_resource type="PackedScene" uid="uid://dgnnmfv3fnkq1" path="res://scenes/bleb.tscn" id="8_eq7jn"]
 [ext_resource type="PackedScene" uid="uid://d3jt454tyd457" path="res://scenes/beam_of_light.tscn" id="9_2jwjg"]
 [ext_resource type="Texture2D" uid="uid://bjtmbw7qi3l87" path="res://sprites/beam/doorway.png" id="10_5k47o"]
 [ext_resource type="PackedScene" uid="uid://c8hpg010watcy" path="res://scenes/finish_area.tscn" id="12_vqsvp"]
 [ext_resource type="PackedScene" uid="uid://bmnpcyihns8u3" path="res://scenes/bomboclat_arena.tscn" id="12_xpg5r"]
+[ext_resource type="PackedScene" uid="uid://cgljog6d1eprj" path="res://scenes/audio_provider.tscn" id="14_6alqc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_71r36"]
 
@@ -185,6 +187,20 @@ tracks/2/keys = {
 "values": [{
 "args": [],
 "method": &"queue_free"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../AudioProvider")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [ExtResource("7_tnsns")],
+"method": &"request"
 }]
 }
 
@@ -3135,5 +3151,7 @@ change_scn = ExtResource("12_xpg5r")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea"]
 position = Vector2(76, -105)
 shape = SubResource("RectangleShape2D_5k47o")
+
+[node name="AudioProvider" parent="." instance=ExtResource("14_6alqc")]
 
 [connection signal="death_animation_ended" from="Bleb" to="CinematicAnimation" method="play" binds= ["after_death"]]

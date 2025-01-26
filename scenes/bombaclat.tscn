@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://c3gg4vm3rn6ev"]
+[gd_scene load_steps=91 format=3 uid="uid://c3gg4vm3rn6ev"]
 
 [ext_resource type="Script" uid="uid://csbygnphebdu8" path="res://scripts/boss2/bombaclat.gd" id="1_dtmye"]
 [ext_resource type="Script" uid="uid://cc2i7sv5fwfl4" path="res://scripts/enemy.gd" id="1_heft1"]
@@ -70,6 +70,7 @@
 [ext_resource type="Script" uid="uid://dp3wcxj0d08p0" path="res://scripts/boss2/boss2_animtree.gd" id="64_ttr5g"]
 [ext_resource type="Script" uid="uid://rfbnhs8jlbrf" path="res://scripts/boss2/boss2_teleport.gd" id="66_dtmye"]
 [ext_resource type="Script" uid="uid://d4ksufl8b1sk" path="res://scripts/boss2/boss2_attack.gd" id="67_ttr5g"]
+[ext_resource type="AudioStream" uid="uid://bxmubofti8kom" path="res://audio/cartoon-bubble-pop-01-.mp3" id="71_qe0ch"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qe0ch"]
 shader = ExtResource("1_y2qpr")
@@ -126,6 +127,26 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("8_vn1rv"), ExtResource("9_vflq4"), ExtResource("10_xsnlq"), ExtResource("11_xlbnn"), ExtResource("12_hk4c3"), ExtResource("13_yletx"), ExtResource("14_pkkia"), ExtResource("15_0qkab"), ExtResource("16_bg6i8"), ExtResource("17_as13c"), ExtResource("18_5ea70"), ExtResource("19_codam"), ExtResource("20_lk1w4"), ExtResource("21_kw3kx")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_2ch1g"]
@@ -278,6 +299,9 @@ metadata/_custom_type_script = ExtResource("64_78l8u")
 [node name="Attack" type="Node" parent="StateTree"]
 script = ExtResource("67_ttr5g")
 metadata/_custom_type_script = ExtResource("64_78l8u")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("71_qe0ch")
 
 [connection signal="death" from="." to="AnimationTree" method="_on_bombaclat_death"]
 [connection signal="recieve_damage" from="." to="StateTree/Teleport" method="_on_bombaclat_recieve_damage"]

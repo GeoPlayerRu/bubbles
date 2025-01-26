@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://dgnnmfv3fnkq1"]
+[gd_scene load_steps=105 format=3 uid="uid://dgnnmfv3fnkq1"]
 
 [ext_resource type="Script" uid="uid://cc2i7sv5fwfl4" path="res://scripts/enemy.gd" id="1_53c42"]
 [ext_resource type="Shader" uid="uid://4hnh1b0l5ree" path="res://shaders/flash.gdshader" id="1_f06k0"]
@@ -79,6 +79,7 @@
 [ext_resource type="Script" uid="uid://dwlpnnunulb2r" path="res://scripts/boss1/boss1_hitbox.gd" id="74_p55i8"]
 [ext_resource type="Script" uid="uid://bbemibuka00ab" path="res://scripts/boss1/boss_smash.gd" id="75_inayf"]
 [ext_resource type="Script" uid="uid://uypggti40mem" path="res://scripts/boss1/boss_death.gd" id="78_wd8vs"]
+[ext_resource type="AudioStream" uid="uid://bxmubofti8kom" path="res://audio/cartoon-bubble-pop-01-.mp3" id="80_ywwrr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wd8vs"]
 shader = ExtResource("1_f06k0")
@@ -98,10 +99,22 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("1_k22kk")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_sx5tq"]
 resource_name = "death"
-length = 1.3
+length = 1.5
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -114,6 +127,32 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("22_28hqn"), ExtResource("23_53c42"), ExtResource("24_asc2m"), ExtResource("25_blcar"), ExtResource("26_2ijj8"), ExtResource("27_jg70j"), ExtResource("28_ti0e0"), ExtResource("29_g5k38"), ExtResource("30_esi46"), ExtResource("31_i8t02"), ExtResource("32_0eci4"), ExtResource("33_crmff"), ExtResource("34_dlwsc"), ExtResource("35_g82cy"), ExtResource("36_muqxa"), ExtResource("37_u0oso"), ExtResource("38_b8r8m"), ExtResource("39_mpl36"), ExtResource("40_qw7vc"), ExtResource("41_wodlv"), ExtResource("42_ikif0"), ExtResource("43_aao3s"), ExtResource("44_xwqvp"), ExtResource("45_eh4bc"), ExtResource("46_ot112"), ExtResource("47_oes08")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_bvw48"]
@@ -365,6 +404,9 @@ script = ExtResource("74_p55i8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-2, -36)
 shape = SubResource("CircleShape2D_gl6c0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("80_ywwrr")
 
 [connection signal="death" from="." to="AnimationTree" method="_on_bleb_death"]
 [connection signal="death" from="." to="StateTree/Death" method="_on_bleb_death"]

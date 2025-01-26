@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name Enemy
 
+const damage_sound = preload("res://audio/boss damage.mp3")
+
 signal death
 signal death_animation_ended
 signal recieve_damage
@@ -23,6 +25,7 @@ func take_damage(amount):
 	flash_tween = create_tween()
 	flash_tween.tween_method(set_flash,1.0,0.0,0.1)
 	recieve_damage.emit()
+	AudioService.play(damage_sound)
 	
 	if hp <= 0:
 		death.emit()

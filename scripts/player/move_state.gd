@@ -13,6 +13,7 @@ var subroutine : bool = false
 
 func _enter(message):
 	subroutine = message.has("subroutine")
+	$"../../Sprite2D".flip_h = false
 
 func _physics_update(delta):
 	if player.can_move:
