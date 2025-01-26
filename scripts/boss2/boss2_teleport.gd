@@ -2,6 +2,12 @@ extends State
 
 @onready var data := $"../.."
 
+func _enter(_message):
+	data.invulnerable = true
+
+func _exit():
+	data.invulnerable = false
+
 func _on_bombaclat_recieve_damage() -> void:
 	if not active:
 		tree.transit('Teleport')

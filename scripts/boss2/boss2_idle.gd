@@ -3,7 +3,7 @@ extends State
 var die
 @onready var timer := $Timer
 
-func _enter(message):
+func _enter(_message):
 	timer.start()
 
 func _exit():

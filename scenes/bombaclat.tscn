@@ -68,8 +68,8 @@
 [ext_resource type="Script" uid="uid://cc3diaa6434je" path="res://scripts/state.gd" id="64_78l8u"]
 [ext_resource type="Script" uid="uid://drsue0qxi83in" path="res://scripts/boss2/boss2_idle.gd" id="64_kfkwm"]
 [ext_resource type="Script" uid="uid://dp3wcxj0d08p0" path="res://scripts/boss2/boss2_animtree.gd" id="64_ttr5g"]
-[ext_resource type="Script" path="res://scripts/boss2/boss2_teleport.gd" id="66_dtmye"]
-[ext_resource type="Script" path="res://scripts/boss2/boss2_attack.gd" id="67_ttr5g"]
+[ext_resource type="Script" uid="uid://rfbnhs8jlbrf" path="res://scripts/boss2/boss2_teleport.gd" id="66_dtmye"]
+[ext_resource type="Script" uid="uid://d4ksufl8b1sk" path="res://scripts/boss2/boss2_attack.gd" id="67_ttr5g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qe0ch"]
 shader = ExtResource("1_y2qpr")
@@ -78,24 +78,6 @@ shader_parameter/amount = null
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ttr5g"]
 radius = 47.0
 height = 158.0
-
-[sub_resource type="Animation" id="Animation_2ch1g"]
-resource_name = "idle"
-length = 0.60001
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_gavdl"), ExtResource("3_c28ni"), ExtResource("4_woq5e"), ExtResource("5_i7tm6"), ExtResource("6_exi5o"), ExtResource("7_17qw3")]
-}
 
 [sub_resource type="Animation" id="Animation_dhbhw"]
 length = 0.001
@@ -110,6 +92,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("2_gavdl")]
+}
+
+[sub_resource type="Animation" id="Animation_pkkia"]
+resource_name = "attack"
+length = 0.60001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("34_vn1rv"), ExtResource("35_vflq4"), ExtResource("36_xsnlq"), ExtResource("37_xlbnn"), ExtResource("38_hk4c3"), ExtResource("39_yletx")]
 }
 
 [sub_resource type="Animation" id="Animation_kfkwm"]
@@ -127,6 +126,24 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("8_vn1rv"), ExtResource("9_vflq4"), ExtResource("10_xsnlq"), ExtResource("11_xlbnn"), ExtResource("12_hk4c3"), ExtResource("13_yletx"), ExtResource("14_pkkia"), ExtResource("15_0qkab"), ExtResource("16_bg6i8"), ExtResource("17_as13c"), ExtResource("18_5ea70"), ExtResource("19_codam"), ExtResource("20_lk1w4"), ExtResource("21_kw3kx")]
+}
+
+[sub_resource type="Animation" id="Animation_2ch1g"]
+resource_name = "idle"
+length = 0.60001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_gavdl"), ExtResource("3_c28ni"), ExtResource("4_woq5e"), ExtResource("5_i7tm6"), ExtResource("6_exi5o"), ExtResource("7_17qw3")]
 }
 
 [sub_resource type="Animation" id="Animation_dtmye"]
@@ -161,23 +178,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("28_mamun"), ExtResource("29_cy6f2"), ExtResource("30_lxbll"), ExtResource("31_0cnnx"), ExtResource("32_b05o1"), ExtResource("33_78l8u")]
-}
-
-[sub_resource type="Animation" id="Animation_pkkia"]
-resource_name = "attack"
-length = 0.60001
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("34_vn1rv"), ExtResource("35_vflq4"), ExtResource("36_xsnlq"), ExtResource("37_xlbnn"), ExtResource("38_hk4c3"), ExtResource("39_yletx")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y2qpr"]
@@ -243,7 +243,7 @@ hp = 6
 metadata/_custom_type_script = ExtResource("1_heft1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-use_parent_material = true
+material = SubResource("ShaderMaterial_qe0ch")
 texture = ExtResource("2_gavdl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -269,7 +269,7 @@ script = ExtResource("64_kfkwm")
 metadata/_custom_type_script = ExtResource("64_78l8u")
 
 [node name="Timer" type="Timer" parent="StateTree/Idle"]
-wait_time = 1.5
+wait_time = 2.0
 
 [node name="Teleport" type="Node" parent="StateTree"]
 script = ExtResource("66_dtmye")

@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://q3i2t1t3p47v" path="res://scripts/globals/audio_service_provider.gd" id="1_vdhqy"]
 
 [node name="AudioProvider" type="Node"]
+process_mode = 3
 script = ExtResource("1_vdhqy")

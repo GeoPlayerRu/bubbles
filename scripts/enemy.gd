@@ -10,12 +10,13 @@ signal recieve_damage
 @export var hp := 3
 
 var flash_tween : Tween
+var invulnerable : bool
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func take_damage(amount):
-	if hp <= 0: return
+	if hp <= 0 or invulnerable: return
 	hp -= amount
 	if flash_tween:
 		flash_tween.kill()
@@ -25,7 +26,7 @@ func take_damage(amount):
 	
 	if hp <= 0:
 		death.emit()
-		GlobalVariables.saved_world += 1
 
 func set_flash(amount):
 	material.set_shader_parameter("amount",amount)
+	

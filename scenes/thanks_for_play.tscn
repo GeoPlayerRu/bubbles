@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://djqfnjy2n33gm"]
+
+[ext_resource type="FontFile" uid="uid://q57gfjxqmstj" path="res://font/Roboto_Condensed/static/RobotoCondensed-Black.ttf" id="1_84gyn"]
+[ext_resource type="Script" uid="uid://bnspbintiverw" path="res://scripts/exit_button.gd" id="2_w013j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w013j"]
+font = ExtResource("1_84gyn")
+font_size = 128
+
+[node name="ThanksForPlay" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Спасибо за игру!
+да, это конец"
+label_settings = SubResource("LabelSettings_w013j")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_84gyn")
+theme_override_font_sizes/font_size = 128
+text = "Выйти"
+script = ExtResource("2_w013j")
