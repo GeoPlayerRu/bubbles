@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://b2hhb3kjyonah"]
+[gd_scene load_steps=2 format=3 uid="uid://b2hhb3kjyonah"]
+
+[ext_resource type="PackedScene" uid="uid://dvd014bl2s1ea" path="res://scenes/background.tscn" id="1_tjjxi"]
 
 [node name="world2" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_tjjxi")]
+
+[editable path="Background"]

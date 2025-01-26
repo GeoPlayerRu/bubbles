@@ -309,7 +309,7 @@ radius = 135.033
 material = SubResource("ShaderMaterial_wd8vs")
 collision_layer = 4
 script = ExtResource("1_53c42")
-hp = 8
+hp = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 use_parent_material = true

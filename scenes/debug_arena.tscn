@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cs5xpmqy6j3bv"]
+[gd_scene load_steps=12 format=4 uid="uid://cs5xpmqy6j3bv"]
 
 [ext_resource type="PackedScene" uid="uid://chruxdkxswxvw" path="res://scenes/player_character.tscn" id="1_3sxe6"]
 [ext_resource type="PackedScene" uid="uid://dvd014bl2s1ea" path="res://scenes/background.tscn" id="1_5ctbd"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://bwr702vfv3xg6" path="res://scripts/bubble/bubble_line.gd" id="3_wfh33"]
 [ext_resource type="Shader" uid="uid://bkjvt0keujpaa" path="res://shaders/bubble_shine2.gdshader" id="4_a4nc4"]
 [ext_resource type="Script" uid="uid://pbft0hn0r72n" path="res://scripts/bubble/bubble_polygon.gd" id="4_twxwl"]
-[ext_resource type="PackedScene" uid="uid://dgnnmfv3fnkq1" path="res://scenes/bleb.tscn" id="10_0do7f"]
 [ext_resource type="PackedScene" uid="uid://b8aiqf7ypwqdh" path="res://scenes/ground_tilemap.tscn" id="10_gljxn"]
 [ext_resource type="PackedScene" uid="uid://cgljog6d1eprj" path="res://scenes/audio_provider.tscn" id="11_gljxn"]
 
@@ -45,9 +44,6 @@ dot_cache = [NodePath("../../BubbleFill/InnerLine/BubbleDot"), NodePath("../../B
 radius = 2048.0
 thickness = 768.0
 steps = 16
-
-[node name="Bleb" parent="." instance=ExtResource("10_0do7f")]
-position = Vector2(978, -151)
 
 [node name="AudioProvider" parent="." instance=ExtResource("11_gljxn")]
 

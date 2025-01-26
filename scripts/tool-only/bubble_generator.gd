@@ -47,7 +47,7 @@ func generate_bubble():
 		
 		var angle = -(float(i)/float(dot_count))*PI
 		indot.global_position = Vector2(cos(angle)*(radius-dotradius),sin(angle)*(radius-dotradius))
-		indot.displace_position = Vector2(cos(angle)*radius,sin(angle)*radius)
+		indot.displace_position = indot.to_local(Vector2(cos(angle)*radius,sin(angle)*radius))
 	
 	#floor
 	var floor_folder = Node.new()
@@ -62,7 +62,7 @@ func generate_bubble():
 		indot.set_owner(get_tree().edited_scene_root)
 		
 		indot.global_position = Vector2(-radius+2*i*dotradius,-dotradius)
-		indot.displace_position = Vector2(indot.global_position.x,indot.global_position.y+dotradius)
+		indot.displace_position = indot.to_local(Vector2(indot.global_position.x,indot.global_position.y+dotradius))
 	
 	#outer halfcircle
 	var outer_folder = Node.new()
@@ -79,5 +79,5 @@ func generate_bubble():
 		
 		var angle = -(float(i)/float(outer_count))*PI
 		indot.global_position = Vector2(cos(angle)*(radius+thickness+dotradius),sin(angle)*(radius+thickness+dotradius))
-		indot.displace_position = Vector2(cos(angle)*(radius+thickness),sin(angle)*(radius+thickness))
+		indot.displace_position = indot.to_local(Vector2(cos(angle)*(radius+thickness),sin(angle)*(radius+thickness)))
 	

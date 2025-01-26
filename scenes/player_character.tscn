@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://chruxdkxswxvw"]
+[gd_scene load_steps=113 format=3 uid="uid://chruxdkxswxvw"]
 
 [ext_resource type="Script" uid="uid://glr7i7ef7jkl" path="res://scripts/player/player_controller.gd" id="1_6r27q"]
 [ext_resource type="Texture2D" uid="uid://brjgtrl5syrgp" path="res://sprites/player/Idle/Idle0001.png" id="2_2vmgx"]
@@ -58,12 +58,17 @@
 [ext_resource type="Texture2D" uid="uid://b5o5yi5p7fh55" path="res://sprites/player/Hit_Down/Hit_Down0004.png" id="55_kflra"]
 [ext_resource type="Texture2D" uid="uid://c5smvnnlc2uov" path="res://sprites/player/Hit_Down/Hit_Down0005.png" id="56_rco7t"]
 [ext_resource type="Texture2D" uid="uid://ceugx17bnv5if" path="res://sprites/player/Hit_Down/Hit_Down0006.png" id="57_0f0ye"]
+[ext_resource type="Texture2D" uid="uid://cwi62flpu0d86" path="res://sprites/player/Death/Death0001.png" id="58_cylkl"]
+[ext_resource type="Texture2D" uid="uid://cpnfnf2pcl1n5" path="res://sprites/player/Death/Death0002.png" id="59_ex8xo"]
 [ext_resource type="Script" uid="uid://dxm6uwlx0x5g0" path="res://scripts/state_tree.gd" id="59_mkfij"]
 [ext_resource type="Script" uid="uid://cc3diaa6434je" path="res://scripts/state.gd" id="60_8iu3a"]
 [ext_resource type="Script" uid="uid://cvxt36oo2j8ej" path="res://scripts/player/move_state.gd" id="60_35ems"]
+[ext_resource type="Texture2D" uid="uid://cyqu0ly3ry1ql" path="res://sprites/player/Death/Death0003.png" id="60_77flt"]
+[ext_resource type="Texture2D" uid="uid://ddwyq2mx11o4i" path="res://sprites/player/Death/Death0004.png" id="61_o026x"]
 [ext_resource type="Script" uid="uid://dqt3bgjsyxnts" path="res://scripts/player/offwall_state.gd" id="62_hi0k7"]
 [ext_resource type="Script" uid="uid://o8gcnpy7l8au" path="res://scripts/player/dash_state.gd" id="63_t0km8"]
 [ext_resource type="Script" uid="uid://dovmpcs8yskoc" path="res://scripts/player/attack_state.gd" id="64_t0km8"]
+[ext_resource type="Script" uid="uid://c35ri5dybmuds" path="res://scripts/player/death_state.gd" id="65_gqv7s"]
 [ext_resource type="Texture2D" uid="uid://ddc4snfbeapw7" path="res://sprites/heart.png" id="65_tg4u4"]
 [ext_resource type="Script" uid="uid://bbqyef7uel78h" path="res://scripts/hp_bar.gd" id="66_jstqe"]
 
@@ -179,6 +184,23 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cbpnw"]
+resource_name = "death"
+length = 0.40001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("58_cylkl"), ExtResource("59_ex8xo"), ExtResource("60_77flt"), ExtResource("61_o026x")]
 }
 
 [sub_resource type="Animation" id="Animation_hmtb3"]
@@ -496,6 +518,7 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_s7f3b"),
 &"dash": SubResource("Animation_75vpc"),
+&"death": SubResource("Animation_cbpnw"),
 &"fall": SubResource("Animation_hmtb3"),
 &"falling": SubResource("Animation_65uv7"),
 &"grounding": SubResource("Animation_d6jif"),
@@ -531,6 +554,9 @@ blend_point_3/pos = Vector2(0, -1)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r0s7i"]
 animation = &"dash"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cylkl"]
+animation = &"death"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m20jk"]
 animation = &"fall"
@@ -589,6 +615,8 @@ states/attack/node = SubResource("AnimationNodeBlendSpace2D_14bhd")
 states/attack/position = Vector2(170, 264)
 states/dash/node = SubResource("AnimationNodeAnimation_r0s7i")
 states/dash/position = Vector2(473, 189)
+states/death/node = SubResource("AnimationNodeAnimation_cylkl")
+states/death/position = Vector2(660, 189)
 states/fall/node = SubResource("AnimationNodeAnimation_m20jk")
 states/fall/position = Vector2(379, -47)
 states/falling/node = SubResource("AnimationNodeAnimation_vjh3r")
@@ -600,7 +628,7 @@ states/idle/position = Vector2(95, 101)
 states/jump/node = SubResource("AnimationNodeAnimation_dpw1b")
 states/jump/position = Vector2(124, -17)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_286ip"), "dash", "idle", SubResource("AnimationNodeStateMachineTransition_eebr4"), "grounding", "idle", SubResource("AnimationNodeStateMachineTransition_fx1yi"), "fall", "falling", SubResource("AnimationNodeStateMachineTransition_1hs58"), "falling", "grounding", SubResource("AnimationNodeStateMachineTransition_oi1jg"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_pkxds"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_gm7m8"), "idle", "fall", SubResource("AnimationNodeStateMachineTransition_po4r1"), "fall", "grounding", SubResource("AnimationNodeStateMachineTransition_mkfij")]
-graph_offset = Vector2(-356, -21)
+graph_offset = Vector2(50, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tg4u4"]
 size = Vector2(181, 140)
@@ -690,6 +718,9 @@ metadata/_custom_type_script = ExtResource("60_8iu3a")
 wait_time = 0.6
 one_shot = true
 
+[node name="Death" type="Node" parent="StateMachine"]
+script = ExtResource("65_gqv7s")
+
 [node name="RightHitbox" type="Area2D" parent="."]
 position = Vector2(-90.5, -74.5)
 collision_layer = 0
@@ -742,6 +773,7 @@ rounded = true
 texture_progress = ExtResource("65_tg4u4")
 script = ExtResource("66_jstqe")
 
+[connection signal="animation_finished" from="AnimationTree" to="StateMachine/Death" method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="StateMachine/OffwallJump/OffWallTimer" to="StateMachine/OffwallJump" method="_on_off_wall_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Dash/DashTimer" to="StateMachine/Dash" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Attack/AttackTimer" to="StateMachine/Attack" method="_on_attack_timer_timeout"]

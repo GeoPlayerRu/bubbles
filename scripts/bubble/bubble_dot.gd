@@ -27,7 +27,7 @@ func update_displace():
 	if tween:
 		tween.kill()
 	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
-	tween.tween_property(self,"global_position",start_position*(1-displace_amount)+displace_position*displace_amount,1)
+	tween.tween_property(self,"global_position",start_position*(1-displace_amount)+(start_position+displace_position)*displace_amount,1)
 
 func _on_body_entered(_body: Node2D) -> void:
 	if overlapping_body_count == 0:

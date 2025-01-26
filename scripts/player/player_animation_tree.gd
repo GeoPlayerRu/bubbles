@@ -23,6 +23,9 @@ func _physics_process(_delta: float) -> void:
 	if state_machine.get_current_state_name() == "Dash" and playback.get_current_node() != 'dash':
 		playback.start('dash')
 	
+	if state_machine.get_current_state_name() == "Death" and playback.get_current_node() != 'death':
+		playback.start('death')
+	
 	if state_machine.get_current_state_name() == "Attack" and playback.get_current_node() != 'attack':
 		var vector = Input.get_vector("ch_left",'ch_right','ch_down','ch_up')
 		if vector == Vector2.ZERO:

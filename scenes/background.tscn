@@ -18,6 +18,11 @@ position = Vector2(0, -1261)
 scale = Vector2(3, 3)
 texture = ExtResource("1_jougr")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Background"]
+position = Vector2(0, -4501)
+scale = Vector2(3, 3)
+texture = ExtResource("1_jougr")
+
 [node name="Second Layer" type="Parallax2D" parent="."]
 modulate = Color(0.85, 0.85, 0.85, 1)
 scroll_scale = Vector2(0.25, 1)
@@ -30,6 +35,11 @@ position = Vector2(0, -1261)
 scale = Vector2(3, 3)
 texture = ExtResource("2_cbsqf")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Second Layer"]
+position = Vector2(0, -4501)
+scale = Vector2(3, 3)
+texture = ExtResource("2_cbsqf")
+
 [node name="Foreground" type="Parallax2D" parent="."]
 modulate = Color(0.85, 0.85, 0.85, 1)
 scroll_offset = Vector2(640, 360)
@@ -38,5 +48,10 @@ repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground"]
 position = Vector2(0, -1261)
+scale = Vector2(3, 3)
+texture = ExtResource("3_wisxt")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Foreground"]
+position = Vector2(0, -4501)
 scale = Vector2(3, 3)
 texture = ExtResource("3_wisxt")

@@ -18,9 +18,9 @@ func _enter(_message):
 	
 	match decision:
 		JUMP:
-			timer.wait_time = randf_range(1,2.5)
+			timer.wait_time = randf_range(0.25,1)
 		SMASH:
-			timer.wait_time = randf_range(1.75,3.25)
+			timer.wait_time = randf_range(0.5,1.5)
 	timer.start()
 
 func _physics_update(delta: float) -> void:

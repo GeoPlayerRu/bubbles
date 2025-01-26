@@ -35,7 +35,7 @@ func take_damage(amount):
 	can_move = false
 	flash.start()
 	if hp <= 0:
-		SceneHandler.restart()
+		$StateMachine.transit('Death')
 
 func _on_flash_timer_timeout() -> void:
 	can_move = true

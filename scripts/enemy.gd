@@ -23,6 +23,7 @@ func take_damage(amount):
 	
 	if hp <= 0:
 		death.emit()
+		GlobalVariables.saved_world += 1
 
 func set_flash(amount):
 	material.set_shader_parameter("amount",amount)

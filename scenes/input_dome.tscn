@@ -1,0 +1,1640 @@
+[gd_scene load_steps=6 format=3 uid="uid://dygfacl5lk0cg"]
+
+[ext_resource type="Script" uid="uid://b1aqj8ygmqy5p" path="res://scripts/input_dome.gd" id="1_ee7kp"]
+[ext_resource type="Script" uid="uid://dpqno2t1of3f5" path="res://scripts/bubble/dome_generator.gd" id="1_iwh4r"]
+[ext_resource type="Script" uid="uid://bwr702vfv3xg6" path="res://scripts/bubble/bubble_line.gd" id="2_5tyht"]
+[ext_resource type="PackedScene" uid="uid://cosckn42gn5ey" path="res://scenes/bubble_dot.tscn" id="2_ee7kp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iwh4r"]
+radius = 4000.0
+
+[node name="InputDome" type="Node2D"]
+script = ExtResource("1_ee7kp")
+
+[node name="Outer" type="Polygon2D" parent="."]
+script = ExtResource("1_iwh4r")
+
+[node name="Line2D" type="Line2D" parent="Outer"]
+default_color = Color(0.147672, 0.147672, 0.147672, 1)
+script = ExtResource("2_5tyht")
+
+[node name="BubbleDot" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4112, 0)
+displace_position = Vector2(-16, 0)
+
+[node name="BubbleDot2" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4111.87, -32.1247)
+displace_position = Vector2(-15.9995, 0.124998)
+
+[node name="BubbleDot3" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4111.5, -64.2474)
+displace_position = Vector2(-15.998, 0.249989)
+
+[node name="BubbleDot4" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4110.87, -96.3662)
+displace_position = Vector2(-15.9956, 0.374969)
+
+[node name="BubbleDot5" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4109.99, -128.479)
+displace_position = Vector2(-15.9919, 0.499916)
+
+[node name="BubbleDot6" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4108.86, -160.584)
+displace_position = Vector2(-15.9878, 0.624832)
+
+[node name="BubbleDot7" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4107.48, -192.679)
+displace_position = Vector2(-15.9827, 0.749725)
+
+[node name="BubbleDot8" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4105.85, -224.763)
+displace_position = Vector2(-15.9761, 0.874557)
+
+[node name="BubbleDot9" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4103.97, -256.833)
+displace_position = Vector2(-15.9685, 0.999344)
+
+[node name="BubbleDot10" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4101.84, -288.887)
+displace_position = Vector2(-15.9607, 1.12408)
+
+[node name="BubbleDot11" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4099.46, -320.923)
+displace_position = Vector2(-15.9512, 1.24872)
+
+[node name="BubbleDot12" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4096.83, -352.94)
+displace_position = Vector2(-15.9409, 1.37329)
+
+[node name="BubbleDot13" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4093.94, -384.936)
+displace_position = Vector2(-15.9297, 1.4978)
+
+[node name="BubbleDot14" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4090.81, -416.907)
+displace_position = Vector2(-15.9177, 1.62222)
+
+[node name="BubbleDot15" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4087.43, -448.854)
+displace_position = Vector2(-15.9043, 1.74652)
+
+[node name="BubbleDot16" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4083.8, -480.773)
+displace_position = Vector2(-15.8901, 1.8707)
+
+[node name="BubbleDot17" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4079.92, -512.662)
+displace_position = Vector2(-15.875, 1.99478)
+
+[node name="BubbleDot18" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4075.79, -544.521)
+displace_position = Vector2(-15.8591, 2.11877)
+
+[node name="BubbleDot19" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4071.41, -576.346)
+displace_position = Vector2(-15.842, 2.24255)
+
+[node name="BubbleDot20" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4066.78, -608.136)
+displace_position = Vector2(-15.824, 2.36627)
+
+[node name="BubbleDot21" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4061.91, -639.889)
+displace_position = Vector2(-15.8052, 2.48987)
+
+[node name="BubbleDot22" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4056.78, -671.603)
+displace_position = Vector2(-15.7852, 2.61328)
+
+[node name="BubbleDot23" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4051.41, -703.275)
+displace_position = Vector2(-15.7644, 2.73651)
+
+[node name="BubbleDot24" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4045.8, -734.905)
+displace_position = Vector2(-15.7424, 2.85956)
+
+[node name="BubbleDot25" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4039.93, -766.49)
+displace_position = Vector2(-15.7195, 2.98248)
+
+[node name="BubbleDot26" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4033.82, -798.029)
+displace_position = Vector2(-15.6958, 3.10522)
+
+[node name="BubbleDot27" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4027.46, -829.518)
+displace_position = Vector2(-15.6711, 3.22766)
+
+[node name="BubbleDot28" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4020.86, -860.957)
+displace_position = Vector2(-15.6453, 3.35004)
+
+[node name="BubbleDot29" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4014.01, -892.343)
+displace_position = Vector2(-15.6187, 3.47217)
+
+[node name="BubbleDot30" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(4006.92, -923.675)
+displace_position = Vector2(-15.5911, 3.59406)
+
+[node name="BubbleDot31" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3999.58, -954.951)
+displace_position = Vector2(-15.5625, 3.71576)
+
+[node name="BubbleDot32" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3991.99, -986.168)
+displace_position = Vector2(-15.5332, 3.83722)
+
+[node name="BubbleDot33" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3984.17, -1017.33)
+displace_position = Vector2(-15.5027, 3.95844)
+
+[node name="BubbleDot34" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3976.1, -1048.42)
+displace_position = Vector2(-15.4712, 4.07947)
+
+[node name="BubbleDot35" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3967.79, -1079.45)
+displace_position = Vector2(-15.4387, 4.2002)
+
+[node name="BubbleDot36" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3959.23, -1110.42)
+displace_position = Vector2(-15.4055, 4.32068)
+
+[node name="BubbleDot37" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3950.44, -1141.31)
+displace_position = Vector2(-15.3716, 4.44092)
+
+[node name="BubbleDot38" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3941.4, -1172.14)
+displace_position = Vector2(-15.3362, 4.56079)
+
+[node name="BubbleDot39" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3932.12, -1202.9)
+displace_position = Vector2(-15.3, 4.68054)
+
+[node name="BubbleDot40" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3922.6, -1233.58)
+displace_position = Vector2(-15.2629, 4.79993)
+
+[node name="BubbleDot41" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3912.85, -1264.19)
+displace_position = Vector2(-15.2251, 4.91895)
+
+[node name="BubbleDot42" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3902.85, -1294.72)
+displace_position = Vector2(-15.186, 5.03784)
+
+[node name="BubbleDot43" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3892.62, -1325.17)
+displace_position = Vector2(-15.1465, 5.15625)
+
+[node name="BubbleDot44" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3882.15, -1355.54)
+displace_position = Vector2(-15.1055, 5.27454)
+
+[node name="BubbleDot45" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3871.44, -1385.83)
+displace_position = Vector2(-15.064, 5.39233)
+
+[node name="BubbleDot46" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3860.49, -1416.03)
+displace_position = Vector2(-15.0212, 5.50989)
+
+[node name="BubbleDot47" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3849.31, -1446.15)
+displace_position = Vector2(-14.9778, 5.62708)
+
+[node name="BubbleDot48" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3837.9, -1476.17)
+displace_position = Vector2(-14.9333, 5.7439)
+
+[node name="BubbleDot49" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3826.25, -1506.11)
+displace_position = Vector2(-14.8882, 5.86035)
+
+[node name="BubbleDot50" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3814.36, -1535.96)
+displace_position = Vector2(-14.842, 5.97656)
+
+[node name="BubbleDot51" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3802.25, -1565.71)
+displace_position = Vector2(-14.7949, 6.09216)
+
+[node name="BubbleDot52" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3789.9, -1595.37)
+displace_position = Vector2(-14.7466, 6.20764)
+
+[node name="BubbleDot53" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3777.32, -1624.93)
+displace_position = Vector2(-14.6978, 6.32275)
+
+[node name="BubbleDot54" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3764.51, -1654.39)
+displace_position = Vector2(-14.6479, 6.43738)
+
+[node name="BubbleDot55" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3751.47, -1683.75)
+displace_position = Vector2(-14.5972, 6.55151)
+
+[node name="BubbleDot56" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3738.2, -1713)
+displace_position = Vector2(-14.5454, 6.66541)
+
+[node name="BubbleDot57" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3724.71, -1742.16)
+displace_position = Vector2(-14.4929, 6.77881)
+
+[node name="BubbleDot58" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3710.98, -1771.2)
+displace_position = Vector2(-14.4395, 6.89172)
+
+[node name="BubbleDot59" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3697.03, -1800.14)
+displace_position = Vector2(-14.3853, 7.00439)
+
+[node name="BubbleDot60" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3682.85, -1828.97)
+displace_position = Vector2(-14.3301, 7.1167)
+
+[node name="BubbleDot61" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3668.45, -1857.68)
+displace_position = Vector2(-14.2742, 7.22839)
+
+[node name="BubbleDot62" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3653.83, -1886.29)
+displace_position = Vector2(-14.2173, 7.3396)
+
+[node name="BubbleDot63" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3638.98, -1914.77)
+displace_position = Vector2(-14.1597, 7.45044)
+
+[node name="BubbleDot64" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3623.91, -1943.15)
+displace_position = Vector2(-14.1006, 7.56091)
+
+[node name="BubbleDot65" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3608.62, -1971.4)
+displace_position = Vector2(-14.0413, 7.67078)
+
+[node name="BubbleDot66" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3593.11, -1999.53)
+displace_position = Vector2(-13.981, 7.78027)
+
+[node name="BubbleDot67" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3577.38, -2027.54)
+displace_position = Vector2(-13.9197, 7.88928)
+
+[node name="BubbleDot68" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3561.43, -2055.43)
+displace_position = Vector2(-13.8577, 7.99768)
+
+[node name="BubbleDot69" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3545.26, -2083.19)
+displace_position = Vector2(-13.7949, 8.10571)
+
+[node name="BubbleDot70" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3528.88, -2110.82)
+displace_position = Vector2(-13.7312, 8.21338)
+
+[node name="BubbleDot71" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3512.28, -2138.32)
+displace_position = Vector2(-13.6665, 8.32031)
+
+[node name="BubbleDot72" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3495.47, -2165.7)
+displace_position = Vector2(-13.6011, 8.427)
+
+[node name="BubbleDot73" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3478.44, -2192.94)
+displace_position = Vector2(-13.5349, 8.53296)
+
+[node name="BubbleDot74" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3461.2, -2220.05)
+displace_position = Vector2(-13.4675, 8.63843)
+
+[node name="BubbleDot75" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3443.75, -2247.02)
+displace_position = Vector2(-13.3999, 8.74316)
+
+[node name="BubbleDot76" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3426.09, -2273.86)
+displace_position = Vector2(-13.3311, 8.8479)
+
+[node name="BubbleDot77" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3408.23, -2300.55)
+displace_position = Vector2(-13.2617, 8.95142)
+
+[node name="BubbleDot78" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3390.15, -2327.11)
+displace_position = Vector2(-13.1914, 9.05493)
+
+[node name="BubbleDot79" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3371.86, -2353.52)
+displace_position = Vector2(-13.1201, 9.15747)
+
+[node name="BubbleDot80" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3353.37, -2379.79)
+displace_position = Vector2(-13.0483, 9.26001)
+
+[node name="BubbleDot81" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3334.68, -2405.92)
+displace_position = Vector2(-12.9756, 9.36157)
+
+[node name="BubbleDot82" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3315.78, -2431.9)
+displace_position = Vector2(-12.9019, 9.46265)
+
+[node name="BubbleDot83" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3296.68, -2457.73)
+displace_position = Vector2(-12.8276, 9.56299)
+
+[node name="BubbleDot84" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3277.38, -2483.41)
+displace_position = Vector2(-12.7524, 9.66309)
+
+[node name="BubbleDot85" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3257.88, -2508.94)
+displace_position = Vector2(-12.6765, 9.76221)
+
+[node name="BubbleDot86" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3238.18, -2534.31)
+displace_position = Vector2(-12.5999, 9.86108)
+
+[node name="BubbleDot87" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3218.28, -2559.53)
+displace_position = Vector2(-12.5225, 9.95923)
+
+[node name="BubbleDot88" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3198.19, -2584.6)
+displace_position = Vector2(-12.4441, 10.0569)
+
+[node name="BubbleDot89" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3177.9, -2609.5)
+displace_position = Vector2(-12.3652, 10.1538)
+
+[node name="BubbleDot90" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3157.41, -2634.25)
+displace_position = Vector2(-12.2856, 10.25)
+
+[node name="BubbleDot91" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3136.74, -2658.84)
+displace_position = Vector2(-12.2053, 10.3457)
+
+[node name="BubbleDot92" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3115.87, -2683.26)
+displace_position = Vector2(-12.124, 10.4407)
+
+[node name="BubbleDot93" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3094.81, -2707.52)
+displace_position = Vector2(-12.042, 10.5352)
+
+[node name="BubbleDot94" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3073.57, -2731.62)
+displace_position = Vector2(-11.9595, 10.6289)
+
+[node name="BubbleDot95" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3052.13, -2755.55)
+displace_position = Vector2(-11.876, 10.7219)
+
+[node name="BubbleDot96" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3030.51, -2779.31)
+displace_position = Vector2(-11.792, 10.8145)
+
+[node name="BubbleDot97" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(3008.7, -2802.9)
+displace_position = Vector2(-11.707, 10.9063)
+
+[node name="BubbleDot98" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2986.72, -2826.32)
+displace_position = Vector2(-11.6213, 10.9973)
+
+[node name="BubbleDot99" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2964.54, -2849.57)
+displace_position = Vector2(-11.5354, 11.0876)
+
+[node name="BubbleDot100" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2942.19, -2872.64)
+displace_position = Vector2(-11.4482, 11.1777)
+
+[node name="BubbleDot101" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2919.66, -2895.54)
+displace_position = Vector2(-11.3606, 11.2668)
+
+[node name="BubbleDot102" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2896.95, -2918.26)
+displace_position = Vector2(-11.272, 11.355)
+
+[node name="BubbleDot103" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2874.06, -2940.8)
+displace_position = Vector2(-11.1831, 11.4429)
+
+[node name="BubbleDot104" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2851, -2963.16)
+displace_position = Vector2(-11.0933, 11.5298)
+
+[node name="BubbleDot105" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2827.76, -2985.35)
+displace_position = Vector2(-11.0029, 11.6162)
+
+[node name="BubbleDot106" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2804.35, -3007.35)
+displace_position = Vector2(-10.9119, 11.7017)
+
+[node name="BubbleDot107" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2780.77, -3029.17)
+displace_position = Vector2(-10.8201, 11.7866)
+
+[node name="BubbleDot108" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2757.02, -3050.8)
+displace_position = Vector2(-10.7278, 11.8708)
+
+[node name="BubbleDot109" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2733.11, -3072.24)
+displace_position = Vector2(-10.6348, 11.9541)
+
+[node name="BubbleDot110" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2709.02, -3093.5)
+displace_position = Vector2(-10.541, 12.0371)
+
+[node name="BubbleDot111" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2684.77, -3114.57)
+displace_position = Vector2(-10.4465, 12.1189)
+
+[node name="BubbleDot112" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2660.36, -3135.45)
+displace_position = Vector2(-10.3516, 12.2002)
+
+[node name="BubbleDot113" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2635.78, -3156.14)
+displace_position = Vector2(-10.2559, 12.2808)
+
+[node name="BubbleDot114" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2611.04, -3176.63)
+displace_position = Vector2(-10.1597, 12.3604)
+
+[node name="BubbleDot115" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2586.14, -3196.94)
+displace_position = Vector2(-10.063, 12.4395)
+
+[node name="BubbleDot116" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2561.09, -3217.04)
+displace_position = Vector2(-9.96533, 12.5176)
+
+[node name="BubbleDot117" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2535.88, -3236.95)
+displace_position = Vector2(-9.86719, 12.5952)
+
+[node name="BubbleDot118" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2510.51, -3256.67)
+displace_position = Vector2(-9.76855, 12.6719)
+
+[node name="BubbleDot119" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2484.99, -3276.18)
+displace_position = Vector2(-9.66943, 12.7478)
+
+[node name="BubbleDot120" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2459.32, -3295.49)
+displace_position = Vector2(-9.56934, 12.823)
+
+[node name="BubbleDot121" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2433.5, -3314.61)
+displace_position = Vector2(-9.46875, 12.8972)
+
+[node name="BubbleDot122" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2407.53, -3333.52)
+displace_position = Vector2(-9.36792, 12.9709)
+
+[node name="BubbleDot123" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2381.42, -3352.22)
+displace_position = Vector2(-9.26611, 13.0437)
+
+[node name="BubbleDot124" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2355.16, -3370.73)
+displace_position = Vector2(-9.16406, 13.1155)
+
+[node name="BubbleDot125" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2328.75, -3389.02)
+displace_position = Vector2(-9.06128, 13.1868)
+
+[node name="BubbleDot126" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2302.2, -3407.11)
+displace_position = Vector2(-8.95801, 13.2573)
+
+[node name="BubbleDot127" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2275.51, -3424.99)
+displace_position = Vector2(-8.854, 13.3269)
+
+[node name="BubbleDot128" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2248.69, -3442.67)
+displace_position = Vector2(-8.74976, 13.3955)
+
+[node name="BubbleDot129" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2221.72, -3460.13)
+displace_position = Vector2(-8.64502, 13.4636)
+
+[node name="BubbleDot130" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2194.62, -3477.38)
+displace_position = Vector2(-8.53931, 13.5308)
+
+[node name="BubbleDot131" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2167.39, -3494.42)
+displace_position = Vector2(-8.43359, 13.5972)
+
+[node name="BubbleDot132" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2140.02, -3511.25)
+displace_position = Vector2(-8.3269, 13.6626)
+
+[node name="BubbleDot133" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2112.53, -3527.86)
+displace_position = Vector2(-8.21997, 13.7271)
+
+[node name="BubbleDot134" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2084.9, -3544.25)
+displace_position = Vector2(-8.11255, 13.791)
+
+[node name="BubbleDot135" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2057.15, -3560.43)
+displace_position = Vector2(-8.00439, 13.8538)
+
+[node name="BubbleDot136" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2029.27, -3576.4)
+displace_position = Vector2(-7.896, 13.916)
+
+[node name="BubbleDot137" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(2001.27, -3592.14)
+displace_position = Vector2(-7.78711, 13.9773)
+
+[node name="BubbleDot138" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1973.14, -3607.67)
+displace_position = Vector2(-7.67761, 14.0376)
+
+[node name="BubbleDot139" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1944.9, -3622.97)
+displace_position = Vector2(-7.56763, 14.0972)
+
+[node name="BubbleDot140" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1916.54, -3638.05)
+displace_position = Vector2(-7.45728, 14.1558)
+
+[node name="BubbleDot141" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1888.05, -3652.92)
+displace_position = Vector2(-7.34656, 14.2136)
+
+[node name="BubbleDot142" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1859.46, -3667.55)
+displace_position = Vector2(-7.23523, 14.2705)
+
+[node name="BubbleDot143" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1830.75, -3681.97)
+displace_position = Vector2(-7.12354, 14.3267)
+
+[node name="BubbleDot144" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1801.93, -3696.16)
+displace_position = Vector2(-7.01147, 14.3818)
+
+[node name="BubbleDot145" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1773, -3710.12)
+displace_position = Vector2(-6.8988, 14.4363)
+
+[node name="BubbleDot146" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1743.96, -3723.86)
+displace_position = Vector2(-6.78577, 14.4897)
+
+[node name="BubbleDot147" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1714.81, -3737.37)
+displace_position = Vector2(-6.67249, 14.5425)
+
+[node name="BubbleDot148" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1685.56, -3750.66)
+displace_position = Vector2(-6.55872, 14.594)
+
+[node name="BubbleDot149" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1656.21, -3763.71)
+displace_position = Vector2(-6.44446, 14.6448)
+
+[node name="BubbleDot150" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1626.76, -3776.53)
+displace_position = Vector2(-6.32983, 14.6946)
+
+[node name="BubbleDot151" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1597.2, -3789.13)
+displace_position = Vector2(-6.21472, 14.7437)
+
+[node name="BubbleDot152" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1567.55, -3801.49)
+displace_position = Vector2(-6.09937, 14.7917)
+
+[node name="BubbleDot153" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1537.8, -3813.62)
+displace_position = Vector2(-5.98364, 14.8391)
+
+[node name="BubbleDot154" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1507.96, -3825.52)
+displace_position = Vector2(-5.86755, 14.8855)
+
+[node name="BubbleDot155" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1478.03, -3837.18)
+displace_position = Vector2(-5.7511, 14.9307)
+
+[node name="BubbleDot156" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1448.01, -3848.61)
+displace_position = Vector2(-5.63428, 14.9753)
+
+[node name="BubbleDot157" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1417.9, -3859.81)
+displace_position = Vector2(-5.51721, 15.0186)
+
+[node name="BubbleDot158" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1387.7, -3870.77)
+displace_position = Vector2(-5.39966, 15.0613)
+
+[node name="BubbleDot159" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1357.42, -3881.49)
+displace_position = Vector2(-5.28186, 15.103)
+
+[node name="BubbleDot160" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1327.05, -3891.98)
+displace_position = Vector2(-5.16357, 15.1438)
+
+[node name="BubbleDot161" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1296.61, -3902.22)
+displace_position = Vector2(-5.04517, 15.1838)
+
+[node name="BubbleDot162" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1266.08, -3912.24)
+displace_position = Vector2(-4.92639, 15.2227)
+
+[node name="BubbleDot163" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1235.48, -3922.01)
+displace_position = Vector2(-4.80737, 15.2607)
+
+[node name="BubbleDot164" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1204.8, -3931.54)
+displace_position = Vector2(-4.68799, 15.2979)
+
+[node name="BubbleDot165" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1174.05, -3940.83)
+displace_position = Vector2(-4.56836, 15.334)
+
+[node name="BubbleDot166" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1143.22, -3949.88)
+displace_position = Vector2(-4.44836, 15.3691)
+
+[node name="BubbleDot167" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1112.33, -3958.69)
+displace_position = Vector2(-4.32813, 15.4036)
+
+[node name="BubbleDot168" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1081.37, -3967.26)
+displace_position = Vector2(-4.20764, 15.4368)
+
+[node name="BubbleDot169" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1050.34, -3975.59)
+displace_position = Vector2(-4.08691, 15.4692)
+
+[node name="BubbleDot170" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1019.25, -3983.68)
+displace_position = Vector2(-3.966, 15.5007)
+
+[node name="BubbleDot171" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(988.099, -3991.52)
+displace_position = Vector2(-3.84473, 15.531)
+
+[node name="BubbleDot172" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(956.886, -3999.11)
+displace_position = Vector2(-3.72327, 15.5608)
+
+[node name="BubbleDot173" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(925.614, -4006.47)
+displace_position = Vector2(-3.60162, 15.5894)
+
+[node name="BubbleDot174" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(894.285, -4013.58)
+displace_position = Vector2(-3.47974, 15.6169)
+
+[node name="BubbleDot175" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(862.902, -4020.44)
+displace_position = Vector2(-3.3576, 15.6438)
+
+[node name="BubbleDot176" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(831.467, -4027.06)
+displace_position = Vector2(-3.23529, 15.6694)
+
+[node name="BubbleDot177" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(799.98, -4033.43)
+displace_position = Vector2(-3.11273, 15.6941)
+
+[node name="BubbleDot178" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(768.445, -4039.56)
+displace_position = Vector2(-2.99005, 15.718)
+
+[node name="BubbleDot179" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(736.863, -4045.44)
+displace_position = Vector2(-2.86719, 15.741)
+
+[node name="BubbleDot180" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(705.236, -4051.07)
+displace_position = Vector2(-2.74408, 15.7629)
+
+[node name="BubbleDot181" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(673.565, -4056.46)
+displace_position = Vector2(-2.62091, 15.7839)
+
+[node name="BubbleDot182" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(641.854, -4061.6)
+displace_position = Vector2(-2.4975, 15.804)
+
+[node name="BubbleDot183" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(610.104, -4066.49)
+displace_position = Vector2(-2.3739, 15.8228)
+
+[node name="BubbleDot184" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(578.316, -4071.13)
+displace_position = Vector2(-2.25024, 15.8408)
+
+[node name="BubbleDot185" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(546.493, -4075.52)
+displace_position = Vector2(-2.1264, 15.8579)
+
+[node name="BubbleDot186" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(514.636, -4079.67)
+displace_position = Vector2(-2.0025, 15.874)
+
+[node name="BubbleDot187" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(482.749, -4083.56)
+displace_position = Vector2(-1.87839, 15.8894)
+
+[node name="BubbleDot188" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(450.831, -4087.21)
+displace_position = Vector2(-1.75418, 15.9036)
+
+[node name="BubbleDot189" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(418.887, -4090.61)
+displace_position = Vector2(-1.62991, 15.9167)
+
+[node name="BubbleDot190" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(386.916, -4093.76)
+displace_position = Vector2(-1.50549, 15.929)
+
+[node name="BubbleDot191" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(354.922, -4096.65)
+displace_position = Vector2(-1.38101, 15.9402)
+
+[node name="BubbleDot192" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(322.907, -4099.3)
+displace_position = Vector2(-1.25647, 15.9504)
+
+[node name="BubbleDot193" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(290.871, -4101.7)
+displace_position = Vector2(-1.13181, 15.9597)
+
+[node name="BubbleDot194" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(258.818, -4103.85)
+displace_position = Vector2(-1.00708, 15.9683)
+
+[node name="BubbleDot195" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(226.749, -4105.74)
+displace_position = Vector2(-0.882294, 15.9753)
+
+[node name="BubbleDot196" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(194.667, -4107.39)
+displace_position = Vector2(-0.757446, 15.9822)
+
+[node name="BubbleDot197" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(162.572, -4108.79)
+displace_position = Vector2(-0.632584, 15.9875)
+
+[node name="BubbleDot198" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(130.468, -4109.93)
+displace_position = Vector2(-0.507645, 15.9919)
+
+[node name="BubbleDot199" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(98.3551, -4110.82)
+displace_position = Vector2(-0.382706, 15.9956)
+
+[node name="BubbleDot200" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(66.2366, -4111.47)
+displace_position = Vector2(-0.257729, 15.9978)
+
+[node name="BubbleDot201" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(34.1141, -4111.86)
+displace_position = Vector2(-0.13274, 15.9993)
+
+[node name="BubbleDot202" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(1.9895, -4112)
+displace_position = Vector2(-0.00774133, 16)
+
+[node name="BubbleDot203" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-30.1352, -4111.89)
+displace_position = Vector2(0.117258, 15.9998)
+
+[node name="BubbleDot204" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-62.2581, -4111.53)
+displace_position = Vector2(0.242249, 15.9983)
+
+[node name="BubbleDot205" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-94.3772, -4110.92)
+displace_position = Vector2(0.367226, 15.9961)
+
+[node name="BubbleDot206" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-126.491, -4110.05)
+displace_position = Vector2(0.49218, 15.9927)
+
+[node name="BubbleDot207" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-158.596, -4108.94)
+displace_position = Vector2(0.617111, 15.988)
+
+[node name="BubbleDot208" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-190.692, -4107.58)
+displace_position = Vector2(0.742004, 15.9829)
+
+[node name="BubbleDot209" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-222.776, -4105.96)
+displace_position = Vector2(0.866837, 15.9766)
+
+[node name="BubbleDot210" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-254.847, -4104.1)
+displace_position = Vector2(0.991623, 15.9692)
+
+[node name="BubbleDot211" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-286.902, -4101.98)
+displace_position = Vector2(1.11636, 15.9612)
+
+[node name="BubbleDot212" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-318.94, -4099.61)
+displace_position = Vector2(1.24103, 15.9517)
+
+[node name="BubbleDot213" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-350.958, -4097)
+displace_position = Vector2(1.3656, 15.9417)
+
+[node name="BubbleDot214" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-382.955, -4094.13)
+displace_position = Vector2(1.49008, 15.9304)
+
+[node name="BubbleDot215" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-414.928, -4091.01)
+displace_position = Vector2(1.6145, 15.9185)
+
+[node name="BubbleDot216" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-446.876, -4087.65)
+displace_position = Vector2(1.73883, 15.9053)
+
+[node name="BubbleDot217" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-478.797, -4084.03)
+displace_position = Vector2(1.86304, 15.8911)
+
+[node name="BubbleDot218" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-510.688, -4080.16)
+displace_position = Vector2(1.98712, 15.876)
+
+[node name="BubbleDot219" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-542.549, -4076.05)
+displace_position = Vector2(2.11108, 15.8601)
+
+[node name="BubbleDot220" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-574.376, -4071.69)
+displace_position = Vector2(2.23492, 15.843)
+
+[node name="BubbleDot221" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-606.168, -4067.08)
+displace_position = Vector2(2.35864, 15.8252)
+
+[node name="BubbleDot222" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-637.924, -4062.22)
+displace_position = Vector2(2.48218, 15.8062)
+
+[node name="BubbleDot223" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-669.64, -4057.11)
+displace_position = Vector2(2.60559, 15.7864)
+
+[node name="BubbleDot224" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-701.315, -4051.75)
+displace_position = Vector2(2.72888, 15.7656)
+
+[node name="BubbleDot225" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-732.948, -4046.15)
+displace_position = Vector2(2.85193, 15.7437)
+
+[node name="BubbleDot226" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-764.536, -4040.3)
+displace_position = Vector2(2.97485, 15.7209)
+
+[node name="BubbleDot227" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-796.077, -4034.2)
+displace_position = Vector2(3.0976, 15.6973)
+
+[node name="BubbleDot228" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-827.569, -4027.86)
+displace_position = Vector2(3.22015, 15.6726)
+
+[node name="BubbleDot229" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-859.012, -4021.27)
+displace_position = Vector2(3.34247, 15.647)
+
+[node name="BubbleDot230" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-890.401, -4014.44)
+displace_position = Vector2(3.4646, 15.6204)
+
+[node name="BubbleDot231" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-921.737, -4007.36)
+displace_position = Vector2(3.58649, 15.5928)
+
+[node name="BubbleDot232" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-953.016, -4000.04)
+displace_position = Vector2(3.70819, 15.5642)
+
+[node name="BubbleDot233" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-984.237, -3992.47)
+displace_position = Vector2(3.82971, 15.5349)
+
+[node name="BubbleDot234" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1015.4, -3984.66)
+displace_position = Vector2(3.95099, 15.5046)
+
+[node name="BubbleDot235" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1046.5, -3976.61)
+displace_position = Vector2(4.07202, 15.4731)
+
+[node name="BubbleDot236" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1077.53, -3968.31)
+displace_position = Vector2(4.19275, 15.4409)
+
+[node name="BubbleDot237" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1108.5, -3959.77)
+displace_position = Vector2(4.31323, 15.4077)
+
+[node name="BubbleDot238" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1139.4, -3950.99)
+displace_position = Vector2(4.43347, 15.3733)
+
+[node name="BubbleDot239" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1170.23, -3941.97)
+displace_position = Vector2(4.55347, 15.3384)
+
+[node name="BubbleDot240" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1200.99, -3932.7)
+displace_position = Vector2(4.6731, 15.3022)
+
+[node name="BubbleDot241" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1231.68, -3923.2)
+displace_position = Vector2(4.79248, 15.2654)
+
+[node name="BubbleDot242" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1262.29, -3913.46)
+displace_position = Vector2(4.91162, 15.2273)
+
+[node name="BubbleDot243" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1292.83, -3903.48)
+displace_position = Vector2(5.03052, 15.1885)
+
+[node name="BubbleDot244" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1323.29, -3893.26)
+displace_position = Vector2(5.14905, 15.1489)
+
+[node name="BubbleDot245" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1353.66, -3882.8)
+displace_position = Vector2(5.26721, 15.1082)
+
+[node name="BubbleDot246" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1383.95, -3872.11)
+displace_position = Vector2(5.38501, 15.0667)
+
+[node name="BubbleDot247" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1414.16, -3861.18)
+displace_position = Vector2(5.50256, 15.0242)
+
+[node name="BubbleDot248" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1444.28, -3850.01)
+displace_position = Vector2(5.61975, 14.9805)
+
+[node name="BubbleDot249" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1474.32, -3838.61)
+displace_position = Vector2(5.73669, 14.9363)
+
+[node name="BubbleDot250" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1504.26, -3826.98)
+displace_position = Vector2(5.85315, 14.8909)
+
+[node name="BubbleDot251" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1534.11, -3815.11)
+displace_position = Vector2(5.96936, 14.8447)
+
+[node name="BubbleDot252" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1563.87, -3803.01)
+displace_position = Vector2(6.08521, 14.7979)
+
+[node name="BubbleDot253" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1593.53, -3790.67)
+displace_position = Vector2(6.20056, 14.7498)
+
+[node name="BubbleDot254" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1623.1, -3778.11)
+displace_position = Vector2(6.31555, 14.7009)
+
+[node name="BubbleDot255" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1652.57, -3765.31)
+displace_position = Vector2(6.43018, 14.6511)
+
+[node name="BubbleDot256" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1681.93, -3752.29)
+displace_position = Vector2(6.54456, 14.6003)
+
+[node name="BubbleDot257" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1711.2, -3739.03)
+displace_position = Vector2(6.65833, 14.5488)
+
+[node name="BubbleDot258" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1740.35, -3725.55)
+displace_position = Vector2(6.77185, 14.4963)
+
+[node name="BubbleDot259" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1769.41, -3711.84)
+displace_position = Vector2(6.88477, 14.4431)
+
+[node name="BubbleDot260" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1798.35, -3697.9)
+displace_position = Vector2(6.99744, 14.3887)
+
+[node name="BubbleDot261" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1827.19, -3683.74)
+displace_position = Vector2(7.10974, 14.3335)
+
+[node name="BubbleDot262" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1855.91, -3669.35)
+displace_position = Vector2(7.22144, 14.2776)
+
+[node name="BubbleDot263" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1884.52, -3654.74)
+displace_position = Vector2(7.33276, 14.2207)
+
+[node name="BubbleDot264" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1913.01, -3639.91)
+displace_position = Vector2(7.4436, 14.1631)
+
+[node name="BubbleDot265" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1941.39, -3624.85)
+displace_position = Vector2(7.55396, 14.1045)
+
+[node name="BubbleDot266" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1969.65, -3609.57)
+displace_position = Vector2(7.66394, 14.0452)
+
+[node name="BubbleDot267" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-1997.79, -3594.07)
+displace_position = Vector2(7.77344, 13.9846)
+
+[node name="BubbleDot268" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2025.81, -3578.36)
+displace_position = Vector2(7.88257, 13.9236)
+
+[node name="BubbleDot269" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2053.7, -3562.42)
+displace_position = Vector2(7.99121, 13.8616)
+
+[node name="BubbleDot270" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2081.47, -3546.27)
+displace_position = Vector2(8.09912, 13.7988)
+
+[node name="BubbleDot271" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2109.11, -3529.9)
+displace_position = Vector2(8.20679, 13.7351)
+
+[node name="BubbleDot272" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2136.63, -3513.31)
+displace_position = Vector2(8.31372, 13.6704)
+
+[node name="BubbleDot273" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2164.01, -3496.51)
+displace_position = Vector2(8.42017, 13.605)
+
+[node name="BubbleDot274" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2191.26, -3479.5)
+displace_position = Vector2(8.52612, 13.5391)
+
+[node name="BubbleDot275" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2218.37, -3462.28)
+displace_position = Vector2(8.63184, 13.4719)
+
+[node name="BubbleDot276" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2245.35, -3444.84)
+displace_position = Vector2(8.73682, 13.4041)
+
+[node name="BubbleDot277" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2272.2, -3427.19)
+displace_position = Vector2(8.84131, 13.3354)
+
+[node name="BubbleDot278" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2298.9, -3409.34)
+displace_position = Vector2(8.94531, 13.2659)
+
+[node name="BubbleDot279" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2325.47, -3391.27)
+displace_position = Vector2(9.04858, 13.1958)
+
+[node name="BubbleDot280" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2351.89, -3373)
+displace_position = Vector2(9.15137, 13.1248)
+
+[node name="BubbleDot281" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2378.17, -3354.53)
+displace_position = Vector2(9.25366, 13.0525)
+
+[node name="BubbleDot282" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2404.31, -3335.84)
+displace_position = Vector2(9.35547, 12.98)
+
+[node name="BubbleDot283" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2430.29, -3316.96)
+displace_position = Vector2(9.4563, 12.9065)
+
+[node name="BubbleDot284" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2456.13, -3297.87)
+displace_position = Vector2(9.55688, 12.8323)
+
+[node name="BubbleDot285" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2481.82, -3278.58)
+displace_position = Vector2(9.65698, 12.7571)
+
+[node name="BubbleDot286" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2507.36, -3259.09)
+displace_position = Vector2(9.75635, 12.6814)
+
+[node name="BubbleDot287" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2532.75, -3239.41)
+displace_position = Vector2(9.85498, 12.6047)
+
+[node name="BubbleDot288" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2557.98, -3219.52)
+displace_position = Vector2(9.95337, 12.5273)
+
+[node name="BubbleDot289" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2583.05, -3199.44)
+displace_position = Vector2(10.0508, 12.4492)
+
+[node name="BubbleDot290" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2607.97, -3179.16)
+displace_position = Vector2(10.1477, 12.3701)
+
+[node name="BubbleDot291" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2632.72, -3158.69)
+displace_position = Vector2(10.2441, 12.2908)
+
+[node name="BubbleDot292" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2657.32, -3138.02)
+displace_position = Vector2(10.3398, 12.2102)
+
+[node name="BubbleDot293" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2681.75, -3117.17)
+displace_position = Vector2(10.4348, 12.1292)
+
+[node name="BubbleDot294" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2706.03, -3096.12)
+displace_position = Vector2(10.5293, 12.0471)
+
+[node name="BubbleDot295" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2730.13, -3074.89)
+displace_position = Vector2(10.623, 11.9646)
+
+[node name="BubbleDot296" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2754.07, -3053.46)
+displace_position = Vector2(10.7163, 11.8811)
+
+[node name="BubbleDot297" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2777.84, -3031.85)
+displace_position = Vector2(10.8088, 11.7971)
+
+[node name="BubbleDot298" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2801.44, -3010.06)
+displace_position = Vector2(10.9006, 11.7122)
+
+[node name="BubbleDot299" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2824.87, -2988.08)
+displace_position = Vector2(10.9919, 11.6267)
+
+[node name="BubbleDot300" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2848.13, -2965.92)
+displace_position = Vector2(11.0823, 11.5405)
+
+[node name="BubbleDot301" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2871.22, -2943.58)
+displace_position = Vector2(11.1721, 11.4536)
+
+[node name="BubbleDot302" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2894.12, -2921.06)
+displace_position = Vector2(11.261, 11.366)
+
+[node name="BubbleDot303" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2916.86, -2898.36)
+displace_position = Vector2(11.3499, 11.2776)
+
+[node name="BubbleDot304" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2939.41, -2875.48)
+displace_position = Vector2(11.4375, 11.1887)
+
+[node name="BubbleDot305" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2961.79, -2852.43)
+displace_position = Vector2(11.5247, 11.0989)
+
+[node name="BubbleDot306" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-2983.98, -2829.21)
+displace_position = Vector2(11.6108, 11.0085)
+
+[node name="BubbleDot307" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3005.99, -2805.81)
+displace_position = Vector2(11.6965, 10.9175)
+
+[node name="BubbleDot308" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3027.82, -2782.24)
+displace_position = Vector2(11.7813, 10.8259)
+
+[node name="BubbleDot309" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3049.46, -2758.5)
+displace_position = Vector2(11.8657, 10.7334)
+
+[node name="BubbleDot310" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3070.92, -2734.59)
+displace_position = Vector2(11.949, 10.6404)
+
+[node name="BubbleDot311" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3092.19, -2710.52)
+displace_position = Vector2(12.032, 10.5469)
+
+[node name="BubbleDot312" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3113.27, -2686.28)
+displace_position = Vector2(12.114, 10.4524)
+
+[node name="BubbleDot313" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3134.16, -2661.87)
+displace_position = Vector2(12.1953, 10.3574)
+
+[node name="BubbleDot314" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3154.86, -2637.31)
+displace_position = Vector2(12.2759, 10.262)
+
+[node name="BubbleDot315" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3175.37, -2612.58)
+displace_position = Vector2(12.3555, 10.1655)
+
+[node name="BubbleDot316" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3195.68, -2587.69)
+displace_position = Vector2(12.4346, 10.0688)
+
+[node name="BubbleDot317" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3215.8, -2562.65)
+displace_position = Vector2(12.5129, 9.97144)
+
+[node name="BubbleDot318" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3235.73, -2537.44)
+displace_position = Vector2(12.5903, 9.87354)
+
+[node name="BubbleDot319" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3255.45, -2512.09)
+displace_position = Vector2(12.6672, 9.77466)
+
+[node name="BubbleDot320" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3274.98, -2486.58)
+displace_position = Vector2(12.7432, 9.67554)
+
+[node name="BubbleDot321" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3294.3, -2460.92)
+displace_position = Vector2(12.8184, 9.57568)
+
+[node name="BubbleDot322" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3313.43, -2435.11)
+displace_position = Vector2(12.8928, 9.4751)
+
+[node name="BubbleDot323" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3332.35, -2409.15)
+displace_position = Vector2(12.9663, 9.37427)
+
+[node name="BubbleDot324" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3351.07, -2383.04)
+displace_position = Vector2(13.0393, 9.27246)
+
+[node name="BubbleDot325" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3369.59, -2356.79)
+displace_position = Vector2(13.1111, 9.17017)
+
+[node name="BubbleDot326" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3387.89, -2330.39)
+displace_position = Vector2(13.1826, 9.06763)
+
+[node name="BubbleDot327" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3406, -2303.85)
+displace_position = Vector2(13.2529, 8.96436)
+
+[node name="BubbleDot328" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3423.89, -2277.17)
+displace_position = Vector2(13.3225, 8.8606)
+
+[node name="BubbleDot329" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3441.58, -2250.35)
+displace_position = Vector2(13.3914, 8.7561)
+
+[node name="BubbleDot330" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3459.05, -2223.4)
+displace_position = Vector2(13.4595, 8.65137)
+
+[node name="BubbleDot331" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3476.32, -2196.31)
+displace_position = Vector2(13.5266, 8.5459)
+
+[node name="BubbleDot332" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3493.37, -2169.08)
+displace_position = Vector2(13.593, 8.44019)
+
+[node name="BubbleDot333" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3510.21, -2141.72)
+displace_position = Vector2(13.6584, 8.3335)
+
+[node name="BubbleDot334" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3526.83, -2114.23)
+displace_position = Vector2(13.7229, 8.22681)
+
+[node name="BubbleDot335" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3543.24, -2086.62)
+displace_position = Vector2(13.7869, 8.11914)
+
+[node name="BubbleDot336" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3559.44, -2058.87)
+displace_position = Vector2(13.8501, 8.01099)
+
+[node name="BubbleDot337" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3575.41, -2031)
+displace_position = Vector2(13.9121, 7.90271)
+
+[node name="BubbleDot338" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3591.17, -2003.01)
+displace_position = Vector2(13.9734, 7.7937)
+
+[node name="BubbleDot339" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3606.71, -1974.89)
+displace_position = Vector2(14.0339, 7.68445)
+
+[node name="BubbleDot340" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3622.03, -1946.65)
+displace_position = Vector2(14.0935, 7.57446)
+
+[node name="BubbleDot341" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3637.13, -1918.3)
+displace_position = Vector2(14.1521, 7.46423)
+
+[node name="BubbleDot342" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3652, -1889.82)
+displace_position = Vector2(14.21, 7.35339)
+
+[node name="BubbleDot343" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3666.65, -1861.23)
+displace_position = Vector2(14.2673, 7.24207)
+
+[node name="BubbleDot344" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3681.08, -1832.53)
+displace_position = Vector2(14.3232, 7.13049)
+
+[node name="BubbleDot345" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3695.29, -1803.72)
+displace_position = Vector2(14.3784, 7.01843)
+
+[node name="BubbleDot346" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3709.27, -1774.79)
+displace_position = Vector2(14.4329, 6.90588)
+
+[node name="BubbleDot347" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3723.02, -1745.76)
+displace_position = Vector2(14.4863, 6.79285)
+
+[node name="BubbleDot348" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3736.54, -1716.62)
+displace_position = Vector2(14.5391, 6.67944)
+
+[node name="BubbleDot349" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3749.84, -1687.38)
+displace_position = Vector2(14.5908, 6.56567)
+
+[node name="BubbleDot350" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3762.91, -1658.03)
+displace_position = Vector2(14.6416, 6.45154)
+
+[node name="BubbleDot351" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3775.75, -1628.58)
+displace_position = Vector2(14.6917, 6.33691)
+
+[node name="BubbleDot352" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3788.35, -1599.04)
+displace_position = Vector2(14.7407, 6.22192)
+
+[node name="BubbleDot353" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3800.73, -1569.39)
+displace_position = Vector2(14.7888, 6.10657)
+
+[node name="BubbleDot354" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3812.88, -1539.65)
+displace_position = Vector2(14.8362, 5.99084)
+
+[node name="BubbleDot355" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3824.79, -1509.81)
+displace_position = Vector2(14.8823, 5.87476)
+
+[node name="BubbleDot356" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3836.47, -1479.89)
+displace_position = Vector2(14.928, 5.7583)
+
+[node name="BubbleDot357" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3847.91, -1449.87)
+displace_position = Vector2(14.9724, 5.64148)
+
+[node name="BubbleDot358" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3859.12, -1419.76)
+displace_position = Vector2(15.0161, 5.52441)
+
+[node name="BubbleDot359" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3870.09, -1389.57)
+displace_position = Vector2(15.0586, 5.40698)
+
+[node name="BubbleDot360" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3880.83, -1359.29)
+displace_position = Vector2(15.1003, 5.28918)
+
+[node name="BubbleDot361" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3891.33, -1328.93)
+displace_position = Vector2(15.1414, 5.1709)
+
+[node name="BubbleDot362" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3901.6, -1298.49)
+displace_position = Vector2(15.1812, 5.05249)
+
+[node name="BubbleDot363" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3911.62, -1267.97)
+displace_position = Vector2(15.2205, 4.93384)
+
+[node name="BubbleDot364" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3921.41, -1237.37)
+displace_position = Vector2(15.2585, 4.8147)
+
+[node name="BubbleDot365" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3930.96, -1206.7)
+displace_position = Vector2(15.2957, 4.69531)
+
+[node name="BubbleDot366" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3940.26, -1175.95)
+displace_position = Vector2(15.3318, 4.57568)
+
+[node name="BubbleDot367" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3949.33, -1145.14)
+displace_position = Vector2(15.3669, 4.45581)
+
+[node name="BubbleDot368" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3958.16, -1114.25)
+displace_position = Vector2(15.4014, 4.33557)
+
+[node name="BubbleDot369" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3966.74, -1083.29)
+displace_position = Vector2(15.4346, 4.21509)
+
+[node name="BubbleDot370" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3975.08, -1052.27)
+displace_position = Vector2(15.467, 4.09436)
+
+[node name="BubbleDot371" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3983.18, -1021.18)
+displace_position = Vector2(15.4988, 3.97345)
+
+[node name="BubbleDot372" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3991.04, -990.03)
+displace_position = Vector2(15.5293, 3.85229)
+
+[node name="BubbleDot373" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-3998.65, -958.821)
+displace_position = Vector2(15.5588, 3.73083)
+
+[node name="BubbleDot374" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4006.02, -927.552)
+displace_position = Vector2(15.5876, 3.60919)
+
+[node name="BubbleDot375" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4013.14, -896.227)
+displace_position = Vector2(15.6155, 3.4873)
+
+[node name="BubbleDot376" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4020.02, -864.847)
+displace_position = Vector2(15.6421, 3.36517)
+
+[node name="BubbleDot377" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4026.66, -833.415)
+displace_position = Vector2(15.668, 3.24286)
+
+[node name="BubbleDot378" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4033.04, -801.932)
+displace_position = Vector2(15.6926, 3.12036)
+
+[node name="BubbleDot379" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4039.19, -770.399)
+displace_position = Vector2(15.7168, 2.99762)
+
+[node name="BubbleDot380" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4045.08, -738.82)
+displace_position = Vector2(15.7395, 2.87476)
+
+[node name="BubbleDot381" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4050.73, -707.195)
+displace_position = Vector2(15.7617, 2.75177)
+
+[node name="BubbleDot382" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4056.13, -675.528)
+displace_position = Vector2(15.7825, 2.62854)
+
+[node name="BubbleDot383" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4061.29, -643.819)
+displace_position = Vector2(15.8027, 2.50513)
+
+[node name="BubbleDot384" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4066.19, -612.071)
+displace_position = Vector2(15.8218, 2.38159)
+
+[node name="BubbleDot385" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4070.85, -580.285)
+displace_position = Vector2(15.8398, 2.25793)
+
+[node name="BubbleDot386" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4075.26, -548.465)
+displace_position = Vector2(15.8569, 2.13409)
+
+[node name="BubbleDot387" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4079.42, -516.61)
+displace_position = Vector2(15.873, 2.01019)
+
+[node name="BubbleDot388" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4083.33, -484.724)
+displace_position = Vector2(15.8884, 1.88608)
+
+[node name="BubbleDot389" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4086.99, -452.809)
+displace_position = Vector2(15.9028, 1.7619)
+
+[node name="BubbleDot390" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4090.41, -420.866)
+displace_position = Vector2(15.9158, 1.6376)
+
+[node name="BubbleDot391" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4093.57, -388.897)
+displace_position = Vector2(15.9285, 1.51321)
+
+[node name="BubbleDot392" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4096.48, -356.904)
+displace_position = Vector2(15.9397, 1.38873)
+
+[node name="BubbleDot393" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4099.15, -324.89)
+displace_position = Vector2(15.95, 1.26416)
+
+[node name="BubbleDot394" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4101.56, -292.856)
+displace_position = Vector2(15.9592, 1.13953)
+
+[node name="BubbleDot395" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4103.72, -260.804)
+displace_position = Vector2(15.9675, 1.0148)
+
+[node name="BubbleDot396" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4105.63, -228.736)
+displace_position = Vector2(15.9753, 0.89003)
+
+[node name="BubbleDot397" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4107.29, -196.654)
+displace_position = Vector2(15.9817, 0.765182)
+
+[node name="BubbleDot398" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4108.71, -164.56)
+displace_position = Vector2(15.9873, 0.640305)
+
+[node name="BubbleDot399" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4109.87, -132.456)
+displace_position = Vector2(15.9917, 0.515396)
+
+[node name="BubbleDot400" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4110.78, -100.344)
+displace_position = Vector2(15.9951, 0.39045)
+
+[node name="BubbleDot401" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4111.43, -68.2259)
+displace_position = Vector2(15.9978, 0.265472)
+
+[node name="BubbleDot402" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4111.84, -36.1035)
+displace_position = Vector2(15.9993, 0.14048)
+
+[node name="BubbleDot403" parent="Outer/Line2D" instance=ExtResource("2_ee7kp")]
+position = Vector2(-4112, -3.97899)
+displace_position = Vector2(16, 0.0154827)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_iwh4r")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
