@@ -1,6 +1,8 @@
-[gd_scene load_steps=56 format=3 uid="uid://c3gg4vm3rn6ev"]
+[gd_scene load_steps=90 format=3 uid="uid://c3gg4vm3rn6ev"]
 
+[ext_resource type="Script" uid="uid://csbygnphebdu8" path="res://scripts/boss2/bombaclat.gd" id="1_dtmye"]
 [ext_resource type="Script" uid="uid://cc2i7sv5fwfl4" path="res://scripts/enemy.gd" id="1_heft1"]
+[ext_resource type="Shader" uid="uid://4hnh1b0l5ree" path="res://shaders/flash.gdshader" id="1_y2qpr"]
 [ext_resource type="Texture2D" uid="uid://nu55v07vst32" path="res://sprites/Boss2/Idle/Idle0001.png" id="2_gavdl"]
 [ext_resource type="Texture2D" uid="uid://b45jkanisv0jp" path="res://sprites/Boss2/Idle/Idle0002.png" id="3_c28ni"]
 [ext_resource type="Texture2D" uid="uid://cp8g0h8p7tfyf" path="res://sprites/Boss2/Idle/Idle0003.png" id="4_woq5e"]
@@ -21,24 +23,61 @@
 [ext_resource type="Texture2D" uid="uid://ba5mme1hhsnlf" path="res://sprites/Boss2/Death/Death0012.png" id="19_codam"]
 [ext_resource type="Texture2D" uid="uid://dtbea5kcdk3" path="res://sprites/Boss2/Death/Death0013.png" id="20_lk1w4"]
 [ext_resource type="Texture2D" uid="uid://b5ryv2awqitds" path="res://sprites/Boss2/Death/Death0014.png" id="21_kw3kx"]
-[ext_resource type="Texture2D" uid="uid://bx6hjqrfqkqfo" path="res://sprites/Boss2/Teleport1/Teleport10001.png" id="22_yo1t2"]
-[ext_resource type="Texture2D" uid="uid://b5kht1boyddbw" path="res://sprites/Boss2/Teleport1/Teleport10002.png" id="23_1hqpc"]
-[ext_resource type="Texture2D" uid="uid://30oh5lrb3ngi" path="res://sprites/Boss2/Teleport1/Teleport10003.png" id="24_0t08g"]
-[ext_resource type="Texture2D" uid="uid://cmyn8okb5hcxy" path="res://sprites/Boss2/Teleport1/Teleport10004.png" id="25_cwq4x"]
-[ext_resource type="Texture2D" uid="uid://2c7222qd5m8k" path="res://sprites/Boss2/Teleport1/Teleport10005.png" id="26_s723y"]
-[ext_resource type="Texture2D" uid="uid://cppibemgnuqff" path="res://sprites/Boss2/Teleport1/Teleport10006.png" id="27_mh7c5"]
+[ext_resource type="Texture2D" uid="uid://x3o660wxf3gl" path="res://sprites/Boss2/Teleport1/Teleport20001.png" id="22_0cnnx"]
+[ext_resource type="Texture2D" uid="uid://b43ahqu27nvn8" path="res://sprites/Boss2/Teleport1/Teleport20002.png" id="23_b05o1"]
+[ext_resource type="Texture2D" uid="uid://bniqoje8hklf2" path="res://sprites/Boss2/Teleport1/Teleport20003.png" id="24_78l8u"]
+[ext_resource type="Texture2D" uid="uid://cm28q3ct4n8xt" path="res://sprites/Boss2/Teleport1/Teleport20004.png" id="25_2ch1g"]
+[ext_resource type="Texture2D" uid="uid://cg7hfektqflye" path="res://sprites/Boss2/Teleport1/Teleport20005.png" id="26_dhbhw"]
+[ext_resource type="Texture2D" uid="uid://dwwbc5swi81c6" path="res://sprites/Boss2/Teleport1/Teleport20006.png" id="27_kfkwm"]
+[ext_resource type="Texture2D" uid="uid://b327vrumkxwo4" path="res://sprites/Boss2/Teleport1/Teleport20007.png" id="28_dtmye"]
 [ext_resource type="Texture2D" uid="uid://hbuqnvm0gm8k" path="res://sprites/Boss2/Teleport2/Teleport20001.png" id="28_mamun"]
 [ext_resource type="Texture2D" uid="uid://cuttc0536mkxd" path="res://sprites/Boss2/Teleport2/Teleport20002.png" id="29_cy6f2"]
+[ext_resource type="Texture2D" uid="uid://b5lgm16sgb6ta" path="res://sprites/Boss2/Teleport1/Teleport20008.png" id="29_ttr5g"]
 [ext_resource type="Texture2D" uid="uid://ctddxfil3u51h" path="res://sprites/Boss2/Teleport2/Teleport20003.png" id="30_lxbll"]
+[ext_resource type="Texture2D" uid="uid://ca3bgpn6vstgd" path="res://sprites/Boss2/Teleport1/Teleport20009.png" id="30_y2qpr"]
 [ext_resource type="Texture2D" uid="uid://w8vdwjppkhym" path="res://sprites/Boss2/Teleport2/Teleport20004.png" id="31_0cnnx"]
+[ext_resource type="Texture2D" uid="uid://dn4in6khqm5ds" path="res://sprites/Boss2/Teleport1/Teleport20010.png" id="31_qe0ch"]
 [ext_resource type="Texture2D" uid="uid://babxpd6r8wumg" path="res://sprites/Boss2/Teleport2/Teleport20005.png" id="32_b05o1"]
+[ext_resource type="Texture2D" uid="uid://31bvhkxr6kfd" path="res://sprites/Boss2/Teleport1/Teleport20011.png" id="32_saj4g"]
 [ext_resource type="Texture2D" uid="uid://c7prlaihrkflw" path="res://sprites/Boss2/Teleport2/Teleport20006.png" id="33_78l8u"]
+[ext_resource type="Texture2D" uid="uid://btrejpfwttg2p" path="res://sprites/Boss2/Teleport1/Teleport20012.png" id="33_unpu6"]
+[ext_resource type="Texture2D" uid="uid://q47088jdpj60" path="res://sprites/Boss2/Teleport1/Teleport20013.png" id="34_0520i"]
 [ext_resource type="Texture2D" uid="uid://bsb014u6n722y" path="res://sprites/Boss2/Attack/Attack0001.png" id="34_vn1rv"]
+[ext_resource type="Texture2D" uid="uid://dah7htjlxgxmn" path="res://sprites/Boss2/Teleport1/Teleport20014.png" id="35_86wj4"]
 [ext_resource type="Texture2D" uid="uid://bk4m6gup6i6vn" path="res://sprites/Boss2/Attack/Attack0002.png" id="35_vflq4"]
+[ext_resource type="Texture2D" uid="uid://cixowttpqopcr" path="res://sprites/Boss2/Teleport1/Teleport20015.png" id="36_varde"]
 [ext_resource type="Texture2D" uid="uid://c5lfj1fqcllq3" path="res://sprites/Boss2/Attack/Attack0003.png" id="36_xsnlq"]
+[ext_resource type="Texture2D" uid="uid://cjvpxxivkawyw" path="res://sprites/Boss2/Teleport1/Teleport20016.png" id="37_ggjkl"]
 [ext_resource type="Texture2D" uid="uid://dwra6ea2qqrol" path="res://sprites/Boss2/Attack/Attack0004.png" id="37_xlbnn"]
+[ext_resource type="Texture2D" uid="uid://bt8exlff323f8" path="res://sprites/Boss2/Teleport1/Teleport20017.png" id="38_76y0q"]
 [ext_resource type="Texture2D" uid="uid://dc51c2sgqdlo2" path="res://sprites/Boss2/Attack/Attack0005.png" id="38_hk4c3"]
 [ext_resource type="Texture2D" uid="uid://bella1wt5keke" path="res://sprites/Boss2/Attack/Attack0006.png" id="39_yletx"]
+[ext_resource type="Texture2D" uid="uid://bq6narv2mpsvw" path="res://sprites/Boss2/Teleport1/Teleport20018.png" id="39_yv5up"]
+[ext_resource type="Texture2D" uid="uid://cd6306ln3r5o5" path="res://sprites/Boss2/Teleport1/Teleport20019.png" id="40_wltl6"]
+[ext_resource type="Texture2D" uid="uid://bg32g8ya3s2le" path="res://sprites/Boss2/Teleport1/Teleport20020.png" id="41_e6cr5"]
+[ext_resource type="Texture2D" uid="uid://cca0r201nwj4b" path="res://sprites/Boss2/Teleport1/Teleport20021.png" id="42_c61qv"]
+[ext_resource type="Texture2D" uid="uid://budwr0136jksl" path="res://sprites/Boss2/Teleport1/Teleport20022.png" id="43_3calq"]
+[ext_resource type="Texture2D" uid="uid://d2lvouoj4bw7l" path="res://sprites/Boss2/Teleport1/Teleport20023.png" id="44_jhqpy"]
+[ext_resource type="Texture2D" uid="uid://clhb7d1q8iuq8" path="res://sprites/Boss2/Teleport1/Teleport20024.png" id="45_pnc5i"]
+[ext_resource type="Texture2D" uid="uid://11hil17ymo0n" path="res://sprites/Boss2/Teleport1/Teleport20025.png" id="46_0yby1"]
+[ext_resource type="Texture2D" uid="uid://c6v4ow0f5jaon" path="res://sprites/Boss2/Teleport1/Teleport20026.png" id="47_vrjk7"]
+[ext_resource type="Texture2D" uid="uid://dkacvdipqhtfe" path="res://sprites/Boss2/Teleport1/Teleport20027.png" id="48_e5h6u"]
+[ext_resource type="Texture2D" uid="uid://f0slnlf46avt" path="res://sprites/Boss2/Teleport1/Teleport20028.png" id="49_oiiio"]
+[ext_resource type="Texture2D" uid="uid://ba30wi5m4mt8m" path="res://sprites/Boss2/Teleport1/Teleport20029.png" id="50_dod5k"]
+[ext_resource type="Script" uid="uid://dxm6uwlx0x5g0" path="res://scripts/state_tree.gd" id="63_b05o1"]
+[ext_resource type="Script" uid="uid://cc3diaa6434je" path="res://scripts/state.gd" id="64_78l8u"]
+[ext_resource type="Script" uid="uid://drsue0qxi83in" path="res://scripts/boss2/boss2_idle.gd" id="64_kfkwm"]
+[ext_resource type="Script" uid="uid://dp3wcxj0d08p0" path="res://scripts/boss2/boss2_animtree.gd" id="64_ttr5g"]
+[ext_resource type="Script" path="res://scripts/boss2/boss2_teleport.gd" id="66_dtmye"]
+[ext_resource type="Script" path="res://scripts/boss2/boss2_attack.gd" id="67_ttr5g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qe0ch"]
+shader = ExtResource("1_y2qpr")
+shader_parameter/amount = null
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ttr5g"]
+radius = 47.0
+height = 158.0
 
 [sub_resource type="Animation" id="Animation_2ch1g"]
 resource_name = "idle"
@@ -92,7 +131,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_dtmye"]
 resource_name = "teleport_begin"
-length = 0.60001
+length = 1.50001
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -101,10 +140,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("22_yo1t2"), ExtResource("23_1hqpc"), ExtResource("24_0t08g"), ExtResource("25_cwq4x"), ExtResource("26_s723y"), ExtResource("27_mh7c5")]
+"values": [ExtResource("22_0cnnx"), ExtResource("23_b05o1"), ExtResource("24_78l8u"), ExtResource("25_2ch1g"), ExtResource("26_dhbhw"), ExtResource("27_kfkwm"), ExtResource("28_dtmye"), ExtResource("29_ttr5g"), ExtResource("30_y2qpr"), ExtResource("31_qe0ch"), ExtResource("32_saj4g"), ExtResource("33_unpu6"), ExtResource("34_0520i"), ExtResource("35_86wj4"), ExtResource("36_varde"), ExtResource("37_ggjkl"), ExtResource("38_76y0q"), ExtResource("39_yv5up"), ExtResource("40_wltl6"), ExtResource("41_e6cr5"), ExtResource("42_c61qv"), ExtResource("43_3calq"), ExtResource("44_jhqpy"), ExtResource("45_pnc5i"), ExtResource("46_0yby1"), ExtResource("47_vrjk7"), ExtResource("48_e5h6u"), ExtResource("49_oiiio"), ExtResource("50_dod5k")]
 }
 
 [sub_resource type="Animation" id="Animation_ttr5g"]
@@ -177,6 +216,10 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_78l8u"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0t08g"]
 states/attack/node = SubResource("AnimationNodeAnimation_0qkab")
 states/attack/position = Vector2(313, -4)
@@ -188,16 +231,23 @@ states/teleport_begin/node = SubResource("AnimationNodeAnimation_5ea70")
 states/teleport_begin/position = Vector2(616, 1)
 states/teleport_end/node = SubResource("AnimationNodeAnimation_codam")
 states/teleport_end/position = Vector2(616, 65)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_lk1w4"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_kw3kx"), "teleport_end", "idle", SubResource("AnimationNodeStateMachineTransition_yo1t2")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_lk1w4"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_kw3kx"), "teleport_end", "idle", SubResource("AnimationNodeStateMachineTransition_yo1t2"), "teleport_begin", "teleport_end", SubResource("AnimationNodeStateMachineTransition_78l8u")]
 graph_offset = Vector2(-16, -48)
 
 [node name="Bombaclat" type="CharacterBody2D"]
-script = ExtResource("1_heft1")
+material = SubResource("ShaderMaterial_qe0ch")
+use_parent_material = true
+collision_layer = 4
+script = ExtResource("1_dtmye")
 hp = 6
 metadata/_custom_type_script = ExtResource("1_heft1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+use_parent_material = true
 texture = ExtResource("2_gavdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ttr5g")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -207,3 +257,31 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_0t08g")
 anim_player = NodePath("../AnimationPlayer")
+script = ExtResource("64_ttr5g")
+
+[node name="StateTree" type="Node" parent="." node_paths=PackedStringArray("current_state")]
+script = ExtResource("63_b05o1")
+current_state = NodePath("Idle")
+metadata/_custom_type_script = ExtResource("63_b05o1")
+
+[node name="Idle" type="Node" parent="StateTree"]
+script = ExtResource("64_kfkwm")
+metadata/_custom_type_script = ExtResource("64_78l8u")
+
+[node name="Timer" type="Timer" parent="StateTree/Idle"]
+wait_time = 1.5
+
+[node name="Teleport" type="Node" parent="StateTree"]
+script = ExtResource("66_dtmye")
+metadata/_custom_type_script = ExtResource("64_78l8u")
+
+[node name="Attack" type="Node" parent="StateTree"]
+script = ExtResource("67_ttr5g")
+metadata/_custom_type_script = ExtResource("64_78l8u")
+
+[connection signal="death" from="." to="AnimationTree" method="_on_bombaclat_death"]
+[connection signal="recieve_damage" from="." to="StateTree/Teleport" method="_on_bombaclat_recieve_damage"]
+[connection signal="animation_finished" from="AnimationTree" to="AnimationTree" method="_on_animation_finished"]
+[connection signal="animation_finished" from="AnimationTree" to="StateTree/Teleport" method="_on_animation_tree_animation_finished"]
+[connection signal="animation_finished" from="AnimationTree" to="StateTree/Attack" method="_on_animation_tree_animation_finished"]
+[connection signal="timeout" from="StateTree/Idle/Timer" to="StateTree/Idle" method="_on_timer_timeout"]

@@ -4,6 +4,7 @@ class_name Enemy
 
 signal death
 signal death_animation_ended
+signal recieve_damage
 
 @export var force := 256.0
 @export var hp := 3
@@ -20,6 +21,7 @@ func take_damage(amount):
 		flash_tween.kill()
 	flash_tween = create_tween()
 	flash_tween.tween_method(set_flash,1.0,0.0,0.1)
+	recieve_damage.emit()
 	
 	if hp <= 0:
 		death.emit()

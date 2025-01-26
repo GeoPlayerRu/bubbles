@@ -10,7 +10,9 @@ func _enter(_message):
 	player.velocity.y = 0
 	sprite.flip_h = player.axis_cache == -1
 
-
-func _on_dash_timer_timeout() -> void:
+func _on_dash_timer_timeout():
 	tree.transit("Move")
-	sprite.flip_h = false
+
+func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
+	if anim_name == 'dash':
+		sprite.flip_h = false
