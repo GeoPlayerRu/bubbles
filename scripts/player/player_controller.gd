@@ -30,12 +30,14 @@ func _physics_process(_delta: float) -> void:
 func _on_dash_timer_timeout() -> void:
 	$Sprite2D.flip_h = false
 
-func take_damage(amount):
-	hp-=amount
-	can_move = false
+func take_damage(damage, knockback_data : PlayerKnockbackData = null):
+	hp-=damage
 	flash.start()
+	if knockback_data != null:
+		$MoveMachine.transit('Knockback',{'knockback_data' : knockback_data})
 	if hp <= 0:
-		$StateMachine.transit('Death')
+		$MoveMachine.transit('Death')
+		return
 
 func _on_flash_timer_timeout() -> void:
 	can_move = true

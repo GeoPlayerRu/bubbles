@@ -1,6 +1,6 @@
 extends State
 
-const projectile := preload('res://scenes/projectile.tscn')
+const projectile := preload('res://scenes/entities/projectile.tscn')
 @onready var data := $"../.."
 
 func _on_animation_tree_animation_finished(anim_name: StringName) -> void:

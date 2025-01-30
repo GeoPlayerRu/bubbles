@@ -13,5 +13,6 @@ func _process(_delta: float) -> void:
 
 func _on_bombaclat_death() -> void:
 	reparent(Player.instance)
+	zoom = Vector2(0.5,0.5)
 	died = true
 	position = Vector2.ZERO

@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=4 uid="uid://cs5xpmqy6j3bv"]
 
-[ext_resource type="PackedScene" uid="uid://chruxdkxswxvw" path="res://scenes/player_character.tscn" id="1_3sxe6"]
+[ext_resource type="PackedScene" uid="uid://chruxdkxswxvw" path="res://scenes/entities/player_character.tscn" id="1_3sxe6"]
 [ext_resource type="PackedScene" uid="uid://dvd014bl2s1ea" path="res://scenes/background.tscn" id="1_5ctbd"]
 [ext_resource type="Script" uid="uid://cyetop4ntf4gp" path="res://scripts/tool-only/bubble_generator.gd" id="2_4ym8t"]
 [ext_resource type="PackedScene" uid="uid://cosckn42gn5ey" path="res://scenes/bubble_dot.tscn" id="3_rp0f4"]
 [ext_resource type="Script" uid="uid://bwr702vfv3xg6" path="res://scripts/bubble/bubble_line.gd" id="3_wfh33"]
 [ext_resource type="Shader" uid="uid://bkjvt0keujpaa" path="res://shaders/bubble_shine2.gdshader" id="4_a4nc4"]
 [ext_resource type="Script" uid="uid://pbft0hn0r72n" path="res://scripts/bubble/bubble_polygon.gd" id="4_twxwl"]
-[ext_resource type="PackedScene" uid="uid://c3gg4vm3rn6ev" path="res://scenes/bombaclat.tscn" id="10_0do7f"]
+[ext_resource type="PackedScene" uid="uid://c3gg4vm3rn6ev" path="res://scenes/entities/bombaclat.tscn" id="10_0do7f"]
 [ext_resource type="PackedScene" uid="uid://b8aiqf7ypwqdh" path="res://scenes/ground_tilemap.tscn" id="10_gljxn"]
 [ext_resource type="PackedScene" uid="uid://cgljog6d1eprj" path="res://scenes/audio_provider.tscn" id="11_gljxn"]
 

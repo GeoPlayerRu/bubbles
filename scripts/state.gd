@@ -2,7 +2,7 @@ extends Node
 
 class_name State
 
-var tree : StateTree
+var tree : StateMachine
 var active : bool = false
 
 func _enter(_message : Dictionary) -> void:

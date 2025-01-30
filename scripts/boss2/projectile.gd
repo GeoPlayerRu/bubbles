@@ -19,3 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.take_damage(1)
 		queue_free()
+
+
+func _on_area_entered(_area: Area2D) -> void:
+	queue_free()

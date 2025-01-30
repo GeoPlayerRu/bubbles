@@ -5,14 +5,12 @@ extends State
 @onready var wallBuffer : Timer = $WallBuffer
 @onready var player := $"../.."
 @onready var dashCooldownTimer : Timer = $DashCooldown
-
+@onready var attack_sm := $"../../AttackMachine"
 
 var jumped : bool = false
 var can_dash : bool = true
-var subroutine : bool = false
 
-func _enter(message):
-	subroutine = message.has("subroutine")
+func _enter(_message):
 	$"../../Sprite2D".flip_h = false
 
 func _physics_update(delta):
@@ -44,10 +42,10 @@ func _physics_update(delta):
 		elif jumpBuffer.time_left == 0:
 			jumpBuffer.start()
 	
-	if can_dash and Input.is_action_just_pressed("ch_dash") and dashCooldownTimer.time_left == 0 and not subroutine:
+	if can_dash and Input.is_action_just_pressed("ch_dash") and dashCooldownTimer.time_left == 0:
 		tree.transit("Dash")
 		dashCooldownTimer.start()
 		can_dash = false
 	
-	if Input.is_action_just_pressed("ch_melee") and not subroutine:
-		tree.transit("Attack")
+	if Input.is_action_just_pressed("ch_melee") and attack_sm.get_current_state_name() != "Attack":
+		attack_sm.transit("Attack")

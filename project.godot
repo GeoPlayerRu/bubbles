@@ -56,7 +56,7 @@ We're left with no arms right in the power struggle
 We're left with no arms right in the power struggle
 Left with no arms in the power struggle
 Left with no arms right here in the power struggle"
-config/version="1.0.0"
+config/version="1.1.0"
 run/main_scene="uid://da8ugb1qr2mkt"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/image="uid://bwe1r0k6tnvpj"
@@ -78,6 +78,10 @@ window/stretch/mode="canvas_items"
 [editor]
 
 movie_writer/movie_file="D:/Projects/snegzim-bubble-gj/movies/export.avi"
+
+[editor_plugins]
+
+enabled=PackedStringArray()
 
 [input]
 
@@ -123,8 +127,19 @@ ch_jump={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
+
 [layer_names]
 
 2d_physics/layer_1="Ground"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"
+2d_physics/layer_4="PlayerHitbox"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

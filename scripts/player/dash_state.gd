@@ -5,6 +5,7 @@ extends State
 @onready var dashTimer : Timer = $DashTimer
 
 func _enter(_message):
+	tree.animation_tree.playback.travel('dash')
 	dashTimer.start()
 	player.velocity.x = player.axis_cache * player.MAX_SPEED * 1.875
 	player.velocity.y = 0

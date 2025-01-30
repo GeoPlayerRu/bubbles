@@ -3,10 +3,10 @@ extends Node
 var main_scene = ProjectSettings.get("application/run/main_scene")
 
 func change_to_packed(packed : PackedScene):
-	get_tree().change_scene_to_packed(packed)
+	get_tree().change_scene_to_packed.call_deferred(packed)
 
 func change_to_file(filename : String):
-	get_tree().change_scene_to_file(filename)
+	get_tree().change_scene_to_file.call_deferred(filename)
 
 func restart():
 	change_to_file.call_deferred(main_scene)
