@@ -128,26 +128,29 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("8_vn1rv"), ExtResource("9_vflq4"), ExtResource("10_xsnlq"), ExtResource("11_xlbnn"), ExtResource("12_hk4c3"), ExtResource("13_yletx"), ExtResource("14_pkkia"), ExtResource("15_0qkab"), ExtResource("16_bg6i8"), ExtResource("17_as13c"), ExtResource("18_5ea70"), ExtResource("19_codam"), ExtResource("20_lk1w4"), ExtResource("21_kw3kx")]
 }
-tracks/1/type = "method"
+tracks/1/type = "audio"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("AudioStreamPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"values": [{
-"args": [0.0],
-"method": &"play"
+"clips": [{
+"end_offset": 0.0186603,
+"start_offset": 0.0,
+"stream": ExtResource("71_qe0ch")
 }, {
-"args": [0.0],
-"method": &"play"
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("71_qe0ch")
 }, {
-"args": [0.0],
-"method": &"play"
-}]
+"end_offset": 0.970335,
+"start_offset": 0.0,
+"stream": ExtResource("71_qe0ch")
+}],
+"times": PackedFloat32Array(0.1, 0.5, 1)
 }
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_2ch1g"]
 resource_name = "idle"
@@ -318,7 +321,6 @@ script = ExtResource("67_ttr5g")
 metadata/_custom_type_script = ExtResource("64_78l8u")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("71_qe0ch")
 
 [connection signal="death" from="." to="AnimationTree" method="_on_bombaclat_death"]
 [connection signal="recieve_damage" from="." to="StateTree/Teleport" method="_on_bombaclat_recieve_damage"]

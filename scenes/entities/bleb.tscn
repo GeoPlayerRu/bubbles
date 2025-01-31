@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://dgnnmfv3fnkq1"]
+[gd_scene load_steps=105 format=3 uid="uid://dgnnmfv3fnkq1"]
 
 [ext_resource type="Script" uid="uid://cc2i7sv5fwfl4" path="res://scripts/enemy.gd" id="1_53c42"]
 [ext_resource type="Shader" uid="uid://4hnh1b0l5ree" path="res://shaders/flash.gdshader" id="1_f06k0"]
@@ -75,7 +75,6 @@
 [ext_resource type="Script" uid="uid://tvujl8xum17x" path="res://scripts/state_machine.gd" id="71_jsf2y"]
 [ext_resource type="Script" uid="uid://cc3diaa6434je" path="res://scripts/state.gd" id="72_oes08"]
 [ext_resource type="Script" uid="uid://c4e2qa7g0kvq2" path="res://scripts/boss1/boss_idle.gd" id="72_sx5tq"]
-[ext_resource type="Script" uid="uid://tvujl8xum17x" path="res://scripts/state_machine.gd" id="73_frdis"]
 [ext_resource type="Script" uid="uid://bg72s8p4gvmjn" path="res://scripts/boss1/boss_jump.gd" id="74_c188i"]
 [ext_resource type="Script" uid="uid://dwlpnnunulb2r" path="res://scripts/boss1/boss1_hitbox.gd" id="74_p55i8"]
 [ext_resource type="Script" uid="uid://bbemibuka00ab" path="res://scripts/boss1/boss_smash.gd" id="75_inayf"]
@@ -99,18 +98,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("1_k22kk")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_sx5tq"]
@@ -141,20 +128,21 @@ tracks/1/keys = {
 "update": 1,
 "values": []
 }
-tracks/2/type = "method"
+tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("AudioStreamPlayer")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.2),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [0.0],
-"method": &"play"
-}]
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("80_ywwrr")
+}],
+"times": PackedFloat32Array(1.1)
 }
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_bvw48"]
 resource_name = "fall"
@@ -374,7 +362,7 @@ position = Vector2(-1, -36)
 shape = SubResource("CircleShape2D_tq23x")
 
 [node name="StateTree" type="Node" parent="." node_paths=PackedStringArray("current_state")]
-script = ExtResource("73_frdis")
+script = ExtResource("71_jsf2y")
 current_state = NodePath("Idle")
 metadata/_custom_type_script = ExtResource("71_jsf2y")
 
@@ -407,7 +395,6 @@ position = Vector2(-2, -36)
 shape = SubResource("CircleShape2D_gl6c0")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("80_ywwrr")
 
 [connection signal="death" from="." to="AnimationTree" method="_on_bleb_death"]
 [connection signal="death" from="." to="StateTree/Death" method="_on_bleb_death"]
