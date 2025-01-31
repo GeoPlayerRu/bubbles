@@ -17,7 +17,7 @@ func _on_timer_timeout() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		body.take_damage(1)
+		body.take_damage(1, PlayerKnockbackData.new(Vector2.ZERO,0.1,true))
 		queue_free()
 
 

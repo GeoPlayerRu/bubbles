@@ -4,6 +4,7 @@ extends AnimationTree
 @onready var state_machine := $"../StateTree"
 
 func _process(_delta: float) -> void:
+	return
 	var playback = get('parameters/playback')
 	
 	if state_machine.get_current_state_name() == "Attack" and playback.get_current_node() == 'idle':

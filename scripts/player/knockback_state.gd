@@ -14,7 +14,7 @@ func _enter(message) -> void:
 
 func _physics_update(delta):
 	if gravity_affected:
-		tree.get_parent().velocity.y += GlobalVariables.gravity
+		tree.get_parent().velocity.y += GlobalVariables.gravity * delta
 
 func _on_timer_timeout() -> void:
 	tree.transit('Move')

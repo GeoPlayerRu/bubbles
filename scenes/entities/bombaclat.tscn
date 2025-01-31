@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://c3gg4vm3rn6ev"]
+[gd_scene load_steps=95 format=3 uid="uid://c3gg4vm3rn6ev"]
 
 [ext_resource type="Script" uid="uid://csbygnphebdu8" path="res://scripts/boss2/bombaclat.gd" id="1_dtmye"]
 [ext_resource type="Script" uid="uid://cc2i7sv5fwfl4" path="res://scripts/enemy.gd" id="1_heft1"]
@@ -67,7 +67,7 @@
 [ext_resource type="Script" uid="uid://tvujl8xum17x" path="res://scripts/state_machine.gd" id="63_b05o1"]
 [ext_resource type="Script" uid="uid://cc3diaa6434je" path="res://scripts/state.gd" id="64_78l8u"]
 [ext_resource type="Script" uid="uid://drsue0qxi83in" path="res://scripts/boss2/boss2_idle.gd" id="64_kfkwm"]
-[ext_resource type="Script" uid="uid://dp3wcxj0d08p0" path="res://scripts/boss2/boss2_animtree.gd" id="64_ttr5g"]
+[ext_resource type="Script" uid="uid://bs1v0rsksgc60" path="res://scripts/csm_animation_tree.gd" id="65_t1bu0"]
 [ext_resource type="Script" uid="uid://rfbnhs8jlbrf" path="res://scripts/boss2/boss2_teleport.gd" id="66_dtmye"]
 [ext_resource type="Script" uid="uid://d4ksufl8b1sk" path="res://scripts/boss2/boss2_attack.gd" id="67_ttr5g"]
 [ext_resource type="AudioStream" uid="uid://bxmubofti8kom" path="res://audio/cartoon-bubble-pop-01-.mp3" id="71_qe0ch"]
@@ -241,6 +241,21 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t1bu0"]
+advance_mode = 2
+advance_expression = "get_node(\"StateTree\").get_current_state_name() == \"Attack\""
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cc8eq"]
+advance_mode = 2
+advance_expression = "get_node(\"StateTree\").get_current_state_name() == \"Teleport\""
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1tgd5"]
+advance_mode = 2
+advance_expression = "hp <= 0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fwgma"]
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0t08g"]
 states/attack/node = SubResource("AnimationNodeAnimation_0qkab")
 states/attack/position = Vector2(313, -4)
@@ -252,7 +267,7 @@ states/teleport_begin/node = SubResource("AnimationNodeAnimation_5ea70")
 states/teleport_begin/position = Vector2(616, 1)
 states/teleport_end/node = SubResource("AnimationNodeAnimation_codam")
 states/teleport_end/position = Vector2(616, 65)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_lk1w4"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_kw3kx"), "teleport_end", "idle", SubResource("AnimationNodeStateMachineTransition_yo1t2"), "teleport_begin", "teleport_end", SubResource("AnimationNodeStateMachineTransition_78l8u")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_lk1w4"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_kw3kx"), "teleport_end", "idle", SubResource("AnimationNodeStateMachineTransition_yo1t2"), "teleport_begin", "teleport_end", SubResource("AnimationNodeStateMachineTransition_78l8u"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_t1bu0"), "idle", "teleport_begin", SubResource("AnimationNodeStateMachineTransition_cc8eq"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_1tgd5"), "death", "End", SubResource("AnimationNodeStateMachineTransition_fwgma")]
 graph_offset = Vector2(-16, -48)
 
 [node name="Bombaclat" type="CharacterBody2D"]
@@ -275,10 +290,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_y2qpr")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." node_paths=PackedStringArray("state_machine")]
 tree_root = SubResource("AnimationNodeStateMachine_0t08g")
+advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-script = ExtResource("64_ttr5g")
+script = ExtResource("65_t1bu0")
+state_machine = NodePath("../StateTree")
 
 [node name="StateTree" type="Node" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("63_b05o1")

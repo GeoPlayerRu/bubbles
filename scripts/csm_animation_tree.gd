@@ -9,6 +9,10 @@ class_name CSMAnimationTree
 
 var playback : AnimationNodeStateMachinePlayback = self["parameters/playback"]
 
+func _ready() -> void:
+	if animation_finished.is_connected(_on_animation_finished) == false:
+		animation_finished.connect(_on_animation_finished)
+
 func _on_animation_finished(anim_name : StringName):
 	if animation_to_state_mapping.has(anim_name):
 		state_machine.transit(animation_to_state_mapping[anim_name])
